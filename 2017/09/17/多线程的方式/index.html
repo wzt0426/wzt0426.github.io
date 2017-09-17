@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JAVA,多线程," />
 
 
 
@@ -94,16 +94,18 @@
 
 
 
-<meta name="description" content="If you want, then do it .">
-<meta property="og:type" content="website">
-<meta property="og:title" content="桃花源居">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="JAVA多线程实现方式主要有三种：继承Thread类、实现Runnable接口、使用ExecutorService、Callable、Future实现有返回结果的多线程。其中前两种方式线程执行完后都没有返回值，只有最后一种是带返回值的。 1.使用继承Thread类的方法来实现多线程    继承Thread的方法尽管被列成一中多线程的实现方法，但其实Thread类的本质也是继承了Runnable接口">
+<meta name="keywords" content="JAVA,多线程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA多线程">
+<meta property="og:url" content="http://yoursite.com/2017/09/17/多线程的方式/index.html">
 <meta property="og:site_name" content="桃花源居">
-<meta property="og:description" content="If you want, then do it .">
+<meta property="og:description" content="JAVA多线程实现方式主要有三种：继承Thread类、实现Runnable接口、使用ExecutorService、Callable、Future实现有返回结果的多线程。其中前两种方式线程执行完后都没有返回值，只有最后一种是带返回值的。 1.使用继承Thread类的方法来实现多线程    继承Thread的方法尽管被列成一中多线程的实现方法，但其实Thread类的本质也是继承了Runnable接口">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-17T15:09:32.885Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="桃花源居">
-<meta name="twitter:description" content="If you want, then do it .">
+<meta name="twitter:title" content="JAVA多线程">
+<meta name="twitter:description" content="JAVA多线程实现方式主要有三种：继承Thread类、实现Runnable接口、使用ExecutorService、Callable、Future实现有返回结果的多线程。其中前两种方式线程执行完后都没有返回值，只有最后一种是带返回值的。 1.使用继承Thread类的方法来实现多线程    继承Thread的方法尽管被列成一中多线程的实现方法，但其实Thread类的本质也是继承了Runnable接口">
 
 
 
@@ -132,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/17/多线程的方式/"/>
 
 
 
 
 
-  <title>桃花源居</title>
+  <title>JAVA多线程 | 桃花源居</title>
   
 
 
@@ -163,9 +165,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
     <a href="https://github.com/wzt0426"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
 
@@ -249,9 +249,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -281,9 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/17/多线程的方式/" itemprop="url">JAVA多线程</a></h1>
+          <h1 class="post-title" itemprop="name headline">JAVA多线程</h1>
         
 
         <div class="post-meta">
@@ -333,9 +331,7 @@
       
 
       
-        
-          
-            <p>JAVA多线程实现方式主要有三种：继承Thread类、实现Runnable接口、使用ExecutorService、Callable、Future实现有返回结果的多线程。其中前两种方式线程执行完后都没有返回值，只有最后一种是带返回值的。</p>
+        <p>JAVA多线程实现方式主要有三种：继承Thread类、实现Runnable接口、使用ExecutorService、Callable、Future实现有返回结果的多线程。其中前两种方式线程执行完后都没有返回值，只有最后一种是带返回值的。</p>
 <p>1.使用继承Thread类的方法来实现多线程<br>    继承Thread的方法尽管被列成一中多线程的实现方法，但其实Thread类的本质也是继承了Runnable接口的一个实例的。其实它代表的也只是一个线程的实例，同时它<br>    启动线程的方式是start()方法。start()方法是一个native方法，它将启动一个新线程，并执行run()方法。这种方式实现多线程很简单，通过自己的类直接extend Thread，并复写run()方法，就可以启动新线程并执行自己定义的run()方法。<br>    同时在Thread的构造函数中也是调用init(null, null, “Thread-“ + nextThreadNum(), 0);而实现runnable的方法是init(null, target, “Thread-“ + nextThreadNum(), 0);<br>    such as<br>package newclint;</p>
 <p>public class MyThread extends Thread{</p>
 <pre><code>public void run(){
@@ -430,8 +426,6 @@ System.out.println(&quot;----程序结束运行----，程序运行时间【&quot
 <h2 id="其中这种方法是采用了线程池，通过设置线程池中生成线程的个数，进行多线程操作。"><a href="#其中这种方法是采用了线程池，通过设置线程池中生成线程的个数，进行多线程操作。" class="headerlink" title="其中这种方法是采用了线程池，通过设置线程池中生成线程的个数，进行多线程操作。"></a>其中这种方法是采用了线程池，通过设置线程池中生成线程的个数，进行多线程操作。</h2><p>Callable<br>Callable接口定义了方法public T call() throws Exception。我们可以在Callable实现中声明强类型的返回值，甚至是抛出异常。尽管在Executors类中已经有一些方法可以将Runnable对象转换为Callable对象，你最好还是仔细复审现有的Runnable实现或Thread的子类。为什么还要这样做？主要是为了检查和清除因为Runnable无法抛出检查型异常而采用的变通方案。<br>同时，你可能希望利用call()方法直接返回结果的能力，以省去读取值时的类型转换。</p>
 <p>Future<br>下面就将线程池和Callable接口相结合，看能发生怎样的效应。Future是Java 1.5中引入的接口，当你提交一个Callable对象给线程池时，将得到一个Future对象，并且它和你传入的Callable有相同的结果类型声明。这个对象取代了Java 1.5之前直接操作具体Thread实例的做法。过去你不得不用Thread.join()或者Thread.join(long millis)等待任务完成<br>    参考网站：<a href="http://www.cnblogs.com/yezhenhan/archive/2012/01/09/2317636.html；" target="_blank" rel="external">http://www.cnblogs.com/yezhenhan/archive/2012/01/09/2317636.html；</a></p>
 
-          
-        
       
     </div>
     
@@ -446,284 +440,38 @@ System.out.println(&quot;----程序结束运行----，程序运行时间【&quot
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/17/new-article/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/17/new-article/" itemprop="url">test for hexo</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-17T12:47:25+08:00">
-                2017-09-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/测试/" itemprop="url" rel="index">
-                    <span itemprop="name">测试</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/JAVA/" rel="tag"># JAVA</a>
           
-
+            <a href="/tags/多线程/" rel="tag"># 多线程</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>时间：2017年九月17号<br>地点：上海市浦东<br>公司：群硕软件<br>致自己：美好的生活源于不断地努力。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/16/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/16/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-16T23:30:05+08:00">
-                2017-09-16
-              </time>
+              <a href="/2017/09/17/new-article/" rel="next" title="test for hexo">
+                <i class="fa fa-chevron-left"></i> test for hexo
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -733,10 +481,11 @@ System.out.println(&quot;----程序结束运行----，程序运行时间【&quot
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -744,6 +493,10 @@ System.out.println(&quot;----程序结束运行----，程序运行时间【&quot
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -764,8 +517,17 @@ System.out.println(&quot;----程序结束运行----，程序运行时间【&quot
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -827,6 +589,22 @@ System.out.println(&quot;----程序结束运行----，程序运行时间【&quot
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text">}  </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其中这种方法是采用了线程池，通过设置线程池中生成线程的个数，进行多线程操作。"><span class="nav-number">2.</span> <span class="nav-text">其中这种方法是采用了线程池，通过设置线程池中生成线程的个数，进行多线程操作。</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -940,10 +718,10 @@ System.out.println(&quot;----程序结束运行----，程序运行时间【&quot
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
