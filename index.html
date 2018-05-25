@@ -264,6 +264,149 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/23/ConnectException/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/wzt.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/23/ConnectException/" itemprop="url">java.net.ConnectException:failed to connect to /127.0.1.1 (port 8080)的解决办法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-23T20:10:25+08:00">
+                2018-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天在做毕业设计的时候遇到了一个问题，就是我的安卓的项目需要去连接本机的服务器上的代码进行数据库的交互。但是报错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java.net.ConnectException: failed to connect to /127.0.1.1 (port 8080)</div></pre></td></tr></table></figure></p>
+<p>我本来以为是网络的问题，查看了一下配置什么的也已经添加了，最后查了一些资料发现是因为我用的是模拟器，模拟器默认把127.0.0.1和localhost当做本身了。如果是测试阶段应该改成10.0.2.2来代替。这样就可以继续进行项目的开发了。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/31/面试笔试必问-接口与抽象类的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1451,163 +1594,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/02/mongodb的聚合,连表查询lookup/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/wzt.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/02/mongodb的聚合,连表查询lookup/" itemprop="url">mongodb的聚合,连表查询lookup</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-02T18:47:25+08:00">
-                2018-03-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mongodb/" itemprop="url" rel="index">
-                    <span itemprop="name">mongodb</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>首先mongodb的聚合:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">db.getCollection(&apos;表一&apos;).aggregate([</div><div class="line">	&#123; </div><div class="line">		$project: &#123; &apos;year_data&apos;: &#123;$year: &quot;$createdAt&quot;&#125;,</div><div class="line">                            &apos;month_data&apos;: &#123;$month: &quot;$createdAt&quot;&#125;</div><div class="line">                            &#125;</div><div class="line">                           &#125;,</div><div class="line">        &#123;$group: &#123;_id : &#123;&quot;year_data&quot;:&quot;$year_data&quot;, &quot;month_data&quot;:&quot;$month_data&quot;&#125;, total : &#123;$sum : 1&#125;&#125;&#125;</div><div class="line">           </div><div class="line">])</div></pre></td></tr></table></figure></p>
-<p>lookup：连表查询<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">db.getCollection(&apos;表一&apos;).aggregate([</div><div class="line">         &#123;$lookup: &#123;</div><div class="line">                    from: &quot;表二&quot;,</div><div class="line">                    localField:	&quot;openId&quot;,</div><div class="line">                    foreignField: &quot;socials.openId&quot;, </div><div class="line">                    as: &quot;member&quot; </div><div class="line">                    &#125;</div><div class="line">         &#125;,</div><div class="line">	&#123; </div><div class="line">		$project: &#123; &apos;year_data&apos;: &#123;$year: &quot;$createdAt&quot;&#125;,</div><div class="line">                            &apos;month_data&apos;: &#123;$month: &quot;$createdAt&quot;&#125;,</div><div class="line">                            &apos;member&apos; :1</div><div class="line">                &#125;</div><div class="line">        &#125;,</div><div class="line">        &#123;$group: &#123;_id : &#123;&quot;year_data&quot;:&quot;$year_data&quot;, &quot;month_data&quot;:&quot;$month_data&quot;&#125;,</div><div class="line">                          total : &#123;$sum : 1&#125;</div><div class="line">                 &#125;</div><div class="line">        &#125;,</div><div class="line">        &#123;$sort: &#123;&quot;_id.year_data&quot;:-1, &quot;_id.month_data&quot;:-1&#125;&#125;</div><div class="line">])</div></pre></td></tr></table></figure></p>
-<p>其中这些字段是干什么的呢 :</p>
-<blockquote>
-<ol>
-<li>from: “要连接的表”,</li>
-<li>localField:    “当前Collection中需要连接的字段”,</li>
-<li>foreignField: “外连Collection中连接查询的字段”, </li>
-<li>as: “把获取到的的值赋值给这个字段</li>
-</ol>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1653,7 +1644,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1664,7 +1655,7 @@
             
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -1675,7 +1666,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

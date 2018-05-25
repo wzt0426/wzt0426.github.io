@@ -264,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/06/git的整理2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/23/for循环的问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micky Wang">
@@ -283,7 +283,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/06/git的整理2/" itemprop="url">Git命令整理2</a></h1>
+                <a class="post-title-link" href="/2018/02/23/for循环的问题/" itemprop="url">for循环的问题</a></h1>
         
 
         <div class="post-meta">
@@ -295,7 +295,294 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-06T12:47:25+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-23T20:10:25+08:00">
+                2018-02-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在我们的正常编写代码和做笔试题的时候经常会遇到这么一个问题就是for循环的问题,那么前一段时间我从网上看到这么一个问题:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">public class T &#123;</div><div class="line">    public  static boolean  testA(char a)&#123;</div><div class="line">        System.out.print(a);</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">    /**</div><div class="line">     * for循环的一些疑问</div><div class="line">     * @param args</div><div class="line">     */</div><div class="line">    public static void main(String[] args) &#123;</div><div class="line">        int i=0;</div><div class="line">        for (testA(&apos;a&apos;);testA(&apos;b&apos;)&amp;&amp;(i&lt;2);testA(&apos;c&apos;)) &#123;</div><div class="line">            i++;</div><div class="line">            testA(&apos;d&apos;);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>结果会是什么呢?答案是:abdcbdcb.</p>
+<hr>
+<p> 不知道与你们的结果是否一样,我看人家的解释用到java的反编译,搞得我也一头雾水.其实我们可以这样看把for循环变成for(int =1; i&lt;10;i++){内部程序}的步骤来看,首先肯定是先执行int=1,然后执行判断,如果true就执行内部,然后执行i++,再进行判断.这样看起来就简单好多了.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/23/gitConfig/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/wzt.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/23/gitConfig/" itemprop="url">Git:git config --global user.name [username] 报错</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-23T20:07:17+08:00">
+                2018-02-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在我们执行git pull等一些操作的时候,会提示你它不知道你是谁,你就需要配置name和email.那么在执行<code>git config --global user.name [username]</code>  的时候也有时候会报<code>Is a directory</code> 的错误.遇到这种情况就需要首先找到你的.getconfig文件,你会发现它竟然是一个文件夹.把它删除掉.然后再执行就可以了.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/06/git的整理3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/wzt.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/06/git的整理3/" itemprop="url">Git整理3</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-06T22:01:25+08:00">
                 2017-12-06
               </time>
             
@@ -357,9 +644,16 @@
       
         
           
-            <h2 id="git-log"><a href="#git-log" class="headerlink" title="git log"></a>git log</h2><p>git log是为了查看自己的提交历史，如果发现自己提交了若干更新之后，又需要回顾一下历史。如果没有添加参数这是显示从最近到最远的提交日志，当然如果感觉信息太多的话可以加<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">## git reset</div><div class="line">git reset是在你查询过log的时候可以看到后面的你写特殊字符，使用```git reset --hard ××××```（xxx是历史的一个字符）。就会回退到你想要的那个版本。</div><div class="line">## git rebase</div><div class="line">git rebase是把多个commit合并成一个commit的操作。在写项目的时候会有这种情况就是会出现很多次的改动那么也会有很多次的commit，但是你的leader所需要merage的仅仅是你正确的那一次而已。所以我们需要把commit合并成一个commit。使用```git rebase -i &quot;你要提交的分支&quot;```。最后再强制提交一次```git push origin &quot;自己的分支&quot; -f</div></pre></td></tr></table></figure></p>
-<h2 id="自我感悟"><a href="#自我感悟" class="headerlink" title="自我感悟"></a>自我感悟</h2><p>如果多个分支提交到同一个git上，那么需要每次提交之前都要先进行<code>git pull</code>一下拉一下代码使自己提交时的代码和远程版本库保持一致。不然会失败，如果强制提交会把其他分支的代码给覆盖掉。<br>同时强烈推荐廖雪峰老师的git教程。</p>
-
+            <h2 id="git-常用实例"><a href="#git-常用实例" class="headerlink" title="git 常用实例"></a>git 常用实例</h2><p>已经push了，而且不小心commit和push好几次，但是你现在没有任何改动了，此时就无法直接用git rebase了，但是想把commit提交合并成一次<br>    git log 查找该分支的第一次提交commitId<br>    git reset –soft commitId  (–soft 和 –hard的区别就是 –soft是软回退，会将你这次commitId之后的提交全部回退到暂存区中，–hard会将你<br>                            这次commitId之后的提交全部清除掉)<br>    此时你这次commitId之后的提交都会回到暂存区中<br>        git commit -m 随便写注释<br>        git rebase -i origin/feature-449（分支名）<br>    此时有可能会出现下面的情况<br>        It seems that there is already a rebase-merge directory, and<br>        I wonder if you are in the middle of another rebase.  If that is the<br>        case, please try<br>            git rebase (–continue | –abort | –skip)<br>        If that is not the case, please<br>            rm -fr “/home/user/projects/aug-marketing/src/modules/ufscmcmall/.git/rebase-merge”<br>        and run me again.  I am stopping in case you still have something</p>
+<pre><code>在这里执行他说的这句话
+    rm -fr &quot;/home/user/projects/aug-marketing/src/modules/ufscmcmall/.git/rebase-merge&quot;
+然后继续执行
+    git rebase -i origin/feature-449（分支名）
+出现窗口让你进行修改commitId的那次和这次的commitId,j将这次commit的前面单词改成s  ctrl+o 回车保存，ctrl+x退出
+再次出现窗口，将这次的commit message信息进行注释，  ctrl+o 回车保存，ctrl+x退出
+此时会提示你操作成功，最后一步
+    git push origin 分支名 -f
+</code></pre>
           
         
       
@@ -509,6 +803,307 @@
 <ul>
 <li>安装插件<br>安装好package control之后进入sublime使用快捷键ctrl+shit+p输入install会出现package control：isstall package之类的，然后拍enter进入输入自己需要的插件比如vue，然后他就会帮你安装。</li>
 </ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/06/git的缓存/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/wzt.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/06/git的缓存/" itemprop="url">Git缓存</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-06T12:47:25+08:00">
+                2017-12-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="git-缓存的常用方法"><a href="#git-缓存的常用方法" class="headerlink" title="git 缓存的常用方法"></a>git 缓存的常用方法</h2><ol>
+<li>git stash</li>
+<li>git stash pop</li>
+<li>git stash list</li>
+<li>git stash apply stashId //从列表中获取，但是该stash还存在与list中</li>
+<li>git stash drop stashId //从列表中删除</li>
+<li>git stash clear  //删除列表</li>
+<li><p>git stash show -i stash@{1} k可以看这一次的改动详情</p>
+</li>
+<li><p>将git log中的某一次提交合并的一个分支上，</p>
+<h2 id="使用场景：例如我把一次提交合并到分支a了，然后将分支a（基于develop创建的）请求合并到develop，但是此时你发现要把该分支的合并倒master"><a href="#使用场景：例如我把一次提交合并到分支a了，然后将分支a（基于develop创建的）请求合并到develop，但是此时你发现要把该分支的合并倒master" class="headerlink" title="使用场景：例如我把一次提交合并到分支a了，然后将分支a（基于develop创建的）请求合并到develop，但是此时你发现要把该分支的合并倒master"></a>使用场景：例如我把一次提交合并到分支a了，然后将分支a（基于develop创建的）请求合并到develop，但是此时你发现要把该分支的合并倒master</h2></li>
+<li>创建新的分支b(基于master分支创建)</li>
+<li>找到你那次提交的commitId号</li>
+<li>git cherry-pick commitId（在b分支下执行）</li>
+<li>it push 到远程分支上</li>
+<li>发送merge 请求到master。</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/06/git的整理2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/wzt.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/06/git的整理2/" itemprop="url">Git命令整理2</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-06T12:47:25+08:00">
+                2017-12-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="git-log"><a href="#git-log" class="headerlink" title="git log"></a>git log</h2><p>git log是为了查看自己的提交历史，如果发现自己提交了若干更新之后，又需要回顾一下历史。如果没有添加参数这是显示从最近到最远的提交日志，当然如果感觉信息太多的话可以加<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">## git reset</div><div class="line">git reset是在你查询过log的时候可以看到后面的你写特殊字符，使用```git reset --hard ××××```（xxx是历史的一个字符）。就会回退到你想要的那个版本。</div><div class="line">## git rebase</div><div class="line">git rebase是把多个commit合并成一个commit的操作。在写项目的时候会有这种情况就是会出现很多次的改动那么也会有很多次的commit，但是你的leader所需要merage的仅仅是你正确的那一次而已。所以我们需要把commit合并成一个commit。使用```git rebase -i &quot;你要提交的分支&quot;```。最后再强制提交一次```git push origin &quot;自己的分支&quot; -f</div></pre></td></tr></table></figure></p>
+<h2 id="自我感悟"><a href="#自我感悟" class="headerlink" title="自我感悟"></a>自我感悟</h2><p>如果多个分支提交到同一个git上，那么需要每次提交之前都要先进行<code>git pull</code>一下拉一下代码使自己提交时的代码和远程版本库保持一致。不然会失败，如果强制提交会把其他分支的代码给覆盖掉。<br>同时强烈推荐廖雪峰老师的git教程。</p>
 
           
         
@@ -1283,281 +1878,11 @@ System.out.println(&quot;----程序结束运行----，程序运行时间【&quot
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/17/new-article/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/wzt.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/17/new-article/" itemprop="url">test for hexo</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-17T12:47:25+08:00">
-                2017-09-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/测试/" itemprop="url" rel="index">
-                    <span itemprop="name">测试</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>时间：2017年九月17号<br>地点：上海市浦东<br>公司：<em>**</em><br>致自己：美好的生活源于不断地努力。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/16/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/wzt.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/16/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-16T23:30:05+08:00">
-                2017-09-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1603,7 +1928,7 @@ System.out.println(&quot;----程序结束运行----，程序运行时间【&quot
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1614,7 +1939,7 @@ System.out.println(&quot;----程序结束运行----，程序运行时间【&quot
             
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -1625,7 +1950,7 @@ System.out.println(&quot;----程序结束运行----，程序运行时间【&quot
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
