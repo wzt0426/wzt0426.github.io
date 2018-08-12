@@ -264,6 +264,448 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/24/java面试-Sting,Stringbuffer,Stringbuilder/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/wzt.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/24/java面试-Sting,Stringbuffer,Stringbuilder/" itemprop="url">java面试-Sting,Stringbuffer,Stringbuilder</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-24T20:10:17+08:00">
+                2018-03-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在进行看Java的面试题的时候,发现一段代码用的是String,StringBuffer分别不一样.然后自己就上网查了一下其中的差异,顺便补充一下脑容量.</p>
+<h6 id="1-首先String与StringBuffer不一样的是String是常量而-StringBuffer和StringBuilder是变量-并且"><a href="#1-首先String与StringBuffer不一样的是String是常量而-StringBuffer和StringBuilder是变量-并且" class="headerlink" title="1.首先String与StringBuffer不一样的是String是常量而 StringBuffer和StringBuilder是变量.并且"></a>1.首先String与StringBuffer不一样的是String是常量而 StringBuffer和StringBuilder是变量.并且</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">string st = &quot;123&quot; String st = st +&quot;222&quot;</div></pre></td></tr></table></figure>
+<p>并没有改变st的值,只是JVM又创建了一个新的对象也名为st,然后进行赋值操作,然后GC把st回收了.</p>
+<h6 id="2-运行速度-StringBuilder-gt-StringBuffer-gt-String-原因大家肯定也知道了-String要进行创建回收"><a href="#2-运行速度-StringBuilder-gt-StringBuffer-gt-String-原因大家肯定也知道了-String要进行创建回收" class="headerlink" title="2.运行速度 StringBuilder&gt;StringBuffer&gt;String.原因大家肯定也知道了,String要进行创建回收."></a>2.运行速度 StringBuilder&gt;StringBuffer&gt;String.原因大家肯定也知道了,String要进行创建回收.</h6><h6 id="3-线程安全-如果一个StringBuffer对象在字符串缓冲区被多个线程使用时，StringBuffer中很多方法可以带有synchronized关键字，所以可以保证线程是安全的，但StringBuilder的方法则没有该关键字，所以不能保证线程安全，有可能会出现一些错误的操作。所以如果要进行的操作是多线程的，那么就要使用StringBuffer，但是在单线程的情况下，还是建议使用速度比较快的StringBuilder。"><a href="#3-线程安全-如果一个StringBuffer对象在字符串缓冲区被多个线程使用时，StringBuffer中很多方法可以带有synchronized关键字，所以可以保证线程是安全的，但StringBuilder的方法则没有该关键字，所以不能保证线程安全，有可能会出现一些错误的操作。所以如果要进行的操作是多线程的，那么就要使用StringBuffer，但是在单线程的情况下，还是建议使用速度比较快的StringBuilder。" class="headerlink" title="3. 线程安全 如果一个StringBuffer对象在字符串缓冲区被多个线程使用时，StringBuffer中很多方法可以带有synchronized关键字，所以可以保证线程是安全的，但StringBuilder的方法则没有该关键字，所以不能保证线程安全，有可能会出现一些错误的操作。所以如果要进行的操作是多线程的，那么就要使用StringBuffer，但是在单线程的情况下，还是建议使用速度比较快的StringBuilder。"></a>3. 线程安全 如果一个StringBuffer对象在字符串缓冲区被多个线程使用时，StringBuffer中很多方法可以带有synchronized关键字，所以可以保证线程是安全的，但StringBuilder的方法则没有该关键字，所以不能保证线程安全，有可能会出现一些错误的操作。所以如果要进行的操作是多线程的，那么就要使用StringBuffer，但是在单线程的情况下，还是建议使用速度比较快的StringBuilder。</h6><p>时间：2018年三月24号<br>地点：上海市浦东<br>公司：**<br>致自己：美好的生活源于不断地努力。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/23/java面试题1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/wzt.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/23/java面试题1/" itemprop="url">java面试1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-23T20:20:30+08:00">
+                2018-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#####1.synchronized和lock的区别<br>| 类别 | synchronized | lock |<br>| - | :-: | -: |<br>| 存在的层次 | java的关键字,在jvm层面上| 一个类 |<br>|锁的释放 | 1.以获取锁的线程执行完同步代码，释放锁 2、线程执行发生异常，jvm会让线程释放锁 | 在finally必须进行线程的释放,不然会死锁 |<br>|锁的获取 | 假设A线程获得锁，B线程等待。如果A线程阻塞，B线程会一直等待 | 分情况而定，Lock有多个锁获取的方式，具体下面会说道，大致就是可以尝试获得锁，线程可以不用一直等待 |<br>| 锁状态| 不能判断 | 可以判断|<br>| 锁类型| 可重入 不可中断 非公平| 可重入 可判断 可公平（两者皆可）|<br>| 性能| 少量同步 | 大量同步 |</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">lock()：获取锁，如果锁被暂用则一直等待</div><div class="line"></div><div class="line">unlock():释放锁</div><div class="line"></div><div class="line">tryLock(): 注意返回类型是boolean，如果获取锁的时候锁被占用就返回false，否则返回true</div><div class="line"></div><div class="line">tryLock(long time, TimeUnit unit)：比起tryLock()就是给了一个时间期限，保证等待参数时间</div><div class="line"></div><div class="line">lockInterruptibly()：用该锁的获得方式，如果线程在获取锁的阶段进入了等待，那么可以中断此线程，先去做别的事</div></pre></td></tr></table></figure>
+<p>#####2. valititle关键字<br>valititle为java编程语言允许线程访问共享变量，为了确保共享变量能被准确和一致的更新，线程应该确保通过排他锁单独获得这个变量。Java语言提供了volatile，在某些情况下比锁更加方便。如果一个字段被声明成volatile，java线程内存模型确保所有线程看到这个变量的值是一致的.比如 int x =1; int y = x; int k =x; k值会是从y中拿去的,因为编程优化,如果加上关键字volititle就会直接去x的内存中拿去拒接编程优化.</p>
+<p>######3.ArrayList和LinkedList你知道吗？你知道它怎么动态扩容的吗<br>| 类别 | ArrayList | LinkedList |<br>| - | :-: | -: |<br>| 基于数据结构 | 基于动态数组| 基于链表的数据结构 |<br>|查找速度 | 快 | 慢 |<br>|增删速度 | 慢 | 快 |<br>| 扩容大小规则是| 扩容后的大小= 原始大小+原始大小/2 + 1 | 直接向后面加|<br>| 线程| 不安全 | 不安全 |</p>
+<p>######数据库的acid<br>数据库事务必须具备ACID特性，ACID是Atomic（原子性）、Consistency（一致性）、Isolation（隔离性）和Durability（持久性）的英文缩写。</p>
+<p>　 原子性：指整个数据库事务是不可分割的工作单位。只有使据库中所有的操作执行成功，才算整个事务成功；事务中任何一个SQL语句执行失败，那么已经执行成功的SQL语句也必须撤销，数据库状态应该退回到执行事务前的状态。</p>
+<p>　 一致性：指数据库事务不能破坏关系数据的完整性以及业务逻辑上的一致性。例如对银行转帐事务，不管事务成功还是失败，应该保证事务结束后ACCOUNTS表中Tom和Jack的存款总额为2000元。</p>
+<p>　 隔离性：指的是在并发环境中，当不同的事务同时操纵相同的数据时，每个事务都有各自的完整数据空间。由并发事务所做的修改必须与任何其他并发事务所做的修改隔离。事务查看数据更新时，数据所处的状态要么是另一事务修改它之前的状态，要么是另一事务修改它之后的状态，事务不会查看到中间状态的数据。</p>
+<p>　 持久性：指的是只要事务成功结束，它对数据库所做的更新就必须永久保存下来。即使发生系统崩溃，重新启动数据库系统后，数据库还能恢复到事务成功结束时的状态。</p>
+<p>######4.Mysql中事务的级别你知道吗？脏读、不可重复读、幻读你能解释一下吗？<br>1、脏读：事务A读取了事务B更新的数据，然后B回滚操作，那么A读取到的数据是脏数据</p>
+<p>　　2、不可重复读：事务 A 多次读取同一数据，事务 B 在事务A多次读取的过程中，对数据作了更新并提交，导致事务A多次读取同一数据时，结果 不一致。</p>
+<p>　　3、幻读：系统管理员A将数据库中所有学生的成绩从具体分数改为ABCDE等级，但是系统管理员B就在这个时候插入了一条具体分数的记录，当系统管理员A改结束后发现还有一条记录没有改过来，就好像发生了幻觉一样，这就叫幻读。</p>
+<p>小结：不可重复读的和幻读很容易混淆，不可重复读侧重于修改，幻读侧重于新增或删除。解决不可重复读的问题只需锁住满足条件的行，解决幻读需要锁表.</p>
+<table>
+<thead>
+<tr>
+<th>事务隔离级别</th>
+<th style="text-align:center">脏读</th>
+<th style="text-align:right">不可重复读</th>
+<th style="text-align:right">幻读</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>读未提交（read-uncommitted）</td>
+<td style="text-align:center">是</td>
+<td style="text-align:right">是</td>
+<td style="text-align:right">是</td>
+</tr>
+<tr>
+<td>不可重复读（read-committed）</td>
+<td style="text-align:center">否</td>
+<td style="text-align:right">是</td>
+<td style="text-align:right">是</td>
+</tr>
+<tr>
+<td>可重复读（repeatable-read）</td>
+<td style="text-align:center">否</td>
+<td style="text-align:right">否</td>
+<td style="text-align:right">是</td>
+</tr>
+<tr>
+<td>串行化（serializable）</td>
+<td style="text-align:center">否</td>
+<td style="text-align:right">否</td>
+<td style="text-align:right">否</td>
+</tr>
+</tbody>
+</table>
+<p>mysql默认的事务隔离级别为repeatable-read</p>
+<p>时间：2018年三月23号<br>地点：上海市浦东<br>公司：**<br>致自己：美好的生活源于不断地努力。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/02/mongodb-模糊查询+聚合函数+连表查询+排序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/wzt.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/02/mongodb-模糊查询+聚合函数+连表查询+排序/" itemprop="url">mongodb-模糊查询+聚合函数+连表查询+排序</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-02T18:50:25+08:00">
+                2018-03-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mongodb/" itemprop="url" rel="index">
+                    <span itemprop="name">mongodb</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="今天我们来聊一下nosql-mongodb的模糊查询"><a href="#今天我们来聊一下nosql-mongodb的模糊查询" class="headerlink" title="今天我们来聊一下nosql mongodb的模糊查询:"></a>今天我们来聊一下nosql mongodb的模糊查询:</h4><h5 id="在mysql中需要做模糊查询的时候一般都是用的关键字"><a href="#在mysql中需要做模糊查询的时候一般都是用的关键字" class="headerlink" title="在mysql中需要做模糊查询的时候一般都是用的关键字"></a>在mysql中需要做模糊查询的时候一般都是用的关键字<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; 1. mysql: select * from 表一 where name like ’%haha%’</div><div class="line">&gt; 2. mongodb: db.表一.find(&#123;name:&#123;$regex:/haha/&#125;&#125;)</div><div class="line">那么在聚合函数中如何把上一个博客上讲的链表查询一起串起来呢?我们不废话直接上代码:</div></pre></td></tr></table></figure></h5><p>db.getCollection(‘nelnmomclubwpcTransitionCouponRecord’).aggregate([<br>         {$lookup: {<br>                    from: “表二”,<br>                    localField: “openId”,<br>                    foreignField: “socials.openId”,<br>                    as: “member”<br>                    }<br>         },<br>    {<br>        $project: { ‘year_data’: {$year: “$createdAt”},<br>                            ‘month_data’: {$month: “$createdAt”},<br>                            ‘member’ :1<br>                }<br>        },<br>        {$unwind: “$member”},<br>        {<br>            $match: {<br>                ‘$or’ : [<br>                    {<br>                        ‘member.properties’ : {<br>                            ‘$elemMatch’: {‘name’: ‘name’, ‘value’: {$regex:”小”}}<br>                         }<br>                     }<br>                 ]<br>            }<br>        },<br>        {$sort: {“_id.year_data”:-1, “_id.month_data”:-1}}<br>```</p>
+<blockquote>
+<ol>
+<li>$unwind; 分割嵌入数组到自己顶层文件</li>
+<li>elemMatch: 嵌套查询(用于多个条件)</li>
+<li>$or 匹配多个键(满足一个即可)</li>
+</ol>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/02/mongodb的聚合,连表查询lookup/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1278,445 +1720,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/25/SpringMVC的运行原理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/wzt.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/25/SpringMVC的运行原理/" itemprop="url">SpringMVC的运行原理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-25T22:10:25+08:00">
-                2018-02-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>SpingMVC运行原理：<br>1、  用户发送请求至前端控制器DispatcherServlet。<br>2、  DispatcherServlet收到请求调用HandlerMapping处理器映射器。<br>3、  处理器映射器找到具体的处理器(可以根据xml配置、注解进行查找)，生成处理器对象及处理器拦截器(如果有则生成)一并返回给DispatcherServlet。<br>4、  DispatcherServlet调用HandlerAdapter处理器适配器。<br>5、  HandlerAdapter经过适配调用具体的处理器(Controller，也叫后端控制器)。<br>6、  Controller执行完成返回ModelAndView。<br>7、  HandlerAdapter将controller执行结果ModelAndView返回给DispatcherServlet。<br>8、  DispatcherServlet将ModelAndView传给ViewReslover视图解析器。<br>9、  ViewReslover解析后返回具体View。<br>10、DispatcherServlet根据View进行渲染视图（即将模型数据填充至视图中）。<br>11、 DispatcherServlet响应用户。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/25/android运行项目点击出错/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/wzt.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/25/android运行项目点击出错/" itemprop="url">android运行项目点击出错</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-25T21:10:25+08:00">
-                2018-02-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="在开始做android项目的时候，有可能遇到很多次需要点击某个按钮跳转到下一个界面，但是点击之后项目就死了。刚接触项目的可能一头雾水。那么我们跟着步骤一步一步的来看一下。"><a href="#在开始做android项目的时候，有可能遇到很多次需要点击某个按钮跳转到下一个界面，但是点击之后项目就死了。刚接触项目的可能一头雾水。那么我们跟着步骤一步一步的来看一下。" class="headerlink" title="在开始做android项目的时候，有可能遇到很多次需要点击某个按钮跳转到下一个界面，但是点击之后项目就死了。刚接触项目的可能一头雾水。那么我们跟着步骤一步一步的来看一下。"></a>在开始做android项目的时候，有可能遇到很多次需要点击某个按钮跳转到下一个界面，但是点击之后项目就死了。刚接触项目的可能一头雾水。那么我们跟着步骤一步一步的来看一下。</h4><ol>
-<li>把项目的逻辑问题注释掉，重新测试。</li>
-<li>java文件是否绑定自己的xml文件。</li>
-<li>查看AndroidManifest.xml文件是否添加过这个类文件。（这个经常会忘记）</li>
-<li>查看点击后设置的Intent是否是本页面。<h4 id="PS-完成项的时候多检查一下，相信获得成功的瞬间一切都是值得的。"><a href="#PS-完成项的时候多检查一下，相信获得成功的瞬间一切都是值得的。" class="headerlink" title="PS:完成项的时候多检查一下，相信获得成功的瞬间一切都是值得的。"></a>PS:完成项的时候多检查一下，相信获得成功的瞬间一切都是值得的。</h4></li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/23/ubuntu Debian安装node.js/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/wzt.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/23/ubuntu Debian安装node.js/" itemprop="url">ubuntu Debian安装node.js</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-23T20:10:25+08:00">
-                2018-02-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ubuntu/" itemprop="url" rel="index">
-                    <span itemprop="name">ubuntu</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="ubuntu安装node-js"><a href="#ubuntu安装node-js" class="headerlink" title="ubuntu安装node.js"></a>ubuntu安装node.js</h2><ul>
-<li>方法：<br>如果我们安装的是Node.js v9.x:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -</div><div class="line">sudo apt-get install -y nodejs</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="Debian安装node-js"><a href="#Debian安装node-js" class="headerlink" title="Debian安装node.js"></a>Debian安装node.js</h2><ul>
-<li>方法：<br>如果我们安装的是Node.js v9.x:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl -sL https://deb.nodesource.com/setup_9.x | bash -</div><div class="line">apt-get install -y nodejs</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>当然如果想要找其他版本的也可以进入：<a href="https://github.com/nodesource/distributions。下面也有其他版本以及教程。键ctrl+shit+p输入install会出现package" target="_blank" rel="external">https://github.com/nodesource/distributions。下面也有其他版本以及教程。键ctrl+shit+p输入install会出现package</a> control：isstall package之类的，然后拍enter进入输入自己需要的插件比如vue，然后他就会帮你安装。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1767,7 +1770,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-count">35</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1778,7 +1781,7 @@
             
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -1789,7 +1792,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
