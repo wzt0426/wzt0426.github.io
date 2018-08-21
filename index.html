@@ -264,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/11/Elements in iteration/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/21/mysql与Oracle的区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micky Wang">
@@ -283,7 +283,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/11/Elements in iteration/" itemprop="url">使用vscode报错Elements in iteration expect to have 'v-bind:key' directives</a></h1>
+                <a class="post-title-link" href="/2018/08/21/mysql与Oracle的区别/" itemprop="url">mysql与Oracle的区别</a></h1>
         
 
         <div class="post-meta">
@@ -295,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-11T20:10:25+08:00">
-                2018-08-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-21T15:10:25+08:00">
+                2018-08-21
               </time>
             
 
@@ -318,8 +318,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/VSCode/" itemprop="url" rel="index">
-                    <span itemprop="name">VSCode</span>
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
                   </a>
                 </span>
 
@@ -357,9 +357,885 @@
       
         
           
-            <p>在使用vscode写vue的时候会出现这样一个错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[eslint-plugin-vue]</div><div class="line">[vue/require-v-for-key]</div><div class="line">Elements in iteration expect to have &apos;v-bind:key&apos; directives.</div><div class="line">Renders the element or template block multiple times based on the source data.</div></pre></td></tr></table></figure></p>
-<p>这是在使用插件vetur的问题，关闭了就行了。打开vscode-首选项-设置-工作区设置<br>把”vetur.validation.template”: true改成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;vetur.validation.template&quot;: false</div></pre></td></tr></table></figure></p>
-<p>保存一下就解决了。</p>
+            <p>今天去面试的时候遇到了一个问题，就是使用MySQL与Oracle之间有什么区别：</p>
+<ol>
+<li>自动增长的数据类型<br>1.1 mysql有自动增长的数据类型，插入数据时候不用操作记录。oracle没有自增长的数据类型，需要自己建立一个自动增长的的序列号。</li>
+<li>单引号的区别<br>2.1 MySQL 可以使用双引号，Oracle只能使用单引号抱起字符串。</li>
+<li>翻页的SQL语句的处理不同。<br>3.1 mysql使用的是limit， Oracle使用的ROWNUM。</li>
+<li>MYSQL日期字段分DATE和TIME两种，ORACLE日期字段只有DATE</li>
+<li>空字符串<br>5.1 MYSQL的非空字段也有空的内容，ORACLE里定义了非空字段就不容许有空的内容。</li>
+<li>字符串模糊比较<br>6.1 MYSQL里用 字段名 like ‘%字符串%’,ORACLE里也可以用 字段名 like ‘%字符串%’ 但这种方法不能使用索引, 速度不快，用字符串比较函数 instr(字段名,’字符串’)&gt;0 会得到更精确的查找结果</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/20/java笔试题1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/wzt.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/20/java笔试题1/" itemprop="url">java笔试题1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-20T20:20:30+08:00">
+                2018-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA/" itemprop="url" rel="index">
+                    <span itemprop="name">JAVA</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>请简述http协议中get请求和post请求的区别<br>答： 1. get请求比post请求快。 2. get请求传参时候是以？+数据的形式，post是放在body中。3. GET提交的数据大小有限制（因为浏览器对URL的长度有限制），而POST方法提交的数据没有限制. 4. GET方式需要使用Request.QueryString来取得变量的值，而POST方式通过Request.Form来获取变量的值。5. 保密程度不够，可以看出来参数。</li>
+<li>请简述session和cookie的区別<br>答： 1. session是存储在服务器上的，cookie是存在客户端的。2. session的存在服务器端的，浏览器关闭，session即失效；cookie是存放在客户端硬盘上的，即使掉电也可以保存。 3. 是针对每一个用户的，唯一的。cookie是针对网站的。每一个网站针对一个。4. 一般cookie保存不重要的用户信息，重要的信息由session保存。</li>
+<li>简述Servlet与JSP的关系<br>答： JSP可以被看作一个特殊的Servlet，它只不过是对Servlet的扩展，只要是JSP能够完成的工作，使用Servlet都可以完成，例如生成动态的页面。由于JSP页面最终要被转换成Servlet来运行，因此处理请求实际上是编译后的Servlet。jsp是java中嵌套java代码，servlect是java中嵌套html代码。</li>
+<li>简述你所理解的JAVA封装、继承、多态<br>答; 1. 封装：是面向对象方法的重要原则，就是把对象的属性和行为（数据）结合为一个独立的整体，并尽可能隐藏对象的内部实现细节，就是把不想告诉或者不该告诉别人的东西隐藏起来，把可以告诉别人的公开，别人只能用我提供的功能实现需求，而不知道是如何实现的。增加安全性. 继承：是面向对象最显著的一个特性，继承是从已有的类中派生出新的类称为子类，子类继承父类的数据属性和行为，并能根据自己的需求扩展出新的行为，提高了代码的复用性. 　多态：指允许不同的对象对同一消息做出相应。即同一消息可以根据发送对象的不同而采用多种不同的行为方式（发送消息就是函数调用）。封装和继承几乎都是为多态而准备的，在执行期间判断引用对象的实际类型，根据其实际的类型调用其相应的方法。表示对问题领域进行分析、设计中得出的抽象的概念，是对一系列看上去不同，但是本质上相同的具体概念的抽象，在java中抽象用 abstract 关键字来修饰，用 abstract 修饰类时，此类就不能被实例化，从这里可以看出，抽象类就是为了继承而存在的，如果定义了一个抽象类而不去继承它，那么等于白白创建了这个抽象类，因为你不能用它来做任何事情，用 abstract 修饰方法时，此方法就是抽象方法，抽象方法必须存在于抽象类中，抽象方法没有方法体，对于一个父类来说，如果它的某个方法在父类中实现出来没有任何意义，必须根据子类的实际需求来进行不同的实现，那么就可以将这个方法声明为抽象方法，抽象方法的修饰符必须为 public 或者 protected ，应为用 private，则不能被子类继承，子类便无法实现该方法，缺省情况下默认为 public 。</li>
+<li>重载和重写的区别。</li>
+<li>重载是在让类以统一的方式处理不同类型数据的一种手段。多个同名函数同时存在，具有不同的参数个数/类型。重载的时候，方法名要一样，但是参数类型和个数不一样，返回值类型可以相同也可以不相同。无法以返回型别作为重载函数的区分标准。重写： 父类与子类之间的多态性，对父类的函数进行重新定义。如果在子类中定义某方法与其父类有相同的名称和参数，我们说该方法被重写 (Overriding)。子类可继承父类中的方法，而不需要重新编写相同的方法。但有时子类并不想原封不动地继承父类的方法，而是想作一定的修改，这就需要采用方法的重写。方法重写又称方法覆盖。</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/20/mysql如何查询每个科目成绩最好的三个人/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/wzt.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/20/mysql如何查询每个科目成绩最好的三个人/" itemprop="url">mysql:如何查询每个科目成绩最好的三个人</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-20T20:10:25+08:00">
+                2018-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天去参加一家的面试，笔试题中有这么的一道题。就是如何查询每个科目最好的三个人：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SELECT * FROM Students s WHERE (</div><div class="line">                      SELECT COUNT(*) FROM  Students sd WHERE sd.kemu= s.kemu sd.score &gt;= s.score) &lt;=3 ORDER BY kemu, score DESC;</div></pre></td></tr></table></figure></p>
+<p>首先解释一下这样的做法，子查询的做法是查询确认每一个成绩中与本部门记录中的全部成绩做比较查询个数。如果比这个大的个数小于三个，说明这个数肯定排前三，同时拿出数值。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/18/储存过程与函数的区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/wzt.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/18/储存过程与函数的区别/" itemprop="url">储存过程与函数的区别</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-18T20:10:25+08:00">
+                2018-08-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在使用mpvue框架写小程序中会遇到的一些问题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">1. 储存过程与函数的区别：</div><div class="line">1、标识符不同。函数的标识符为FUNCTION，过程为：PROCEDURE。</div><div class="line">2、函数中有返回值，且必须返回，而过程没有返回值。</div><div class="line">3、过程无返回值类型，不能将结果直接赋值给变量；函数有返回值类型，调用时，除在select中，必须将返回值赋给变量。</div><div class="line">4、函数可以在select语句中直接使用，而过程不能，例如：假设已有函数fun_getAVG() 返回number类型绝对值。那么select fun_getAVG(col_a) from table 这样是可以的</div><div class="line"></div><div class="line">2. 带有输入与输出的储存过程：</div></pre></td></tr></table></figure></p>
+<p>create procedure selectState (in userName char(20) , out state int)<br>begin<br>select state from user where userName = userName;<br>end<br>call selectState(“micky”, @state)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">3. 带有输入的函数</div></pre></td></tr></table></figure></p>
+<p>create function selectState (userName char(20))<br>returns int<br>begin<br>select state from user where userName = userName;<br>return state;<br>end<br>SELECT selectState  (“mick”)<br>```</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/java笔试2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/wzt.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/16/java笔试2/" itemprop="url">java笔试题1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T16:20:30+08:00">
+                2018-08-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA/" itemprop="url" rel="index">
+                    <span itemprop="name">JAVA</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>== 和equal方法的区别<br>答： 1. 1.基本数据类型，也称原始数据类型。byte,short,char,int,long,float,double,boolean<br>他们之间的比较，应用双等号（==）,比较的是他们的值。<br>2.复合数据类型(类)<br>当他们用（==）进行比较的时候，比较的是他们在内存中的存放地址，所以，除非是同一个new出来的对象，他们的比较后的结果为true，否则比较后结果为false。 JAVA当中所有的类都是继承于Object这个基类的，在Object中的基类中定义了一个equals的方法，这个方法的初始行为是比较对象的内存地 址，但在一些类库当中这个方法被覆盖掉了，如String,Integer,Date在这些类当中equals有其自身的实现，而不再是比较类在堆内存中的存放地址了。</li>
+<li>HashMap和HashTable区别<br>答： 1.hashmap和hashTable都继承了Map,CloneAble,Serializable三个接口，但是hashMap继承的是AbstractMap而hashTable继承的是Dictionary。2.hashMap可以接受null的key和value，但是hashTable如果有null值会NullPointerException。3. hashTable是线程安全的，hashMap不是线程安全的。因为hashTable的get方法中用了synchronized描述符。</li>
+<li>HashSet和TreeSet的区别<br>答： 1.hashSet底层用的是hashmap，TreeSet底层用的是treemap。2. 存储时保证数据唯一性依据不同：HashSet是通过复写hashCode()方法和equals()方法来保证的，而HashSet通过Compareable接口的compareTo()方法来保证的。3. HashSet无序，TreeSet有序。4. hashset底层结构用的是hash表，TreeSet底层用的是二叉树。</li>
+<li>.ArrayList和LinkedList的区别<br>答： 1.ArrayList是实现了基于动态数组的数据结构，LinkedList基于链表的数据结构。2.对于随机访问get和set，ArrayList觉得优于LinkedList，因为LinkedList要移动指针。3. 对于新增和删除操作add和remove，LinedList比较占优势，因为ArrayList要移动数据。4.线程不安全。</li>
+<li>假如你正在开发一个系统的登录程序，请简述你是如何实现记住用户名和密码这个操作的，并如何实现<br>答: 首先在登录的时候会进行查询cookie里面是否有我要的信息，如果有的话。拿出来放到form表单里面。如果没有登陆成功以后，把需要的信息放在cookie中并且付一个时间。</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/15/查询所有的重复记录/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/wzt.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/15/查询所有的重复记录/" itemprop="url">查询所有的重复记录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-15T20:10:25+08:00">
+                2018-08-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>如何查询一个表内的所有重复记录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT * FROM students s WHERE s.kemu IN(SELECT sd.kemu FROM students sd GROUP BY sd.kemu HAVING COUNT(sd.kemu) &gt;1);</div></pre></td></tr></table></figure></p>
+<p>查询出来之后，如何删除这些重复的记录：<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DELETE FROM students WHERE id not in (select maxid from (SELECT MAX(ID) AS maxid FROM students GROUP BY kemu) b)</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/11/Vue使用v-for报错/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/wzt.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/11/Vue使用v-for报错/" itemprop="url">Vue使用v-for="(item, index) in pics"报错</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-11T20:10:25+08:00">
+                2018-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在使用mpvue框架写小程序中会遇到的一些问题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(Emitted value instead of an instance of Error) &lt;li v-for=&quot;item in pics&quot;&gt;: component lists rendered with v-for should have explicit keys. See https://vuejs.org/guide/list.html#key for more info.</div></pre></td></tr></table></figure></p>
+<p>解决方法：<br>在for循环后面加上一个<code>:key=&quot;index&quot;</code>就可以了。</p>
 
           
         
@@ -562,7 +1438,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/11/Vue使用v-for报错/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/11/Elements in iteration/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micky Wang">
@@ -581,7 +1457,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/11/Vue使用v-for报错/" itemprop="url">Vue使用v-for="(item, index) in pics"报错</a></h1>
+                <a class="post-title-link" href="/2018/08/11/Elements in iteration/" itemprop="url">使用vscode报错Elements in iteration expect to have 'v-bind:key' directives</a></h1>
         
 
         <div class="post-meta">
@@ -616,8 +1492,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vue/" itemprop="url" rel="index">
-                    <span itemprop="name">Vue</span>
+                  <a href="/categories/VSCode/" itemprop="url" rel="index">
+                    <span itemprop="name">VSCode</span>
                   </a>
                 </span>
 
@@ -655,8 +1531,9 @@
       
         
           
-            <p>在使用mpvue框架写小程序中会遇到的一些问题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(Emitted value instead of an instance of Error) &lt;li v-for=&quot;item in pics&quot;&gt;: component lists rendered with v-for should have explicit keys. See https://vuejs.org/guide/list.html#key for more info.</div></pre></td></tr></table></figure></p>
-<p>解决方法：<br>在for循环后面加上一个<code>:key=&quot;index&quot;</code>就可以了。</p>
+            <p>在使用vscode写vue的时候会出现这样一个错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[eslint-plugin-vue]</div><div class="line">[vue/require-v-for-key]</div><div class="line">Elements in iteration expect to have &apos;v-bind:key&apos; directives.</div><div class="line">Renders the element or template block multiple times based on the source data.</div></pre></td></tr></table></figure></p>
+<p>这是在使用插件vetur的问题，关闭了就行了。打开vscode-首选项-设置-工作区设置<br>把”vetur.validation.template”: true改成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;vetur.validation.template&quot;: false</div></pre></td></tr></table></figure></p>
+<p>保存一下就解决了。</p>
 
           
         
@@ -835,769 +1712,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/31/面试笔试必问-接口与抽象类的区别/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/wzt.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/31/面试笔试必问-接口与抽象类的区别/" itemprop="url">面试笔试必问-接口与抽象类的区别</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-31T17:00:30+08:00">
-                2018-03-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1.抽象类可以用的关键字是继承extends,接口是实现implements.<br>2.接口可以实现多个,抽象类只能继承一个.<br>3.抽象类中可以存在非抽象方法,接口中的方法都是抽象的.<br>4.抽象类中可以有成员变量，而接口中不能有成员变量.<br>5.抽象类中可以有构造方法但是不能被实例化.<br>6.抽象类里可以没有抽象方法.<br>7.抽象方法要被实现，所以不能是静态的，也不能是私有的.<br>8.接口中的抽象方法默认且必须都是public的，而抽象类中的抽象方法可以是public、protect或默认.<br>9.抽象类和接口中都可以包含静态成员变量，抽象类中的静态成员变量的属性可以是任意的，而接口中的静态成员变量默认且必须是public static final。<br>10.如果一个类里有抽象方法，那么这个类只能是抽象类.<br>11.抽象类中的抽象方法不能有方法体,其他方法可以.</p>
-<h6 id="ps-如果你像我一样不是太懂的话可以自己建一个抽象类和接口去试一下-可能记得会比较牢固一点"><a href="#ps-如果你像我一样不是太懂的话可以自己建一个抽象类和接口去试一下-可能记得会比较牢固一点" class="headerlink" title="ps:(如果你像我一样不是太懂的话可以自己建一个抽象类和接口去试一下,可能记得会比较牢固一点.)"></a>ps:(如果你像我一样不是太懂的话可以自己建一个抽象类和接口去试一下,可能记得会比较牢固一点.)</h6><p>时间：2018年三月31号<br>地点：河南省郑州<br>公司：**<br>致自己：美好的生活源于不断地努力。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/31/java笔试-字母对比/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/wzt.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/31/java笔试-字母对比/" itemprop="url">java笔试-字母对比</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-31T15:20:30+08:00">
-                2018-03-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h5 id="在前几天参加了一次某个大公司的笔试-前面的题全是逻辑题图形不过还好-到了最后是两道编程题-其中一道是这样的-输入两串字符-开始对比-ab与bb输出1-a与b不同就加一-b与b相同就不加-如果相同就不加-ababab与bb就输出5-当时因为个人原因没写成-今天写写试试"><a href="#在前几天参加了一次某个大公司的笔试-前面的题全是逻辑题图形不过还好-到了最后是两道编程题-其中一道是这样的-输入两串字符-开始对比-ab与bb输出1-a与b不同就加一-b与b相同就不加-如果相同就不加-ababab与bb就输出5-当时因为个人原因没写成-今天写写试试" class="headerlink" title="在前几天参加了一次某个大公司的笔试,前面的题全是逻辑题图形不过还好,到了最后是两道编程题.其中一道是这样的:输入两串字符,开始对比,ab与bb输出1,a与b不同就加一,b与b相同就不加,如果相同就不加.ababab与bb就输出5.当时因为个人原因没写成,今天写写试试:"></a>在前几天参加了一次某个大公司的笔试,前面的题全是逻辑题图形不过还好,到了最后是两道编程题.其中一道是这样的:输入两串字符,开始对比,ab与bb输出1,a与b不同就加一,b与b相同就不加,如果相同就不加.ababab与bb就输出5.当时因为个人原因没写成,今天写写试试:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">import java.util.Scanner;</div><div class="line"></div><div class="line">public class wordContrast &#123;</div><div class="line">	</div><div class="line">	public static void Contrast (String firstWord, String sendWord) &#123;</div><div class="line">		char f[] = firstWord.toCharArray();</div><div class="line">		char s[] = sendWord.toCharArray();</div><div class="line">		int num = 0;</div><div class="line">		</div><div class="line">		for (int i = 0; i &lt; f.length - s.length + 1; i++) &#123;</div><div class="line">			int k = i;</div><div class="line">			</div><div class="line">			for (int j = 0; j &lt; s.length; j++) &#123;</div><div class="line">				if (f[k] != s[j]) &#123;</div><div class="line">					num = num +1;</div><div class="line">				&#125;</div><div class="line">				</div><div class="line">				//System.out.println(&quot;f[i]&quot;+f[k]+k+&quot;==&quot;+&quot;s[j]&quot;+s[j]+j+&quot;==&quot;);</div><div class="line">				k++;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		System.out.println(num);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		Scanner sc = new Scanner(System.in);</div><div class="line">		String firstWord = sc.next();</div><div class="line">		String sendWord = sc.next();</div><div class="line">		Contrast(firstWord, sendWord);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>时间：2018年三月31号<br>地点：河南省郑州<br>公司：**<br>致自己：美好的生活源于不断地努力。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/30/java笔试题-密码字母变化/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/wzt.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/30/java笔试题-密码字母变化/" itemprop="url">java笔试题-密码字母变化</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-30T20:20:30+08:00">
-                2018-03-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h5 id="我记得看过一道笔试题-是输入一串字符-如果是a-y或者A-Y就-一个字符-比如输入的是a就翻译成b-如果是a就翻译成b的-A的就变成B-但是如果是其他字符就不变化-自己写一下试试"><a href="#我记得看过一道笔试题-是输入一串字符-如果是a-y或者A-Y就-一个字符-比如输入的是a就翻译成b-如果是a就翻译成b的-A的就变成B-但是如果是其他字符就不变化-自己写一下试试" class="headerlink" title="我记得看过一道笔试题,是输入一串字符,如果是a-y或者A-Y就+一个字符.比如输入的是a就翻译成b,如果是a就翻译成b的,A的就变成B,但是如果是其他字符就不变化.自己写一下试试:"></a>我记得看过一道笔试题,是输入一串字符,如果是a-y或者A-Y就+一个字符.比如输入的是a就翻译成b,如果是a就翻译成b的,A的就变成B,但是如果是其他字符就不变化.自己写一下试试:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">import java.util.Scanner;</div><div class="line">public class PasswordDetail &#123;</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		Scanner sc = new Scanner(System.in);</div><div class="line">		while(sc.hasNext()) &#123;</div><div class="line">			String str = sc.nextLine();</div><div class="line">			System.out.println(Get(str));</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	public static String Get (String str) &#123;</div><div class="line">		char c[] =str.toCharArray();</div><div class="line">		StringBuffer buf = new StringBuffer();</div><div class="line">		for (int i=0; i&lt;c.length;i++) &#123;</div><div class="line">			if(c[i] == &apos;Z&apos;) &#123;</div><div class="line">				buf.append(&quot;A&quot;);</div><div class="line">			&#125;else if (c[i] == &apos;z&apos;) &#123;</div><div class="line">				buf.append(&quot;a&quot;);</div><div class="line">			&#125; else if ((c[i] &gt;= &apos;a&apos; &amp;&amp; c[i] &gt;= &apos;y&apos;) || (c[i] &gt;= &apos;A&apos; &amp;&amp; c[i] &gt;= &apos;Y&apos;)) &#123;</div><div class="line">				buf.append((char)(c[i]+1));</div><div class="line">			&#125; else &#123;</div><div class="line">				buf.append(c[i]);</div><div class="line">			&#125;</div><div class="line">			</div><div class="line">		&#125;</div><div class="line">		return String.valueOf(buf);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>输入ababa123,显示bcbcbc123.</p>
-<p>时间：2018年三月30号<br>地点：上海市浦东<br>公司：**<br>致自己：美好的生活源于不断地努力。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/26/设计模式-单例模式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/wzt.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/26/设计模式-单例模式/" itemprop="url">设计模式-单例模式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-26T21:07:17+08:00">
-                2018-03-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在项目中有时候就需要用到单例模式,通过单例模式可以保证系统中一个类只有一个实例而且该实例易于外界访问，从而方便对实例个数的控制并节约系统资源.比如你的log,每个功能都会写log,但是我们只需要一个实例来进行.</p>
-<p>####懒汉模式:<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public class First &#123;</div><div class="line">    private static First instance;</div><div class="line">    private First()&#123;&#125;</div><div class="line">    public static First getInstance()&#123;</div><div class="line">        if (instance == null) &#123;</div><div class="line">            instance = new SingletonDemo1();</div><div class="line">        &#125;</div><div class="line">        return instance;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>但是很明显,不能用于多线程的工作.多个线程同时进行判断的时候还是会出问题.</p>
-<p>####懒汉模式(加锁)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public class Second &#123;</div><div class="line">    private static Second instance;</div><div class="line">    private Second()&#123;&#125;</div><div class="line">    public static synchronized Second getInstance()&#123;</div><div class="line">        if (instance == null) &#123;</div><div class="line">            instance = new Second();</div><div class="line">        &#125;</div><div class="line">        return instance;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>这种方法可以解决多线程同时进行访问的问题,但是由于加了锁,进入到方法的时候会等待上一个线程把资源释放出来.那么效率就非常低了.</p>
-<p>####饿汉模式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public class Third &#123;</div><div class="line">    private static Third instance = new Third();</div><div class="line">    private Third()&#123;&#125;</div><div class="line">    public static Third getInstance()&#123;</div><div class="line">        return instance;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>这种方法会在类实例化的时候就加载,如果不用的话会造成资源的浪费.</p>
-<h4 id="双重锁模式"><a href="#双重锁模式" class="headerlink" title="双重锁模式"></a>双重锁模式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public class Fourth &#123;</div><div class="line">    private volatile static Fourth fourth;</div><div class="line">    private Fourth()&#123;&#125;</div><div class="line">    public static Fourth getInstance()&#123;</div><div class="line">        if (Fourth == null) &#123;</div><div class="line">            synchronized (Fourth.class) &#123;</div><div class="line">                if (fourth == null) &#123;</div><div class="line">                    fourth = new Fourth();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return fourth;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这种双重锁模式可以有效的防止资源浪费和解决多线程的问题,其中第二个锁就是为了防止多线程执行过第一个锁之后第一个线程继续执行,而第二个进行等待,等第一个线程执行过其实已经创建过实例了但是第二个线程进行执行的时候需要再进行一次判断.</p>
-<p>时间：2018年三月26号<br>地点：上海市浦东<br>公司：**<br>致自己：美好的生活源于不断地努力。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/26/java面试题2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/wzt.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/26/java面试题2/" itemprop="url">java面试题2</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-26T20:20:30+08:00">
-                2018-03-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>#####1.SpringMVC核心处理流程<br>1、DispatcherServlet前端控制器接收发过来的请求，交给HandlerMapping处理器映射器</p>
-<p>2、HandlerMapping处理器映射器，根据请求路径找到相应的HandlerAdapter处理器适配器（处理器适配器就是那些拦截器或Controller）</p>
-<p>3、HandlerAdapter处理器适配器，处理一些功能请求，返回一个ModelAndView对象（包括模型数据、逻辑视图名）</p>
-<p>4、ViewResolver视图解析器，先根据ModelAndView中设置的View解析具体视图</p>
-<p>5、然后再将Model模型中的数据渲染到View上</p>
-<p>#####2.@Autowire注解<br>1.@Autowire注解和@Resource一样，同样也可以标注在字段或属性的setter方法上，但它默认按类型装配。</p>
-<ol>
-<li>如果我们想使用按名称装配，可以结合@Qualifier注解一起使用:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@Autowired @Qualifier(&quot;personDaoxxxx&quot;) private TestDao testDao;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>#####3.tcp与udp<br>1、TCP面向连接（如打电话要先拨号建立连接）;UDP是无连接的，即发送数据之前不需要建立连接</p>
-<p>2、TCP提供可靠的服务。也就是说，通过TCP连接传送的数据，无差错，不丢失，不重复，且按序到达;UDP尽最大努力交付，即不保证可靠交付</p>
-<p>3、TCP面向字节流，实际上是TCP把数据看成一连串无结构的字节流;UDP是面向报文的</p>
-<p>UDP没有拥塞控制，因此网络出现拥塞不会使源主机的发送速率降低（对实时应用很有用，如IP电话，实时视频会议等）</p>
-<p>4、每一条TCP连接只能是点到点的;UDP支持一对一，一对多，多对一和多对多的交互通信</p>
-<p>5、TCP首部开销20字节;UDP的首部开销小，只有8个字节</p>
-<p>6、TCP的逻辑通信信道是全双工的可靠信道，UDP则是不可靠信道</p>
-<p>时间：2018年三月26号<br>地点：上海市浦东<br>公司：**<br>致自己：美好的生活源于不断地努力。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/25/设计模式-代理模式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/wzt.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/25/设计模式-代理模式/" itemprop="url">设计模式-代理模式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-25T20:17:17+08:00">
-                2018-03-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>代理模式是设计模式中一种比较重要的设计模式,常用于一种类不能或者不必要去进行与其他类进行交互.这样可以构建一个代理类,所有的工作都交给代理类去做.</p>
-<p>比如,一个男学生喜欢一个女学生,他想去给那个女孩送礼物,但是他不敢亲自去就上某宝订了一束鲜花,然后让花店的服务员送给那个女孩.那么这个服务员就是代理类.那么在代码中应该是怎么样的呢?</p>
-<h5 id="送花的动作接口"><a href="#送花的动作接口" class="headerlink" title="送花的动作接口"></a>送花的动作接口</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">public Interface IGiveGift &#123;</div><div class="line">	void SendFlowers();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="男同学"><a href="#男同学" class="headerlink" title="男同学"></a>男同学</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public class StudentBoy Interface IGiveGift &#123;</div><div class="line">	public StudentGirl StudentGirl;</div><div class="line">	public StudentBoy (StudentGirl StudentGirl) &#123;</div><div class="line">		this.StudentGirl = StudentGirl;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public void SendFlowers &#123;</div><div class="line">		System.out.println(StudentGirl.name&quot;send flowers&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="一脸懵懂的女同学"><a href="#一脸懵懂的女同学" class="headerlink" title="一脸懵懂的女同学"></a>一脸懵懂的女同学</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public class StudentGirl &#123;</div><div class="line">	public String Name;</div><div class="line">	public void setName(String name) &#123;</div><div class="line">		this.Name = name;</div><div class="line">	&#125;</div><div class="line">	public String getName &#123;</div><div class="line">		return Name;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>#####花店服务员(代理类)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public class Poxy Interface IGiveGift &#123;</div><div class="line">	public StudentBoy studentBoy;</div><div class="line">	public Poxy (StudentGirl studentGirl) &#123;</div><div class="line">		studentBoy = new StudentBoy (studentGirl);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public void SendFlowers() &#123;</div><div class="line">		studentBoy.SendFlowers();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h5 id="main方法"><a href="#main方法" class="headerlink" title="main方法"></a>main方法</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public class ActitySendFlowers &#123;</div><div class="line"></div><div class="line">	public static void main (String args[]) &#123;</div><div class="line">		StudentGirl studentGirl = new StudentGirl();</div><div class="line">		studentGirl.setName(&quot;Girl&quot;);</div><div class="line"></div><div class="line">		Poxy poxy = new Poxy(studentGirl);</div><div class="line">		poxy.SendFlowers();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>其中男同学并没有亲自去new一个女同学的类,是通过代理类进行完成操作的,在编程的世界里代理模式会给我们省好多的事情,但是现实生活中还是要靠自己不然就会冒出来好多的小三.</p>
-<p>时间：2018年三月25号<br>地点：上海市浦东<br>公司：**<br>致自己：美好的生活源于不断地努力。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1643,7 +1762,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">41</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1654,7 +1773,7 @@
             
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -1665,7 +1784,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
