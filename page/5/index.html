@@ -264,6 +264,1045 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/06/git的缓存/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/wzt.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/06/git的缓存/" itemprop="url">Git缓存</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-06T12:47:25+08:00">
+                2017-12-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="git-缓存的常用方法"><a href="#git-缓存的常用方法" class="headerlink" title="git 缓存的常用方法"></a>git 缓存的常用方法</h2><ol>
+<li>git stash</li>
+<li>git stash pop</li>
+<li>git stash list</li>
+<li>git stash apply stashId //从列表中获取，但是该stash还存在与list中</li>
+<li>git stash drop stashId //从列表中删除</li>
+<li>git stash clear  //删除列表</li>
+<li><p>git stash show -i stash@{1} k可以看这一次的改动详情</p>
+</li>
+<li><p>将git log中的某一次提交合并的一个分支上，</p>
+<h2 id="使用场景：例如我把一次提交合并到分支a了，然后将分支a（基于develop创建的）请求合并到develop，但是此时你发现要把该分支的合并倒master"><a href="#使用场景：例如我把一次提交合并到分支a了，然后将分支a（基于develop创建的）请求合并到develop，但是此时你发现要把该分支的合并倒master" class="headerlink" title="使用场景：例如我把一次提交合并到分支a了，然后将分支a（基于develop创建的）请求合并到develop，但是此时你发现要把该分支的合并倒master"></a>使用场景：例如我把一次提交合并到分支a了，然后将分支a（基于develop创建的）请求合并到develop，但是此时你发现要把该分支的合并倒master</h2></li>
+<li>创建新的分支b(基于master分支创建)</li>
+<li>找到你那次提交的commitId号</li>
+<li>git cherry-pick commitId（在b分支下执行）</li>
+<li>it push 到远程分支上</li>
+<li>发送merge 请求到master。</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/21/git的整理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/wzt.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/21/git的整理/" itemprop="url">Git命令整理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-21T12:47:25+08:00">
+                2017-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="由于进入公司之后发现几乎所有的项目组代码的交流几乎都是在git上所以自己又重新整理了一下常用的git命令。"><a href="#由于进入公司之后发现几乎所有的项目组代码的交流几乎都是在git上所以自己又重新整理了一下常用的git命令。" class="headerlink" title="由于进入公司之后发现几乎所有的项目组代码的交流几乎都是在git上所以自己又重新整理了一下常用的git命令。"></a>由于进入公司之后发现几乎所有的项目组代码的交流几乎都是在git上所以自己又重新整理了一下常用的git命令。</h2><ul>
+<li><p>配置自己的名字 git config –global user.name “your name”</p>
+</li>
+<li><p>配置自己的邮箱git config –global user.email “….@email.com”</p>
+</li>
+<li><p>查看状态 git status</p>
+</li>
+<li><p>新建一个分支 git branch ‘’</p>
+</li>
+<li><p>切换分支 git chekout ‘’</p>
+</li>
+<li><p>查看分支 git branch</p>
+</li>
+<li><p>把代码提交到版本库 git add -a</p>
+</li>
+<li><p>把文件提交到仓库 git commit -m”message”</p>
+</li>
+<li><p>把文件提交到远程仓库 git push origin branch.name</p>
+</li>
+<li><p>查看历史记录 git log</p>
+</li>
+<li><p>克隆代码 git clone</p>
+</li>
+<li><p>对比代码 git diff</p>
+</li>
+<li><p>拉去远程代码库的代码 git pull</p>
+</li>
+<li><p>把当前代码存放 git stash</p>
+</li>
+<li><p>把当前存放的代码提取顺便把存取的删除 git stash pop</p>
+</li>
+</ul>
+<p>其实这些命令并不需要死记硬背的，你用的多了自然就记住了。而且这些真的是进入职场必须会的技能之一。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/26/线程安全重要性/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/wzt.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/26/线程安全重要性/" itemprop="url">线程安全的重要性</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-26T21:07:17+08:00">
+                2017-09-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在实习的面试中往往会遇到被面试官问一些关于线程的问题，比如说arrayList 和 Vector，HashMap和HashTable，StringBuilder和StringBuffer等一些的区别<br>那么我们肯定会说是线程安全与非线程安全的。那么什么是线程安全？什么又是非线程安全呢？那么这两者又有什么用么？<br>      线程安全与非线程安全：<br>  线程安全就是多线程访问时，采用了加锁机制，当一个线程访问该类的某个数据时，进行保护，其他线程不能进行访问直到该线程读取完，其他线程才可使用。不会出现数据不一致或者数据污染。<br>  非线程安全就是不提供数据访问保护，有可能出现多个线程先后更改数据造成所得到的数据是脏数据。<br>  ps:非线程安全并不是线程不安全。<br>    描述一下线程安全的重要性：<br>    Class：TesstThreadSafe<br>package ThreadsTest;</p>
+<p>import java.util.concurrent.CountDownLatch;</p>
+<p>public class TesstThreadSafe {</p>
+<pre><code>public static void main(String[] args) {
+    for (int i = 0; i &lt; 10; i++){
+        test();
+    }
+}
+
+private static void test() {
+    Counter counter = new Counter();
+    int threadCount = 1000;
+    /**
+     * CountDownLatch是一个同步工具，它主要用线程执行之间的协作。CountDownLatch 的作用和 Thread.join() 方法类似，
+     * 让一些线程阻塞直到另一些线程完成一系列操作后才被唤醒。在直接创建线程的年代（Java 5.0 之前），我们可以使用 Thread.join()。
+     * 在线程池出现后，因为线程池中的线程不能直接被引用，所以就必须使用 CountDownLatch 了。
+       CountDownLatch主要有两个方法，当一个或多个线程调用await方法时，这些线程会阻塞。
+       其它线程调用countDown方法会将计数器减1(调用countDown方法的线程不会阻塞)，当计数器的值变为0时，因await方法阻塞的线程会被唤醒，继续执行。
+     */
+    CountDownLatch countDownLatch = new CountDownLatch(threadCount);
+
+    for (int i = 0; i &lt; threadCount; i++ ) {
+        Thread thread = new Thread(new ThreadPack(counter, countDownLatch));
+        thread.start();
+    }
+
+    try {
+        countDownLatch.await(); 
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+
+    System.out.println(counter.getCount());
+
+}
+</code></pre><p>}<br>    Class:Counter.<br>package ThreadsTest;</p>
+<p>public class Counter {<br>    private int count = 0;</p>
+<pre><code>public int getCount(){
+    return count;
+}
+
+public void AddCount(){
+    count++;
+}
+</code></pre><p>}<br>    运行结果：<br>9984<br>10000<br>10000<br>9980<br>9990<br>10000<br>9990<br>10000<br>10000<br>10000<br>    经过运算我们可以发现同时开启10个线程，会发现结果是不一样的。<br>    Class:ThreadPack<br>package ThreadsTest;</p>
+<p>import java.util.concurrent.CountDownLatch;</p>
+<p>public class ThreadPack implements Runnable{<br>    private Counter counter;<br>    private CountDownLatch countDownLatch;</p>
+<pre><code>public ThreadPack(Counter counter, CountDownLatch countDownLatch) {
+    this.counter = counter;
+    this.countDownLatch = countDownLatch;
+}
+
+
+@Override
+public void run() {
+
+    for (int i = 0; i &lt; 10;i++){
+        counter.AddCount();
+    }
+    countDownLatch.countDown();
+}
+</code></pre><p>}</p>
+<pre><code>CountDownLatce的源码：
+</code></pre><p>public CountDownLatch(int count) {<br>        if (count &lt; 0) throw new IllegalArgumentException(“count &lt; 0”);<br>        this.sync = new Sync(count);<br>    }</p>
+<pre><code>public void await() throws InterruptedException {
+    sync.acquireSharedInterruptibly(1);
+}
+</code></pre><p>时间：2017年九月26号<br>地点：上海市浦东<br>公司：**<br>致自己：美好的生活源于不断地努力。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/18/JVM理解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/wzt.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/18/JVM理解/" itemprop="url">JVM理解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-18T21:07:17+08:00">
+                2017-09-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA/" itemprop="url" rel="index">
+                    <span itemprop="name">JAVA</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>JAVA是由JVM执行的，首先记一下JVM的具体执行过程：<br>首先Java源码文件（.java）会被Java编辑器编辑成字节码文件（.class），然后会由类加载器去进行加载编辑好的<br>字节码文件，JVM把每一条要执行的字节码交给解释器，翻译成对应的机器码，然后由解释器执行。JVM解释执行字节码文件就是JVM操作Java解释器进行解释执行字节码文件的过程。<br>同时JAVA的跨平台也是因为JAVA程序是基于JVM的，在不同的操作系统下的JVM也是不同的。</p>
+<ol>
+<li>JVM：一种能够运行Java字节码（Java bytecode）的虚拟机。</li>
+<li>字节码：字节码是已经经过编译，但与特定机器码无关，需要解释器转译后才能成为机器码的中间代码。</li>
+<li>Java字节码：是Java虚拟机执行的一种指令格式。</li>
+<li>解释器：是一种电脑程序，能够把高级编程语言一行一行直接翻译运行。解释器不会一次把整个程序翻译出来，只像一位“中间人”，每次运行程序时都要先转成另一种语言再作运行，因此解释器的程序运行速度比较缓慢。它每翻译一行程序叙述就立刻运行，然后再翻译下一行，再运行，如此不停地进行下去。它会先将源码翻译成另一种语言，以供多次运行而无需再经编译。其制成品无需依赖编译器而运行，程序运行速度比较快。</li>
+</ol>
+<hr>
+<pre><code>### JVM的运行时数据区包括：程序计数器(Program Counter Register)、Java栈(VM Stack)、本地方法栈(Native Method Stack)、方法区(Method Area)、堆(Heap)。
+</code></pre><p>1.程序计数器</p>
+<p>　　程序计数器（Program Counter Register），也有称作为PC寄存器。想必学过汇编语言的朋友对程序计数器这个概念并不陌生，在汇编语言中，程序计数器是指CPU中的寄存器，它保存的是程序当前执行的指令的地址（也可以说保存下一条指令的所在存储单元的地址），当CPU需要执行指令时，需要从程序计数器中得到当前需要执行的指令所在存储单元的地址，然后根据得到的地址获取到指令，在得到指令之后，程序计数器便自动加1或者根据转移指针得到下一条指令的地址，如此循环，直至执行完所有的指令。<br>　　虽然JVM中的程序计数器并不像汇编语言中的程序计数器一样是物理概念上的CPU寄存器，但是JVM中的程序计数器的功能跟汇编语言中的程序计数器的功能在逻辑上是等同的，也就是说是用来指示 执行哪条指令的。<br>　　由于在JVM中，多线程是通过线程轮流切换来获得CPU执行时间的，因此，在任一具体时刻，一个CPU的内核只会执行一条线程中的指令，因此，为了能够使得每个线程都在线程切换后能够恢复在切换之前的程序执行位置，每个线程都需要有自己独立的程序计数器，并且不能互相被干扰，否则就会影响到程序的正常执行次序。因此，可以这么说，程序计数器是每个线程所私有的。<br>　　在JVM规范中规定，如果线程执行的是非native方法，则程序计数器中保存的是当前需要执行的指令的地址；如果线程执行的是native方法，则程序计数器中的值是undefined。<br>　　由于程序计数器中存储的数据所占空间的大小不会随程序的执行而发生改变，因此，对于程序计数器是不会发生内存溢出现象(OutOfMemory)的。<br>2.Java栈<br>　　Java栈也称作虚拟机栈（Java Vitual Machine Stack），也就是我们常常所说的栈，跟C语言的数据段中的栈类似。事实上，Java栈是Java方法执行的内存模型。为什么这么说呢？下面就来解释一下其中的原因。<br>　　Java栈中存放的是一个个的栈帧，每个栈帧对应一个被调用的方法，在栈帧中包括局部变量表(Local Variables)、操作数栈(Operand Stack)、指向当前方法所属的类的运行时常量池（运行时常量池的概念在方法区部分会谈到）的引用(Reference to runtime constant pool)、方法返回地址(Return Address)和一些额外的附加信息。当线程执行一个方法时，就会随之创建一个对应的栈帧，并将建立的栈帧压栈。当方法执行完毕之后，便会将栈帧出栈。因此可知，线程当前执行的方法所对应的栈帧必定位于Java栈的顶部。讲到这里，大家就应该会明白为什么 在 使用 递归方法的时候容易导致栈内存溢出的现象了以及为什么栈区的空间不用程序员去管理了（当然在Java中，程序员基本不用关系到内存分配和释放的事情，因为Java有自己的垃圾回收机制），这部分空间的分配和释放都是由系统自动实施的。对于所有的程序设计语言来说，栈这部分空间对程序员来说是不透明的。<br>局部变量表，顾名思义，想必不用解释大家应该明白它的作用了吧。就是用来存储方法中的局部变量（包括在方法中声明的非静态变量以及函数形参）。对于基本数据类型的变量，则直接存储它的值，对于引用类型的变量，则存的是指向对象的引用。局部变量表的大小在编译器就可以确定其大小了，因此在程序执行期间局部变量表的大小是不会改变的。</p>
+<p>　　操作数栈，想必学过数据结构中的栈的朋友想必对表达式求值问题不会陌生，栈最典型的一个应用就是用来对表达式求值。想想一个线程执行方法的过程中，实际上就是不断执行语句的过程，而归根到底就是进行计算的过程。因此可以这么说，程序中的所有计算过程都是在借助于操作数栈来完成的。</p>
+<p>　　指向运行时常量池的引用，因为在方法执行的过程中有可能需要用到类中的常量，所以必须要有一个引用指向运行时常量。</p>
+<p>　　方法返回地址，当一个方法执行完毕之后，要返回之前调用它的地方，因此在栈帧中必须保存一个方法返回地址。</p>
+<p>　　由于每个线程正在执行的方法可能不同，因此每个线程都会有一个自己的Java栈，互不干扰。</p>
+<p>3.本地方法栈</p>
+<p>　　本地方法栈与Java栈的作用和原理非常相似。区别只不过是Java栈是为执行Java方法服务的，而本地方法栈则是为执行本地方法（Native Method）服务的。在JVM规范中，并没有对本地方发展的具体实现方法以及数据结构作强制规定，虚拟机可以自由实现它。在HotSopt虚拟机中直接就把本地方法栈和Java栈合二为一。</p>
+<p>4.堆</p>
+<p>　　在C语言中，堆这部分空间是唯一一个程序员可以管理的内存区域。程序员可以通过malloc函数和free函数在堆上申请和释放空间。那么在Java中是怎么样的呢？</p>
+<p>　　Java中的堆是用来存储对象本身的以及数组（当然，数组引用是存放在Java栈中的）。只不过和C语言中的不同，在Java中，程序员基本不用去关心空间释放的问题，Java的垃圾回收机制会自动进行处理。因此这部分空间也是Java垃圾收集器管理的主要区域。另外，堆是被所有线程共享的，在JVM中只有一个堆。</p>
+<p>5.方法区</p>
+<p>　　方法区在JVM中也是一个非常重要的区域，它与堆一样，是被线程共享的区域。在方法区中，存储了每个类的信息（包括类的名称、方法信息、字段信息）、静态变量、常量以及编译器编译后的代码等。</p>
+<p>　　在Class文件中除了类的字段、方法、接口等描述信息外，还有一项信息是常量池，用来存储编译期间生成的字面量和符号引用。</p>
+<p>　　在方法区中有一个非常重要的部分就是运行时常量池，它是每一个类或接口的常量池的运行时表示形式，在类和接口被加载到JVM后，对应的运行时常量池就被创建出来。当然并非Class文件常量池中的内容才能进入运行时常量池，在运行期间也可将新的常量放入运行时常量池中，比如String的intern方法。<br>    方法区中放了：被虚拟机加载的类信息，常量，静态变量，即时编译器编译后的代码。<br>    参考文档：<a href="http://www.cnblogs.com/dolphin0520/p/3613043.html" target="_blank" rel="external">http://www.cnblogs.com/dolphin0520/p/3613043.html</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/17/多线程的方式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/wzt.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/17/多线程的方式/" itemprop="url">JAVA多线程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-17T21:07:17+08:00">
+                2017-09-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>JAVA多线程实现方式主要有三种：继承Thread类、实现Runnable接口、使用ExecutorService、Callable、Future实现有返回结果的多线程。其中前两种方式线程执行完后都没有返回值，只有最后一种是带返回值的。</p>
+<p>1.使用继承Thread类的方法来实现多线程<br>    继承Thread的方法尽管被列成一中多线程的实现方法，但其实Thread类的本质也是继承了Runnable接口的一个实例的。其实它代表的也只是一个线程的实例，同时它<br>    启动线程的方式是start()方法。start()方法是一个native方法，它将启动一个新线程，并执行run()方法。这种方式实现多线程很简单，通过自己的类直接extend Thread，并复写run()方法，就可以启动新线程并执行自己定义的run()方法。<br>    同时在Thread的构造函数中也是调用init(null, null, “Thread-“ + nextThreadNum(), 0);而实现runnable的方法是init(null, target, “Thread-“ + nextThreadNum(), 0);<br>    such as<br>package newclint;</p>
+<p>public class MyThread extends Thread{</p>
+<pre><code>public void run(){
+    System.out.println(&quot;This is a Test&quot;);
+}
+
+public static void main(String[] args) {
+    // TODO Auto-generated method stub
+    MyThread myThread =  new MyThread();
+    myThread.start();
+}
+</code></pre><p>}</p>
+<p>2.使用implements Runnable 来实现多线程的操作。常见于自己的类已经继承其他类，需要实现多线程的操作。<br>      其中需要去实例化一个Thread去调用start来执行run方法。把类名作为参数传给Thread方法</p>
+<p>  /**</p>
+<ul>
+<li>创建一个指定Runnable的线程</li>
+<li>其中name规则为 “Thread-“ + nextThreadNum()<br>*/<br>public Thread(Runnable target) {<br>init(null, target, “Thread-“ + nextThreadNum(), 0);<br>}</li>
+</ul>
+<p>public void run() {<br>　　if (target != null) {<br>　　 target.run();<br>　　}  </p>
+<h2 id=""><a href="#" class="headerlink" title="}  "></a>}  </h2><p>package newclint;</p>
+<p>public class RunnableMethod implements Runnable {  </p>
+<pre><code>@Override
+public void run() {
+    System.out.println(&quot;This is Runnable implement &quot;);
+
+}
+
+public static void main(String[] args) {
+    // TODO Auto-generated method stub
+    RunnableMethod testRunnable = new RunnableMethod();
+    Thread thread = new Thread(testRunnable);
+    thread.start();
+}
+</code></pre><p>}</p>
+<p>3.使用ExecutorService、Callable、Future实现有返回结果的多线程<br>    ExecutorService、Callable、Future这个对象实际上都是属于Executor框架中的功能类。返回结果的线程是在JDK1.5中引入的新特征，<br>    确实很实用，有了这种特征我就不需要再为了得到返回值而大费周折了，而且即便实现了也可能漏洞百出。<br>    可返回值的任务必须实现Callable接口，类似的，无返回值的任务必须Runnable接口。执行Callable任务后，可以获取一个Future的对象，<br>    在该对象上调用get就可以获取到Callable任务返回的Object了，<br>    再结合线程池接口ExecutorService就可以实现传说中有返回结果的多线程了。</p>
+<hr>
+<p>package ThreadsTest;</p>
+<p>import java.util.Date;<br>import java.util.concurrent.Callable;</p>
+<p>public class MyCallable implements Callable<object> {<br>    private String taskNumber;</object></p>
+<pre><code>MyCallable(String taskNumber) {
+    this.taskNumber = taskNumber;
+}
+
+public Object call() throws Exception {
+    System.out.println(&quot;---&quot; + taskNumber + &quot;任务启动&quot;);
+    Date dateBegin = new Date();
+    Thread.sleep(1000);
+    Date dateEnd = new Date();
+    long time = dateEnd.getTime() - dateBegin.getTime();
+    System.out.println(&quot;---&quot; + taskNumber + &quot;任务终止&quot;);
+    return taskNumber + &quot;任务返回运行结果,当前任务时间【&quot; + time + &quot;毫秒】&quot;;
+}
+</code></pre><p>}</p>
+<hr>
+<p>package ThreadsTest;</p>
+<p>import java.util.concurrent.*;<br>import java.util.Date;<br>import java.util.List;<br>import java.util.ArrayList;</p>
+<p>/**</p>
+<ul>
+<li><p>有返回值的线程<br>*/<br>@SuppressWarnings(“unchecked”)<br>public class Test {</p>
+<p> public static void main(String[] args) throws ExecutionException, InterruptedException {</p>
+<pre><code>System.out.println(&quot;----程序开始运行----&quot;);
+Date dateBegin = new Date();
+int taskSize = 6;
+// 创建一个线程池
+ExecutorService pool = Executors.newFixedThreadPool(taskSize);
+// 创建多个有返回值的任务
+List&lt;Future&gt; list = new ArrayList&lt;Future&gt;();
+
+for (int i = 0; i &lt; taskSize; i++) {
+    Callable c = new MyCallable(i + &quot; &quot;);
+    // 执行任务并获取Future对象
+    Future f = pool.submit(c);
+    list.add(f);
+}
+
+// 关闭线程池
+pool.shutdown();
+
+// 获取所有并发任务的运行结果
+for (Future f : list) {
+    // 从Future对象上获取任务的返回值，并输出到控制台
+    System.out.println(&quot;&gt;&gt;&gt;&quot; + f.get().toString());
+}
+
+Date dateEnd = new Date();
+System.out.println(&quot;----程序结束运行----，程序运行时间【&quot; + (dateEnd.getTime() - dateBegin.getTime()) + &quot;毫秒】&quot;);
+</code></pre><p> }<br>}</p>
+</li>
+</ul>
+<hr>
+<p>///executorPool是一个ThreadPoolExecutor对象，submit()方法会将你传入的Callable封装成一个FutureTask对象，并执行execute方法（启用一个Thread去执行，会去判定是否超过线程数等等这些操作先不理会。<br>所以是异步的而且并非懒加载）。</p>
+<h2 id="其中这种方法是采用了线程池，通过设置线程池中生成线程的个数，进行多线程操作。"><a href="#其中这种方法是采用了线程池，通过设置线程池中生成线程的个数，进行多线程操作。" class="headerlink" title="其中这种方法是采用了线程池，通过设置线程池中生成线程的个数，进行多线程操作。"></a>其中这种方法是采用了线程池，通过设置线程池中生成线程的个数，进行多线程操作。</h2><p>Callable<br>Callable接口定义了方法public T call() throws Exception。我们可以在Callable实现中声明强类型的返回值，甚至是抛出异常。尽管在Executors类中已经有一些方法可以将Runnable对象转换为Callable对象，你最好还是仔细复审现有的Runnable实现或Thread的子类。为什么还要这样做？主要是为了检查和清除因为Runnable无法抛出检查型异常而采用的变通方案。<br>同时，你可能希望利用call()方法直接返回结果的能力，以省去读取值时的类型转换。</p>
+<p>Future<br>下面就将线程池和Callable接口相结合，看能发生怎样的效应。Future是Java 1.5中引入的接口，当你提交一个Callable对象给线程池时，将得到一个Future对象，并且它和你传入的Callable有相同的结果类型声明。这个对象取代了Java 1.5之前直接操作具体Thread实例的做法。过去你不得不用Thread.join()或者Thread.join(long millis)等待任务完成<br>    参考网站：<a href="http://www.cnblogs.com/yezhenhan/archive/2012/01/09/2317636.html；" target="_blank" rel="external">http://www.cnblogs.com/yezhenhan/archive/2012/01/09/2317636.html；</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/17/new-article/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/wzt.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/17/new-article/" itemprop="url">test for hexo</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-17T12:47:25+08:00">
+                2017-09-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/测试/" itemprop="url" rel="index">
+                    <span itemprop="name">测试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>时间：2017年九月17号<br>地点：上海市浦东<br>公司：<em>**</em><br>致自己：美好的生活源于不断地努力。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/16/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -429,7 +1468,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -440,7 +1479,7 @@
             
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -451,7 +1490,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
