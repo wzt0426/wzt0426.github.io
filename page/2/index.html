@@ -1669,7 +1669,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/11/如何用mpvue搭建小程序/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/11/Vue使用v-for报错/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micky Wang">
@@ -1688,7 +1688,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/11/如何用mpvue搭建小程序/" itemprop="url">如何用mpvue搭建小程序</a></h1>
+                <a class="post-title-link" href="/2018/08/11/Vue使用v-for报错/" itemprop="url">Vue使用v-for="(item, index) in pics"报错</a></h1>
         
 
         <div class="post-meta">
@@ -1740,7 +1740,7 @@
 
           
           
-             <span id="/2018/08/11/如何用mpvue搭建小程序/" class="leancloud_visitors" data-flag-title="如何用mpvue搭建小程序">
+             <span id="/2018/08/11/Vue使用v-for报错/" class="leancloud_visitors" data-flag-title="Vue使用v-for="(item, index) in pics"报错">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1773,19 +1773,8 @@
       
         
           
-            <p>由于公司需要进行小程序的开发，自己就上网查询了一下使用mpvue框架来做小程序的教程。</p>
-<ol>
-<li>在使用mpvue的时候首先需要安装node.js 和 npm （可以先查看一下是否安装了）</li>
-<li><p>由于国外的服务器使用起来不方便，使用淘宝的镜像。</p>
-<figure class="highlight plain"><figcaption><span>set registry</span><a href="https://registry.npm.taobao.org/```" target="_blank" rel="external">link</a></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">3. 接下来安装vue-cli(j记得用管理员的权限)</div><div class="line"> ``` </div><div class="line">$ npm install --global vue-cli</div></pre></td></tr></table></figure>
-</li>
-<li><p>接下来创建一个项目模板</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$ vue init mpvue/mpvue-quickstart my-project</div></pre></td></tr></table></figure>
-</li>
-<li><p>在使用中需要选择的一律默认，拍enter</p>
-</li>
-<li>安装依赖,运行<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ cd my-project</div><div class="line">$ npm install</div><div class="line">$ npm run dev</div></pre></td></tr></table></figure></li>
-</ol>
+            <p>在使用mpvue框架写小程序中会遇到的一些问题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(Emitted value instead of an instance of Error) &lt;li v-for=&quot;item in pics&quot;&gt;: component lists rendered with v-for should have explicit keys. See https://vuejs.org/guide/list.html#key for more info.</div></pre></td></tr></table></figure></p>
+<p>解决方法：<br>在for循环后面加上一个<code>:key=&quot;index&quot;</code>就可以了。</p>
 
           
         
