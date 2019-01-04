@@ -1261,6 +1261,205 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/06/git的缓存/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang"/>
+      <meta itemprop="description" content="If you want, then do it ."/>
+      <meta itemprop="image" content="/images/avatar.gif"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017/12/06/git的缓存/" class="post-title-link" itemprop="url">Git缓存</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-12-06 12:47:25 / 修改时间：21:56:56" itemprop="dateCreated datePublished" datetime="2017-12-06T12:47:25+08:00">2017-12-06</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/06/git的缓存/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2017/12/06/git的缓存/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/12/06/git的缓存/" class="leancloud_visitors" data-flag-title="Git缓存">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+	
+      
+      
+
+      
+        
+          
+            <h2 id="git-缓存的常用方法"><a href="#git-缓存的常用方法" class="headerlink" title="git 缓存的常用方法"></a>git 缓存的常用方法</h2><ol>
+<li>git stash</li>
+<li>git stash pop</li>
+<li>git stash list</li>
+<li>git stash apply stashId //从列表中获取，但是该stash还存在与list中</li>
+<li>git stash drop stashId //从列表中删除</li>
+<li>git stash clear  //删除列表</li>
+<li><p>git stash show -i stash@{1} k可以看这一次的改动详情</p>
+</li>
+<li><p>将git log中的某一次提交合并的一个分支上，</p>
+<h2 id="使用场景：例如我把一次提交合并到分支a了，然后将分支a（基于develop创建的）请求合并到develop，但是此时你发现要把该分支的合并倒master"><a href="#使用场景：例如我把一次提交合并到分支a了，然后将分支a（基于develop创建的）请求合并到develop，但是此时你发现要把该分支的合并倒master" class="headerlink" title="使用场景：例如我把一次提交合并到分支a了，然后将分支a（基于develop创建的）请求合并到develop，但是此时你发现要把该分支的合并倒master"></a>使用场景：例如我把一次提交合并到分支a了，然后将分支a（基于develop创建的）请求合并到develop，但是此时你发现要把该分支的合并倒master</h2></li>
+<li>创建新的分支b(基于master分支创建)</li>
+<li>找到你那次提交的commitId号</li>
+<li>git cherry-pick commitId（在b分支下执行）</li>
+<li>it push 到远程分支上</li>
+<li>发送merge 请求到master。</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+	<div>
+	  
+	</div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/06/git的整理2/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1590,205 +1789,6 @@
 <ul>
 <li>安装插件<br>安装好package control之后进入sublime使用快捷键ctrl+shit+p输入install会出现package control：isstall package之类的，然后拍enter进入输入自己需要的插件比如vue，然后他就会帮你安装。</li>
 </ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-	<div>
-	  
-	</div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/06/git的缓存/"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang"/>
-      <meta itemprop="description" content="If you want, then do it ."/>
-      <meta itemprop="image" content="/images/avatar.gif"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2017/12/06/git的缓存/" class="post-title-link" itemprop="url">Git缓存</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2017-12-06 12:47:25 / 修改时间：21:56:56" itemprop="dateCreated datePublished" datetime="2017-12-06T12:47:25+08:00">2017-12-06</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/12/06/git的缓存/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2017/12/06/git的缓存/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/12/06/git的缓存/" class="leancloud_visitors" data-flag-title="Git缓存">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-	
-      
-      
-
-      
-        
-          
-            <h2 id="git-缓存的常用方法"><a href="#git-缓存的常用方法" class="headerlink" title="git 缓存的常用方法"></a>git 缓存的常用方法</h2><ol>
-<li>git stash</li>
-<li>git stash pop</li>
-<li>git stash list</li>
-<li>git stash apply stashId //从列表中获取，但是该stash还存在与list中</li>
-<li>git stash drop stashId //从列表中删除</li>
-<li>git stash clear  //删除列表</li>
-<li><p>git stash show -i stash@{1} k可以看这一次的改动详情</p>
-</li>
-<li><p>将git log中的某一次提交合并的一个分支上，</p>
-<h2 id="使用场景：例如我把一次提交合并到分支a了，然后将分支a（基于develop创建的）请求合并到develop，但是此时你发现要把该分支的合并倒master"><a href="#使用场景：例如我把一次提交合并到分支a了，然后将分支a（基于develop创建的）请求合并到develop，但是此时你发现要把该分支的合并倒master" class="headerlink" title="使用场景：例如我把一次提交合并到分支a了，然后将分支a（基于develop创建的）请求合并到develop，但是此时你发现要把该分支的合并倒master"></a>使用场景：例如我把一次提交合并到分支a了，然后将分支a（基于develop创建的）请求合并到develop，但是此时你发现要把该分支的合并倒master</h2></li>
-<li>创建新的分支b(基于master分支创建)</li>
-<li>找到你那次提交的commitId号</li>
-<li>git cherry-pick commitId（在b分支下执行）</li>
-<li>it push 到远程分支上</li>
-<li>发送merge 请求到master。</li>
-</ol>
 
           
         
@@ -2578,12 +2578,6 @@ public void run() {
 
 
 
-
-  
-    
-    
-  
-  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
 
