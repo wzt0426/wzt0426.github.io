@@ -310,7 +310,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/python3 查询mysql数据库导出excel/"/>
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/python3获取网页上的图片/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micky Wang"/>
@@ -330,7 +330,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/11/04/python3 查询mysql数据库导出excel/" class="post-title-link" itemprop="url">python3 查询mysql数据库导出excel</a>
+                <a href="/2018/11/04/python3获取网页上的图片/" class="post-title-link" itemprop="url">python3获取网页上的图片</a>
               
             
           </h1>
@@ -355,7 +355,7 @@
                 
               
 
-              <time title="创建时间：2018-11-04 10:10:25 / 修改时间：18:19:49" itemprop="dateCreated datePublished" datetime="2018-11-04T10:10:25+08:00">2018-11-04</time>
+              <time title="创建时间：2018-11-04 10:10:25 / 修改时间：18:20:43" itemprop="dateCreated datePublished" datetime="2018-11-04T10:10:25+08:00">2018-11-04</time>
             
 
             
@@ -392,8 +392,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/04/python3 查询mysql数据库导出excel/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/python3 查询mysql数据库导出excel/" itemprop="commentCount"></span>
+                <a href="/2018/11/04/python3获取网页上的图片/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/python3获取网页上的图片/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -401,7 +401,7 @@
 
           
           
-             <span id="/2018/11/04/python3 查询mysql数据库导出excel/" class="leancloud_visitors" data-flag-title="python3 查询mysql数据库导出excel">
+             <span id="/2018/11/04/python3获取网页上的图片/" class="leancloud_visitors" data-flag-title="python3获取网页上的图片">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -434,7 +434,8 @@
       
         
           
-            <p>在项目使用中有时候会需要给用户拉一下数据，那么python脚本就很好的解决了这个问题。但是python2和python3在使用库中有些不一样。<br>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"># -*- coding: utf-8 -*-</div><div class="line">import math</div><div class="line">import sys</div><div class="line">import pymysql</div><div class="line"># pymysql.install_as_MySQLdb()</div><div class="line">import xlwt  </div><div class="line"># import MySQLdb</div><div class="line"></div><div class="line">print (sys.argv[1])</div><div class="line">print (sys.argv[2])</div><div class="line">number1 = sys.argv[1]</div><div class="line">number2 = sys.argv[2]</div><div class="line">sqlString = &apos;select  t.id, t.schoolid, t.czr, t.xqid, t.zy, q.title from questionnaire_time_grant t, tquestionnaire q where sfsc = 0 and  schoolid= ** and status= 1  AND q.isdelete = 0 AND q.id = t.wjid limit &apos; + number1 +&apos; , &apos;+ number2</div><div class="line">print (sqlString)</div><div class="line"></div><div class="line">conn = pymysql.connect(</div><div class="line">    host=&apos;****&apos;,</div><div class="line">    port=***,</div><div class="line">    user=***,</div><div class="line">    passwd=***,</div><div class="line">    db=***,</div><div class="line">    charset=&apos;utf8&apos;</div><div class="line">)</div><div class="line"></div><div class="line">print (conn.cursor())</div><div class="line"></div><div class="line">cursor = conn.cursor()</div><div class="line">count = cursor.execute(sqlString)</div><div class="line"></div><div class="line">print (count)</div><div class="line">#重置游标位置  </div><div class="line">cursor.scroll(0,mode=&apos;absolute&apos;)  </div><div class="line">#搜取所有结果  </div><div class="line">results = cursor.fetchall()</div><div class="line"># fields = cursor.description</div><div class="line">fields = [&apos;id&apos;,&apos;schoolid&apos;,&apos;czr&apos;,&apos;xqid&apos;,&apos;zy&apos;,&apos;title&apos;]</div><div class="line">print (fields)</div><div class="line">#print (results)</div><div class="line">wbk = xlwt.Workbook(encoding=&apos;utf-8&apos;)</div><div class="line">sheet = wbk.add_sheet(&apos;test1&apos;,cell_overwrite_ok=True)</div><div class="line">style = xlwt.XFStyle()#初始化样式</div><div class="line">font = xlwt.Font()#创建字体</div><div class="line">font.name = u&apos;微软雅黑&apos; #字体类型</div><div class="line">font.colour_index = 6   #字体颜色</div><div class="line">print (len(fields))</div><div class="line"># for ifs in range(0,len(fields)):  </div><div class="line">#     sheet.write(0,ifs,fields[ifs][0]) </div><div class="line">for ifs in range(0,len(fields)): </div><div class="line">	sheet.write(0,ifs,fields[ifs])</div><div class="line">ics=1  </div><div class="line">jcs=0  </div><div class="line">for ics in range(1,len(results)+1):  </div><div class="line">    for jcs in range(0,len(fields)):  </div><div class="line">        sheet.write(ics,jcs,results[ics-1][jcs]) </div><div class="line">cursor.close()</div><div class="line"></div><div class="line">conn.close()</div><div class="line">wbk.save(&apos;test4.xls&apos;)</div></pre></td></tr></table></figure></p>
+            <p>由于今天工作早早做完，就想从网上找一些偶像的照片等写自己的网站使用。然后又正在学习python就想着扒一些图片。但是发现有时候网页上出现中文就不行，后来还是解决了，棒棒的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">import urllib.request</div><div class="line">import re</div><div class="line">from urllib.request import quote, unquote</div><div class="line"></div><div class="line">url = &quot;https://baike.baidu.com/item/刘亦菲/136156?fr=aladdin&quot; #http://findicons.com/pack/2787/beautiful_flat_icons</div><div class="line"># utf8编码，指定安全字符。</div><div class="line">url = quote(url, safe=&quot;;/?:@&amp;=+$,&quot;, encoding=&quot;utf-8&quot;)</div><div class="line">webPage=urllib.request.urlopen(url) #https://baike.baidu.com/item/刘亦菲/136156?fr=aladdin</div><div class="line">#print (webPage)</div><div class="line">data = webPage.read()</div><div class="line">data = data.decode(&apos;UTF-8&apos;)</div><div class="line">#print (data)</div><div class="line">k = re.split(r&apos;\s+&apos;,data)</div><div class="line"></div><div class="line">s = []</div><div class="line">sp = []</div><div class="line">si = []</div><div class="line">for i in k :</div><div class="line">    if (re.match(r&apos;src&apos;,i) or re.match(r&apos;href&apos;,i)):</div><div class="line">        if (not re.match(r&apos;href=&quot;#&quot;&apos;,i)):</div><div class="line">            if (re.match(r&apos;.*?png&quot;&apos;,i) or re.match(r&apos;.*?ico&quot;&apos;,i) or re.match(r&apos;.*?jpg&quot;&apos;,i) ):</div><div class="line">                if (re.match(r&apos;src&apos;,i)):</div><div class="line">                    s.append(i)</div><div class="line"></div><div class="line">for it in s :</div><div class="line">    if (re.match(r&apos;.*?png&quot;&apos;,it)):</div><div class="line">        sp.append(it)</div><div class="line"></div><div class="line">for it in s :</div><div class="line">    if (re.match(r&apos;.*?jpg&quot;&apos;,it)):</div><div class="line">        sp.append(it)</div><div class="line"></div><div class="line">cnt = 0</div><div class="line">cou = 1</div><div class="line">for it in sp:</div><div class="line">    m = re.search(r&apos;src=&quot;(.*?)&quot;&apos;,it)</div><div class="line">    iturl = m.group(1)</div><div class="line">    print(iturl)</div><div class="line">    if (iturl[0]==&apos;/&apos;):</div><div class="line">        continue;</div><div class="line">    web = urllib.request.urlopen(iturl)</div><div class="line">    itdata = web.read()</div><div class="line">    if (cnt%3==1 and cnt&gt;=4 and cou&lt;=30):</div><div class="line">        f = open(&apos;d:/image/&apos;+str(cou)+&apos;.png&apos;,&quot;wb&quot;)</div><div class="line">        cou = cou+1</div><div class="line">        f.write(itdata)</div><div class="line">        f.close()</div><div class="line">        print(it)</div><div class="line">    cnt = cnt+1</div></pre></td></tr></table></figure></p>
+<p>如图所示：<br><img src="https://upload-images.jianshu.io/upload_images/9149914-877f41fa74562077.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="截图.png"></p>
 <p>刚学python，有什么问题欢迎交流。</p>
 
           
@@ -682,7 +683,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/选择排序与冒泡排序/"/>
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/SQL如何在分组后的某个字段中加条件/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micky Wang"/>
@@ -702,7 +703,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/11/04/选择排序与冒泡排序/" class="post-title-link" itemprop="url">选择排序与冒泡排序</a>
+                <a href="/2018/11/04/SQL如何在分组后的某个字段中加条件/" class="post-title-link" itemprop="url">SQL如何在分组后的某个字段中加条件</a>
               
             
           </h1>
@@ -727,7 +728,7 @@
                 
               
 
-              <time title="创建时间：2018-11-04 10:10:25 / 修改时间：18:18:44" itemprop="dateCreated datePublished" datetime="2018-11-04T10:10:25+08:00">2018-11-04</time>
+              <time title="创建时间：2018-11-04 10:10:25 / 修改时间：18:17:18" itemprop="dateCreated datePublished" datetime="2018-11-04T10:10:25+08:00">2018-11-04</time>
             
 
             
@@ -749,7 +750,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a></span>
 
                 
                 
@@ -764,8 +765,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/04/选择排序与冒泡排序/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/选择排序与冒泡排序/" itemprop="commentCount"></span>
+                <a href="/2018/11/04/SQL如何在分组后的某个字段中加条件/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/SQL如何在分组后的某个字段中加条件/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -773,7 +774,7 @@
 
           
           
-             <span id="/2018/11/04/选择排序与冒泡排序/" class="leancloud_visitors" data-flag-title="选择排序与冒泡排序">
+             <span id="/2018/11/04/SQL如何在分组后的某个字段中加条件/" class="leancloud_visitors" data-flag-title="SQL如何在分组后的某个字段中加条件">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -806,15 +807,7 @@
       
         
           
-            <p>在一些面试和应用中会遇到很多种需要排序的算法，这里就聊一下选择排序和冒泡排序。首先选择排序：</p>
-<ol>
-<li><p>选择排序<br>选择排序主要就是先选出列表中最小的数值，然后依次比较放到起始位置。从剩余未排序元素中继续寻找最小元素，然后放到排序序列起始位置。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">public selectSort(int number[])&#123;</div><div class="line">     int size = numbers.length;</div><div class="line">　    int temp;</div><div class="line">    //外侧循环</div><div class="line">    for (int i=0;i&lt;size;i++) &#123;</div><div class="line">        int k = i;</div><div class="line">        //内侧循环</div><div class="line">        for (int j =size-1;j&gt;i;j--) &#123;</div><div class="line">        //取出最小值</div><div class="line">         if (number[j]&lt;number[k]) &#123;</div><div class="line">            k=j;</div><div class="line">         &#125;</div><div class="line">        &#125;</div><div class="line">        temp = number[k];</div><div class="line">        number[i] = number[k];</div><div class="line">        bumber[k] = temp;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>冒泡排序<br>冒泡排序主要是依次两两进行比较，它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">public static void bubbleSort(int[] a) &#123;</div><div class="line">    int temp;</div><div class="line">    int size = a.length;</div><div class="line">    for(int i=1; i&lt;size; i++) &#123;</div><div class="line">        for(int j=0; j&lt;size-i; j++) &#123;</div><div class="line">            if(a[j] &lt; a[j+1]) &#123;</div><div class="line">                temp = a[j];</div><div class="line">                a[j]=a[j+1];</div><div class="line">                a[j+1]=temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        for(int aa : a)</div><div class="line">            System.out.print(aa+&quot;,&quot;);</div><div class="line">        System.out.println();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
+            <p>在工作中会遇到各种各样的需求，比如会让你统计一些数据的数量，但是在拿数量的时候条件还不一样。这样的话仅仅在where中写条件就不行了，一个统计在校生的个数，一个要统计在校女生的个数。那个这个判断是否为女生的判断就不能写在where中了。我们可以在count的时候加上每个统计所需要的条件比如：<br><code>count( IF ( njid =1 and zxzt = 0, TRUE, NULL ) )</code><br>这样就是统计原有的条件中再加上年纪id为1，zxzt为0的条件再进行统计。<br>ps. 这种首字母拼音的格式非常垃圾，但是公司要求的，求不喷。</p>
 
           
         
@@ -2056,7 +2049,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/11/Vue使用v-for报错/"/>
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/11/Elements in iteration/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micky Wang"/>
@@ -2076,7 +2069,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/08/11/Vue使用v-for报错/" class="post-title-link" itemprop="url">Vue使用v-for="(item, index) in pics"报错</a>
+                <a href="/2018/08/11/Elements in iteration/" class="post-title-link" itemprop="url">使用vscode报错Elements in iteration expect to have 'v-bind:key' directives</a>
               
             
           </h1>
@@ -2118,7 +2111,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-08-12 16:06:40" itemprop="dateModified" datetime="2018-08-12T16:06:40+08:00">2018-08-12</time>
+                <time title="修改时间：2018-08-12 16:05:02" itemprop="dateModified" datetime="2018-08-12T16:05:02+08:00">2018-08-12</time>
               
             
           </span>
@@ -2135,7 +2128,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/VSCode/" itemprop="url" rel="index"><span itemprop="name">VSCode</span></a></span>
 
                 
                 
@@ -2150,8 +2143,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/11/Vue使用v-for报错/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/08/11/Vue使用v-for报错/" itemprop="commentCount"></span>
+                <a href="/2018/08/11/Elements in iteration/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/08/11/Elements in iteration/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -2159,7 +2152,7 @@
 
           
           
-             <span id="/2018/08/11/Vue使用v-for报错/" class="leancloud_visitors" data-flag-title="Vue使用v-for="(item, index) in pics"报错">
+             <span id="/2018/08/11/Elements in iteration/" class="leancloud_visitors" data-flag-title="使用vscode报错Elements in iteration expect to have 'v-bind:key' directives">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -2192,8 +2185,9 @@
       
         
           
-            <p>在使用mpvue框架写小程序中会遇到的一些问题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(Emitted value instead of an instance of Error) &lt;li v-for=&quot;item in pics&quot;&gt;: component lists rendered with v-for should have explicit keys. See https://vuejs.org/guide/list.html#key for more info.</div></pre></td></tr></table></figure></p>
-<p>解决方法：<br>在for循环后面加上一个<code>:key=&quot;index&quot;</code>就可以了。</p>
+            <p>在使用vscode写vue的时候会出现这样一个错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[eslint-plugin-vue]</div><div class="line">[vue/require-v-for-key]</div><div class="line">Elements in iteration expect to have &apos;v-bind:key&apos; directives.</div><div class="line">Renders the element or template block multiple times based on the source data.</div></pre></td></tr></table></figure></p>
+<p>这是在使用插件vetur的问题，关闭了就行了。打开vscode-首选项-设置-工作区设置<br>把”vetur.validation.template”: true改成<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;vetur.validation.template&quot;: false</div></pre></td></tr></table></figure></p>
+<p>保存一下就解决了。</p>
 
           
         
