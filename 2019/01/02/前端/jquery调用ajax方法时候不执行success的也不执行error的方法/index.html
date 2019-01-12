@@ -106,14 +106,14 @@
   <meta name="description" content="在完成前端向后台异步交互的时候，遇到了这样的一个问题。就是说在发送到后台数据，并且后台已经执行成功该方法的时候。前端并没有执行success方法或者error方法。这让我非常吃惊。开始的代码如下：12345678910111213$.ajax(&amp;#123;    		type: &amp;quot;POST&amp;quot;,        	url: &amp;quot;****&amp;quot;,        	dat">
 <meta name="keywords" content="前端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="maven的生命周期">
+<meta property="og:title" content="jquery调用ajax方法时候不执行success的也不执行error的方法">
 <meta property="og:url" content="http://yoursite.com/2019/01/02/前端/jquery调用ajax方法时候不执行success的也不执行error的方法/index.html">
 <meta property="og:site_name" content="桃花源居">
 <meta property="og:description" content="在完成前端向后台异步交互的时候，遇到了这样的一个问题。就是说在发送到后台数据，并且后台已经执行成功该方法的时候。前端并没有执行success方法或者error方法。这让我非常吃惊。开始的代码如下：12345678910111213$.ajax(&amp;#123;    		type: &amp;quot;POST&amp;quot;,        	url: &amp;quot;****&amp;quot;,        	dat">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-02T15:07:43.993Z">
+<meta property="og:updated_time" content="2019-01-12T15:33:24.293Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="maven的生命周期">
+<meta name="twitter:title" content="jquery调用ajax方法时候不执行success的也不执行error的方法">
 <meta name="twitter:description" content="在完成前端向后台异步交互的时候，遇到了这样的一个问题。就是说在发送到后台数据，并且后台已经执行成功该方法的时候。前端并没有执行success方法或者error方法。这让我非常吃惊。开始的代码如下：12345678910111213$.ajax(&amp;#123;    		type: &amp;quot;POST&amp;quot;,        	url: &amp;quot;****&amp;quot;,        	dat">
 
 
@@ -131,7 +131,7 @@
   };
 </script>
 
-  <title>maven的生命周期 | 桃花源居</title>
+  <title>jquery调用ajax方法时候不执行success的也不执行error的方法 | 桃花源居</title>
   
 
 
@@ -338,7 +338,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">maven的生命周期
+          <h1 class="post-title" itemprop="name headline">jquery调用ajax方法时候不执行success的也不执行error的方法
 
               
             
@@ -364,12 +364,24 @@
                 
               
 
-              <time title="创建时间：2019-01-02 22:10:25 / 修改时间：23:07:43" itemprop="dateCreated datePublished" datetime="2019-01-02T22:10:25+08:00">2019-01-02</time>
+              <time title="创建时间：2019-01-02 22:10:25" itemprop="dateCreated datePublished" datetime="2019-01-02T22:10:25+08:00">2019-01-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-12 23:33:24" itemprop="dateModified" datetime="2019-01-12T23:33:24+08:00">2019-01-12</time>
               
             
           </span>
@@ -410,7 +422,7 @@
 
           
           
-             <span id="/2019/01/02/前端/jquery调用ajax方法时候不执行success的也不执行error的方法/" class="leancloud_visitors" data-flag-title="maven的生命周期">
+             <span id="/2019/01/02/前端/jquery调用ajax方法时候不执行success的也不执行error的方法/" class="leancloud_visitors" data-flag-title="jquery调用ajax方法时候不执行success的也不执行error的方法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -947,9 +959,14 @@
             })
           } else {
             
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1}))
+                .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function () {
+                  console.log('Failed to create');
+                });
             
           }
         })
