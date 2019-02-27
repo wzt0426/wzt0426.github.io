@@ -320,7 +320,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/02/前端/jquery调用ajax方法时候不执行success的也不执行error的方法/"/>
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/27/leetcode/leetcodeAdd-Two-Numbers/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micky Wang"/>
@@ -340,7 +340,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/01/02/前端/jquery调用ajax方法时候不执行success的也不执行error的方法/" class="post-title-link" itemprop="url">jquery调用ajax方法时候不执行success的也不执行error的方法</a>
+                <a href="/2019/02/27/leetcode/leetcodeAdd-Two-Numbers/" class="post-title-link" itemprop="url">leetcode Two Sum</a>
               
             
           </h1>
@@ -365,24 +365,12 @@
                 
               
 
-              <time title="创建时间：2019-01-02 22:10:25" itemprop="dateCreated datePublished" datetime="2019-01-02T22:10:25+08:00">2019-01-02</time>
+              <time title="创建时间：2019-02-27 22:10:25 / 修改时间：21:12:00" itemprop="dateCreated datePublished" datetime="2019-02-27T22:10:25+08:00">2019-02-27</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-12 23:33:24" itemprop="dateModified" datetime="2019-01-12T23:33:24+08:00">2019-01-12</time>
               
             
           </span>
@@ -399,7 +387,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a></span>
 
                 
                 
@@ -414,8 +402,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/02/前端/jquery调用ajax方法时候不执行success的也不执行error的方法/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/01/02/前端/jquery调用ajax方法时候不执行success的也不执行error的方法/" itemprop="commentCount"></span>
+                <a href="/2019/02/27/leetcode/leetcodeAdd-Two-Numbers/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/02/27/leetcode/leetcodeAdd-Two-Numbers/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -423,7 +411,7 @@
 
           
           
-             <span id="/2019/01/02/前端/jquery调用ajax方法时候不执行success的也不执行error的方法/" class="leancloud_visitors" data-flag-title="jquery调用ajax方法时候不执行success的也不执行error的方法">
+             <span id="/2019/02/27/leetcode/leetcodeAdd-Two-Numbers/" class="leancloud_visitors" data-flag-title="leetcode Two Sum">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -456,9 +444,1008 @@
       
         
           
-            <p>在完成前端向后台异步交互的时候，遇到了这样的一个问题。就是说在发送到后台数据，并且后台已经执行成功该方法的时候。前端并没有执行success方法或者error方法。这让我非常吃惊。开始的代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">    		type: &quot;POST&quot;,</div><div class="line">        	url: &quot;****&quot;,</div><div class="line">        	data: &#123;&quot;urls&quot;:urls,</div><div class="line">        			&quot;titles&quot; : titles</div><div class="line">        		&#125;,</div><div class="line">        	dataType: &apos;json&apos;,</div><div class="line">    		success: function(data)&#123;</div><div class="line">        		</div><div class="line">        		 location.reload();</div><div class="line">        		 console.log(data);</div><div class="line">        	&#125;</div><div class="line">		&#125;);</div></pre></td></tr></table></figure></p>
-<p>并没有什么问题哈，但是仔细检查后发现：主要原因在于后台返回的数据并非json格式，而在代码中指定了 dataType: “json”, 解决方法是将 json改为text。发送和接受的格式保持到一致。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">    		type: &quot;POST&quot;,</div><div class="line">        	url: &quot;****&quot;,</div><div class="line">        	data: &#123;&quot;urls&quot;:urls,</div><div class="line">        			&quot;titles&quot; : titles</div><div class="line">        		&#125;,</div><div class="line">        	dataType: &apos;json&apos;,</div><div class="line">    		success: function(data)&#123;</div><div class="line">        		</div><div class="line">        		 location.reload();</div><div class="line">        		 console.log(data);</div><div class="line">        	&#125;</div><div class="line">		&#125;);</div></pre></td></tr></table></figure></p>
-<p>这样就OK了。</p>
+            <h3 id="问题-Add-Two-Numbers"><a href="#问题-Add-Two-Numbers" class="headerlink" title="问题: Add Two Numbers"></a>问题: Add Two Numbers</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</div><div class="line"></div><div class="line">You may assume the two numbers do not contain any leading zero, except the number 0 itself.</div><div class="line"></div><div class="line">Example:</div><div class="line"></div><div class="line">Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)</div><div class="line">Output: 7 -&gt; 0 -&gt; 8</div><div class="line">Explanation: 342 + 465 = 807.</div></pre></td></tr></table></figure>
+<h3 id="解答："><a href="#解答：" class="headerlink" title="解答："></a>解答：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">public class Leedcode2 &#123;</div><div class="line">    public static void main(String args[]) &#123;</div><div class="line">        Leedcode2 leedcode2 = new Leedcode2();</div><div class="line">        ListNode l1= new ListNode(2);</div><div class="line">        ListNode l2= new ListNode(3);</div><div class="line">        ListNode l3= new ListNode(6);</div><div class="line">        l1.next = l2;</div><div class="line">        l2.next = l3;</div><div class="line">        ListNode l4= new ListNode(2);</div><div class="line">        ListNode l5= new ListNode(7);</div><div class="line">        ListNode l6= new ListNode(6);</div><div class="line">        l4.next = l5;</div><div class="line">        l5.next = l6;</div><div class="line">        ListNode result =leedcode2.addTwoNumbers(l1,l4);</div><div class="line">        while (result !=null) &#123;</div><div class="line">            System.out.println(result.val);</div><div class="line">            result = result.next;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    public ListNode addTwoNumbers(ListNode l1, ListNode l2) &#123;</div><div class="line">        ListNode l3 = new ListNode((l1.val+l2.val)%10);</div><div class="line">        ListNode temp = l3;</div><div class="line">        int f = (l1.val + l2.val)&gt;=10 ? 1 : 0;</div><div class="line">        l1 = l1.next;</div><div class="line">        l2 = l2.next;</div><div class="line">        while (l1 !=null || l2!=null || f!=0) &#123;</div><div class="line">            int val1 = 0;</div><div class="line">            int val2 = 0;</div><div class="line">            if (l1!=null) &#123;</div><div class="line">                val1 = l1.val;</div><div class="line">                l1 = l1.next;</div><div class="line">            &#125;</div><div class="line">            if (l2!=null) &#123;</div><div class="line">                val2 = l2.val;</div><div class="line">                l2 = l2.next;</div><div class="line">            &#125;</div><div class="line">            int sum = (val1+val2+f)&gt;=10 ? (val1+val2+f)%10:(val1+val2+f);</div><div class="line">            f= (val1+val2+f)&gt;=10 ? 1:0;</div><div class="line">            temp.next = new ListNode(sum);</div><div class="line">            temp = temp.next;</div><div class="line">        &#125;</div><div class="line">        return l3;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>首先拿到这道题第一反应就应该考虑到肯定会用到迭代，然后慢慢捋一下思路编写代码。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+	<div>
+	  
+	</div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/20/leetcode/leetcode-Two-um/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang"/>
+      <meta itemprop="description" content="If you want, then do it ."/>
+      <meta itemprop="image" content="/images/wzt.jpg"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/02/20/leetcode/leetcode-Two-um/" class="post-title-link" itemprop="url">leetcode Two Sum</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-20 22:10:25" itemprop="dateCreated datePublished" datetime="2019-02-20T22:10:25+08:00">2019-02-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-02-27 21:12:10" itemprop="dateModified" datetime="2019-02-27T21:12:10+08:00">2019-02-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/20/leetcode/leetcode-Two-um/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/02/20/leetcode/leetcode-Two-um/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/02/20/leetcode/leetcode-Two-um/" class="leancloud_visitors" data-flag-title="leetcode Two Sum">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+	
+      
+      
+
+      
+        
+          
+            <h3 id="问题"><a href="#问题" class="headerlink" title="问题:"></a>问题:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Given an array of integers, return indices of the two numbers such that they add up to a specific target.</div><div class="line"></div><div class="line">You may assume that each input would have exactly one solution, and you may not use the same element twice.</div><div class="line"></div><div class="line">Example:</div><div class="line"></div><div class="line">Given nums = [2, 7, 11, 15], target = 9,</div><div class="line"></div><div class="line">Because nums[0] + nums[1] = 2 + 7 = 9,</div><div class="line">return [0, 1].</div></pre></td></tr></table></figure>
+<h3 id="初级解决方案："><a href="#初级解决方案：" class="headerlink" title="初级解决方案："></a>初级解决方案：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public int[] twoSum(int[] nums, int target) &#123;</div><div class="line">        int []ss = new int[2];;</div><div class="line">        for (int i=0;i&lt;nums.length-1;i++) &#123;</div><div class="line">            for (int j = i+1;j&lt;nums.length;j++) &#123;</div><div class="line">                if (target == (nums[i]+nums[j])) &#123;</div><div class="line">                    ss[0] = i;</div><div class="line">                    ss[1] = j;</div><div class="line">                    return ss;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return null;</div><div class="line"></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h3 id="进阶解决方案："><a href="#进阶解决方案：" class="headerlink" title="进阶解决方案："></a>进阶解决方案：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">public int[] twoSum(int[] nums, int target) &#123;</div><div class="line">        Map&lt;Integer,Integer&gt; map = new HashMap&lt;Integer, Integer&gt;();</div><div class="line">        for (int i =0;i&lt;nums.length;i++) &#123;</div><div class="line">            if (map.containsKey(target - nums[i])) &#123;</div><div class="line">                return new int[] &#123;map.get(target - nums[i]),i&#125;;</div><div class="line">            &#125;else &#123;</div><div class="line">                map.put(nums[i],i);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return null;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>在遇到问题的时候首先会直接运用最简单的方法去完成，但是如果可以花点时间想一下也是能够进步的。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+	<div>
+	  
+	</div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/20/springcloud/Spring Cloud git 配置报错/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang"/>
+      <meta itemprop="description" content="If you want, then do it ."/>
+      <meta itemprop="image" content="/images/wzt.jpg"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/02/20/springcloud/Spring Cloud git 配置报错/" class="post-title-link" itemprop="url">Spring Cloud git 配置报错Could not resolve placeholder 'foo' in value "${foo}"</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-20 22:10:25" itemprop="dateCreated datePublished" datetime="2019-02-20T22:10:25+08:00">2019-02-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-02-27 21:05:50" itemprop="dateModified" datetime="2019-02-27T21:05:50+08:00">2019-02-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/20/springcloud/Spring Cloud git 配置报错/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/02/20/springcloud/Spring Cloud git 配置报错/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/02/20/springcloud/Spring Cloud git 配置报错/" class="leancloud_visitors" data-flag-title="Spring Cloud git 配置报错Could not resolve placeholder 'foo' in value "${foo}"">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+	
+      
+      
+
+      
+        
+          
+            <h4 id="1-Could-not-resolve-placeholder-‘foo’-in-value-“-foo-”"><a href="#1-Could-not-resolve-placeholder-‘foo’-in-value-“-foo-”" class="headerlink" title="1. Could not resolve placeholder ‘foo’ in value “${foo}”"></a>1. Could not resolve placeholder ‘foo’ in value “${foo}”</h4><p>这两天一直在学习git的配置，一直的报错。发现Server端可以拿到git中的配置信息，但是client端一直拿不到信息还一直报错。看了一下网上的解决方案，发现都是解决不了我的问题，把网上查到的解决方案也分享一下：</p>
+<ol>
+<li>添加代码Bean<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@Bean</div><div class="line">    public static PropertySourcesPlaceholderConfigurer placeholderConfigurer() &#123;</div><div class="line">        PropertySourcesPlaceholderConfigurer c = new PropertySourcesPlaceholderConfigurer();</div><div class="line">        c.setIgnoreUnresolvablePlaceholders(true);</div><div class="line">        return c;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>添加上之后，不报错了但是拿到的也不是Server的配置文件。</p>
+<ol>
+<li>版本不对 让自己的版本统一。</li>
+<li>添加新依赖<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line">   &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</div><div class="line">   &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;</div><div class="line">  &lt;/dependency&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>亲测没有用。</p>
+<ol>
+<li>修改注册器地址的位置<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">#eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/</div><div class="line">server.port=7917</div><div class="line">spring.application.name=spring-cloud-config-clients</div><div class="line">spring.cloud.config.name=neo-config</div><div class="line">spring.cloud.config.profile=dev</div><div class="line">spring.cloud.config.label=master</div><div class="line">spring.cloud.config.discovery.enabled=true</div><div class="line">spring.cloud.config.discovery.service-id=spring-cloud-config-server</div><div class="line">#spring.cloud.config.uri= http://localhost:7916/</div><div class="line">eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>把<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">5.  查看自己引用的依赖</div></pre></td></tr></table></figure></p>
+<p><groupid>org.springframework.cloud</groupid><br>            <artifactid>spring-cloud-starter-config</artifactid><br>        <br><code>这个依赖是client要使用的，不是</code>spring-cloud-config-server```  千万不要从server那边复制过来直接用了，不是一个依赖。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+	<div>
+	  
+	</div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/15/springcloud/Spring Cloud 运行闪退/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang"/>
+      <meta itemprop="description" content="If you want, then do it ."/>
+      <meta itemprop="image" content="/images/wzt.jpg"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/02/15/springcloud/Spring Cloud 运行闪退/" class="post-title-link" itemprop="url">Spring Cloud 运行闪退</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-15 22:10:25" itemprop="dateCreated datePublished" datetime="2019-02-15T22:10:25+08:00">2019-02-15</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-02-27 21:04:42" itemprop="dateModified" datetime="2019-02-27T21:04:42+08:00">2019-02-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/15/springcloud/Spring Cloud 运行闪退/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/02/15/springcloud/Spring Cloud 运行闪退/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/02/15/springcloud/Spring Cloud 运行闪退/" class="leancloud_visitors" data-flag-title="Spring Cloud 运行闪退">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+	
+      
+      
+
+      
+        
+          
+            <p>刚开始学习Spring Boot和Spring Cloud的时候遇到了一个问题，就是在我启动完项目后会立马闪退也不报错。这让我一脸懵逼，我这好像跟教程上的一样呀，不知道哪里出了问题。<br>我就开始上网百度一下，发现他们提出的问题跟我的不一样，什么少引入了<code>spring-boot-starter-web</code>包了，什么少加了什么注解呀。跟我的情况都不服。我就感觉可能跟这个包有关系，打开这个包进去看一下它都引入了什么依赖包，一看真相立马大白了。<br><code>spring-boot-starter-web</code> 包引入了<img src="https://upload-images.jianshu.io/upload_images/9149914-baa3477813e16b72.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png">  而我在pom.xml又自作主张的引入了另外一个版本的tomcate，就造成了冲突，所以启动不来。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+	<div>
+	  
+	</div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/05/springcloud/Unable to connect to Command Metric Stream./"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang"/>
+      <meta itemprop="description" content="If you want, then do it ."/>
+      <meta itemprop="image" content="/images/wzt.jpg"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/02/05/springcloud/Unable to connect to Command Metric Stream./" class="post-title-link" itemprop="url">Unable to connect to Command Metric Stream.</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-05 22:10:25" itemprop="dateCreated datePublished" datetime="2019-02-05T22:10:25+08:00">2019-02-05</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-02-27 21:03:53" itemprop="dateModified" datetime="2019-02-27T21:03:53+08:00">2019-02-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/05/springcloud/Unable to connect to Command Metric Stream./#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/02/05/springcloud/Unable to connect to Command Metric Stream./" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/02/05/springcloud/Unable to connect to Command Metric Stream./" class="leancloud_visitors" data-flag-title="Unable to connect to Command Metric Stream.">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+	
+      
+      
+
+      
+        
+          
+            <p>还是在学习hystrix监控的时候遇到了一个问题，访问过<a href="http://localhost:7913/hystrix.stream之后就显示Unable" target="_blank" rel="external">http://localhost:7913/hystrix.stream之后就显示Unable</a> to connect to Command Metric Stream。这是为什么呢？<br>我就查了一下资料，前辈说springBoot1.5是可以的，那为什么2.0就不行了呢？<br>进入源代码中查看一下，发现spring2.0的一个Servlect被注释掉了，我们只要在自己的项目里配置上这个servlet就ok了。<br>具体操作：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">@Bean</div><div class="line">	public ServletRegistrationBean getServlet() &#123;</div><div class="line">		HystrixMetricsStreamServlet streamServlet = new HystrixMetricsStreamServlet();</div><div class="line">		ServletRegistrationBean registrationBean = new ServletRegistrationBean(streamServlet);</div><div class="line">		registrationBean.setLoadOnStartup(1);</div><div class="line">		registrationBean.addUrlMappings(&quot;/hystrix.stream&quot;);</div><div class="line">		registrationBean.setName(&quot;HystrixMetricsStreamServlet&quot;);</div><div class="line">		return registrationBean;</div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
+<p>这样就可以了。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+	<div>
+	  
+	</div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/02/springcloud/Spring Cloud 中的@enablehystrixdashboard注解用不了/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang"/>
+      <meta itemprop="description" content="If you want, then do it ."/>
+      <meta itemprop="image" content="/images/wzt.jpg"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/02/02/springcloud/Spring Cloud 中的@enablehystrixdashboard注解用不了/" class="post-title-link" itemprop="url">Spring Cloud 中的@enablehystrixdashboard注解用不了</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-02 22:10:25" itemprop="dateCreated datePublished" datetime="2019-02-02T22:10:25+08:00">2019-02-02</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-02-27 21:02:32" itemprop="dateModified" datetime="2019-02-27T21:02:32+08:00">2019-02-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/02/springcloud/Spring Cloud 中的@enablehystrixdashboard注解用不了/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/02/02/springcloud/Spring Cloud 中的@enablehystrixdashboard注解用不了/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/02/02/springcloud/Spring Cloud 中的@enablehystrixdashboard注解用不了/" class="leancloud_visitors" data-flag-title="Spring Cloud 中的@enablehystrixdashboard注解用不了">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+	
+      
+      
+
+      
+        
+          
+            <p>在完成前端向后台异步交互的时候，遇到了这样的一个问题。就是说在发送到后台数据，并且后台已经执行成功该方法的时候。前端并没有执行success方法或者error方法。这让我非常吃惊。开始的代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">今天学习的springcloud的hystrix的时候遇到了一个问题，就是@enablehystrixdashboard的注解无论如何都不能把她的包```import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;``` 引入。我查看了一下pom.xml 发现</div></pre></td></tr></table></figure></p>
+<p><dependency><br>            <groupid>org.springframework.cloud</groupid><br>            <artifactid>spring-cloud-netflix-hystrix-dashboard</artifactid><br>        </dependency><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">已经引入了，所以就在网上查看了一下发现是Spring Boot版本的问题。需要把依赖替换一下：</div></pre></td></tr></table></figure></p>
+<p><dependency><br>            <groupid>org.springframework.cloud</groupid><br>            <artifactid>spring-cloud-netflix-hystrix-dashboard</artifactid><br>        </dependency><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">替换成</div></pre></td></tr></table></figure></p>
+<p><dependency><br>            <groupid>com.netflix.hystrix</groupid><br>            <artifactid>hystrix-javanica</artifactid><br>            <version>RELEASE</version><br>        </dependency><br>        <dependency><br>            <groupid>org.springframework.cloud</groupid><br>            <artifactid>spring-cloud-netflix-hystrix-dashboard</artifactid><br>        </dependency><br>```<br>这样就ok了。希望大家写的时候也要多注意一下版本的问题。</p>
 
           
         
@@ -701,6 +1688,203 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/02/前端/jquery调用ajax方法时候不执行success的也不执行error的方法/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang"/>
+      <meta itemprop="description" content="If you want, then do it ."/>
+      <meta itemprop="image" content="/images/wzt.jpg"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/01/02/前端/jquery调用ajax方法时候不执行success的也不执行error的方法/" class="post-title-link" itemprop="url">jquery调用ajax方法时候不执行success的也不执行error的方法</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-02 22:10:25" itemprop="dateCreated datePublished" datetime="2019-01-02T22:10:25+08:00">2019-01-02</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-12 23:33:24" itemprop="dateModified" datetime="2019-01-12T23:33:24+08:00">2019-01-12</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/02/前端/jquery调用ajax方法时候不执行success的也不执行error的方法/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/01/02/前端/jquery调用ajax方法时候不执行success的也不执行error的方法/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/01/02/前端/jquery调用ajax方法时候不执行success的也不执行error的方法/" class="leancloud_visitors" data-flag-title="jquery调用ajax方法时候不执行success的也不执行error的方法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+	
+      
+      
+
+      
+        
+          
+            <p>在完成前端向后台异步交互的时候，遇到了这样的一个问题。就是说在发送到后台数据，并且后台已经执行成功该方法的时候。前端并没有执行success方法或者error方法。这让我非常吃惊。开始的代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">    		type: &quot;POST&quot;,</div><div class="line">        	url: &quot;****&quot;,</div><div class="line">        	data: &#123;&quot;urls&quot;:urls,</div><div class="line">        			&quot;titles&quot; : titles</div><div class="line">        		&#125;,</div><div class="line">        	dataType: &apos;json&apos;,</div><div class="line">    		success: function(data)&#123;</div><div class="line">        		</div><div class="line">        		 location.reload();</div><div class="line">        		 console.log(data);</div><div class="line">        	&#125;</div><div class="line">		&#125;);</div></pre></td></tr></table></figure></p>
+<p>并没有什么问题哈，但是仔细检查后发现：主要原因在于后台返回的数据并非json格式，而在代码中指定了 dataType: “json”, 解决方法是将 json改为text。发送和接受的格式保持到一致。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">    		type: &quot;POST&quot;,</div><div class="line">        	url: &quot;****&quot;,</div><div class="line">        	data: &#123;&quot;urls&quot;:urls,</div><div class="line">        			&quot;titles&quot; : titles</div><div class="line">        		&#125;,</div><div class="line">        	dataType: &apos;json&apos;,</div><div class="line">    		success: function(data)&#123;</div><div class="line">        		</div><div class="line">        		 location.reload();</div><div class="line">        		 console.log(data);</div><div class="line">        	&#125;</div><div class="line">		&#125;);</div></pre></td></tr></table></figure></p>
+<p>这样就OK了。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+	<div>
+	  
+	</div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/02/算法/数组中连续元素的和等于所给数的子数组/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -809,204 +1993,6 @@
           
             <h2 id="问题是：给出一个排序好的数组和一个数，求数组中连续元素的和等于所给数的子数组"><a href="#问题是：给出一个排序好的数组和一个数，求数组中连续元素的和等于所给数的子数组" class="headerlink" title="问题是：给出一个排序好的数组和一个数，求数组中连续元素的和等于所给数的子数组 ."></a>问题是：给出一个排序好的数组和一个数，求数组中连续元素的和等于所给数的子数组 .</h2><h3 id="解决代码"><a href="#解决代码" class="headerlink" title="解决代码"></a>解决代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">package StudyOne;</div><div class="line"></div><div class="line">import org.junit.Test;</div><div class="line">/**</div><div class="line"> * 给出一个排序好的数组和一个数，求数组中连续元素的和等于所给数的子数组 </div><div class="line"> * @author Micky.Wang</div><div class="line"> *</div><div class="line"> */</div><div class="line">public class continuousElements &#123;</div><div class="line">	@Test</div><div class="line">	public void test() &#123;</div><div class="line">		int[] num = &#123; 1, 2, 2, 3, 4, 5, 6, 7, 8, 9 &#125;;</div><div class="line">		int sum = 7;</div><div class="line">		findSum(num, sum);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public void findSum(int[] num, int sum) &#123;</div><div class="line">		int left = 0;</div><div class="line">		int right = 0;</div><div class="line">		for (int i = 0; i &lt; num.length; i++) &#123;</div><div class="line">			int curSum = 0;</div><div class="line">			left = i;</div><div class="line">			right = i;</div><div class="line">			while (curSum &lt; sum) &#123;</div><div class="line">				curSum += num[right++];</div><div class="line">			&#125;</div><div class="line">			if (curSum == sum) &#123;</div><div class="line">				for (int j = left; j &lt; right; j++) &#123;</div><div class="line">					System.out.print(num[j] + &quot; &quot;);</div><div class="line">				&#125;</div><div class="line">				System.out.println();</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>时间：2019年1月2号<br>地点：北京市昌平<br>公司：**<br>致自己：美好的生活源于不断地努力。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-	<div>
-	  
-	</div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/svn/SVN的学习-commit和update和delete/"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang"/>
-      <meta itemprop="description" content="If you want, then do it ."/>
-      <meta itemprop="image" content="/images/wzt.jpg"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/11/04/svn/SVN的学习-commit和update和delete/" class="post-title-link" itemprop="url">SVN的学习-add</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-04 19:10:25 / 修改时间：19:08:41" itemprop="dateCreated datePublished" datetime="2018-11-04T19:10:25+08:00">2018-11-04</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/SVN/" itemprop="url" rel="index"><span itemprop="name">SVN</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/04/svn/SVN的学习-commit和update和delete/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/svn/SVN的学习-commit和update和delete/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/11/04/svn/SVN的学习-commit和update和delete/" class="leancloud_visitors" data-flag-title="SVN的学习-add">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-	
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>添加一个文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svn add index.html</div></pre></td></tr></table></figure>
-</li>
-<li><p>添加一个文件夹中的所有文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svn add text</div></pre></td></tr></table></figure>
-</li>
-<li><p>只添加本文件夹，不添加文件夹中的内容。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svn add text --non-recursive</div></pre></td></tr></table></figure>
-</li>
-<li><p>添加所有的文件(文件夹已经添加进去的不再进行操作)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svn add *</div></pre></td></tr></table></figure>
-</li>
-<li><p>添加所有的文件(文件夹已经添加进去的也再进行操作)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svn add * --force</div></pre></td></tr></table></figure></li>
-</ol>
 
           
         
@@ -1248,972 +2234,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/svn/SVN的学习-diff和mkdir/"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang"/>
-      <meta itemprop="description" content="If you want, then do it ."/>
-      <meta itemprop="image" content="/images/wzt.jpg"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/11/04/svn/SVN的学习-diff和mkdir/" class="post-title-link" itemprop="url">SVN的学习-diff和mkdir</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-04 19:10:25 / 修改时间：19:07:41" itemprop="dateCreated datePublished" datetime="2018-11-04T19:10:25+08:00">2018-11-04</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/SVN/" itemprop="url" rel="index"><span itemprop="name">SVN</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/04/svn/SVN的学习-diff和mkdir/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/svn/SVN的学习-diff和mkdir/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/11/04/svn/SVN的学习-diff和mkdir/" class="leancloud_visitors" data-flag-title="SVN的学习-diff和mkdir">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-	
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>对比index.html当前版本和最后一次更新版本有什么不同</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svn diff index.html</div></pre></td></tr></table></figure>
-</li>
-<li><p>对比index.html当前版本和版本2有什么不同</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svn diff -r 2 index.html</div></pre></td></tr></table></figure>
-</li>
-<li><p>对比index.html版本1和版本2有什么不同</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svn diff -r 1:2 index.html</div></pre></td></tr></table></figure>
-</li>
-<li><p>批量对比</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svn diff</div></pre></td></tr></table></figure>
-</li>
-<li><p>增加一个文件夹并且直接添加到版本中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">svn mkdir doc</div></pre></td></tr></table></figure></li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-	<div>
-	  
-	</div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/新建文件夹 (3)/An internal error occurred durin/"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang"/>
-      <meta itemprop="description" content="If you want, then do it ."/>
-      <meta itemprop="image" content="/images/wzt.jpg"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/11/04/新建文件夹 (3)/An internal error occurred durin/" class="post-title-link" itemprop="url">eclipse出现Java heap space 错误。</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-04 10:10:25" itemprop="dateCreated datePublished" datetime="2018-11-04T10:10:25+08:00">2018-11-04</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-04 15:46:43" itemprop="dateModified" datetime="2019-01-04T15:46:43+08:00">2019-01-04</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/eclipse/" itemprop="url" rel="index"><span itemprop="name">eclipse</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/04/新建文件夹 (3)/An internal error occurred durin/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/新建文件夹 (3)/An internal error occurred durin/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/11/04/新建文件夹 (3)/An internal error occurred durin/" class="leancloud_visitors" data-flag-title="eclipse出现Java heap space 错误。">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-	
-      
-      
-
-      
-        
-          
-            <p>今天在做项目的时候从svn上把项目检出来之后，运行项目的时候发现出现了一些问题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">eclipse出现An internal error occurred during: &quot;Building workspace&quot;. Java heap space 错误。</div></pre></td></tr></table></figure></p>
-<p>然后eclipse超级卡的，百度了以后发现可以这样操作：<br>删除这两处<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">  第一处：</div><div class="line"></div><div class="line"> &lt;buildCommand&gt;</div><div class="line">         &lt;name&gt;org.eclipse.wst.jsdt.core.javascriptValidator&lt;/name&gt;</div><div class="line">         &lt;arguments&gt;</div><div class="line">         &lt;/arguments&gt;</div><div class="line">&lt;ildCommand&gt;</div><div class="line">第二处：</div><div class="line"> &lt;nature&gt;org.eclipse.wst.jsdt.core.jsNature&lt;/nature&gt;</div></pre></td></tr></table></figure></p>
-<p>最后重启一下eclipse运行一些自己的项目就可以了。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-	<div>
-	  
-	</div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/新建文件夹 (2)/选择排序与冒泡排序/"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang"/>
-      <meta itemprop="description" content="If you want, then do it ."/>
-      <meta itemprop="image" content="/images/wzt.jpg"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/11/04/新建文件夹 (2)/选择排序与冒泡排序/" class="post-title-link" itemprop="url">选择排序与冒泡排序</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-04 10:10:25 / 修改时间：18:18:44" itemprop="dateCreated datePublished" datetime="2018-11-04T10:10:25+08:00">2018-11-04</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/04/新建文件夹 (2)/选择排序与冒泡排序/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/新建文件夹 (2)/选择排序与冒泡排序/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/11/04/新建文件夹 (2)/选择排序与冒泡排序/" class="leancloud_visitors" data-flag-title="选择排序与冒泡排序">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-	
-      
-      
-
-      
-        
-          
-            <p>在一些面试和应用中会遇到很多种需要排序的算法，这里就聊一下选择排序和冒泡排序。首先选择排序：</p>
-<ol>
-<li><p>选择排序<br>选择排序主要就是先选出列表中最小的数值，然后依次比较放到起始位置。从剩余未排序元素中继续寻找最小元素，然后放到排序序列起始位置。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">public selectSort(int number[])&#123;</div><div class="line">     int size = numbers.length;</div><div class="line">　    int temp;</div><div class="line">    //外侧循环</div><div class="line">    for (int i=0;i&lt;size;i++) &#123;</div><div class="line">        int k = i;</div><div class="line">        //内侧循环</div><div class="line">        for (int j =size-1;j&gt;i;j--) &#123;</div><div class="line">        //取出最小值</div><div class="line">         if (number[j]&lt;number[k]) &#123;</div><div class="line">            k=j;</div><div class="line">         &#125;</div><div class="line">        &#125;</div><div class="line">        temp = number[k];</div><div class="line">        number[i] = number[k];</div><div class="line">        bumber[k] = temp;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>冒泡排序<br>冒泡排序主要是依次两两进行比较，它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">public static void bubbleSort(int[] a) &#123;</div><div class="line">    int temp;</div><div class="line">    int size = a.length;</div><div class="line">    for(int i=1; i&lt;size; i++) &#123;</div><div class="line">        for(int j=0; j&lt;size-i; j++) &#123;</div><div class="line">            if(a[j] &lt; a[j+1]) &#123;</div><div class="line">                temp = a[j];</div><div class="line">                a[j]=a[j+1];</div><div class="line">                a[j+1]=temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        for(int aa : a)</div><div class="line">            System.out.print(aa+&quot;,&quot;);</div><div class="line">        System.out.println();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-	<div>
-	  
-	</div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/新建文件夹 (2)/sublime选中全部某个字段进行批量操作/"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang"/>
-      <meta itemprop="description" content="If you want, then do it ."/>
-      <meta itemprop="image" content="/images/wzt.jpg"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/11/04/新建文件夹 (2)/sublime选中全部某个字段进行批量操作/" class="post-title-link" itemprop="url">sublime选中全部某个字段进行批量操作</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-04 10:10:25 / 修改时间：18:25:44" itemprop="dateCreated datePublished" datetime="2018-11-04T10:10:25+08:00">2018-11-04</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/sublime/" itemprop="url" rel="index"><span itemprop="name">sublime</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/04/新建文件夹 (2)/sublime选中全部某个字段进行批量操作/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/新建文件夹 (2)/sublime选中全部某个字段进行批量操作/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/11/04/新建文件夹 (2)/sublime选中全部某个字段进行批量操作/" class="leancloud_visitors" data-flag-title="sublime选中全部某个字段进行批量操作">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-	
-      
-      
-
-      
-        
-          
-            <ol>
-<li>首先选中，ctrl+f</li>
-<li>alert+enter.</li>
-<li>搞定。</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-	<div>
-	  
-	</div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/新建文件夹 (2)/mavan的生命周期/"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang"/>
-      <meta itemprop="description" content="If you want, then do it ."/>
-      <meta itemprop="image" content="/images/wzt.jpg"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/11/04/新建文件夹 (2)/mavan的生命周期/" class="post-title-link" itemprop="url">maven的生命周期</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-04 10:10:25 / 修改时间：19:04:49" itemprop="dateCreated datePublished" datetime="2018-11-04T10:10:25+08:00">2018-11-04</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/maven/" itemprop="url" rel="index"><span itemprop="name">maven</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/04/新建文件夹 (2)/mavan的生命周期/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/新建文件夹 (2)/mavan的生命周期/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/11/04/新建文件夹 (2)/mavan的生命周期/" class="leancloud_visitors" data-flag-title="maven的生命周期">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-	
-      
-      
-
-      
-        
-          
-            <p>maven有三套的生命周期：</p>
-<ol>
-<li>clean周期：主要用于清理上一次构建产生的文件，可以理解为删除target目录。</li>
-<li>默认周期：<br>2.1 compile 编译src/main/java下的java文件，产生对应的class<br>2.2 test 运行测试用例<br>2.3 package 打包构件，即生成对应的jar, war等.<br>2.4 install将构件部署到本地仓库.<br>2.5 deploy 部署构件到远程仓库<br>2.6 test-compile 编译src/test/java下的java文件，产生对应的class<br>2.7 process-test-resources 默认处理src/test/resources/下的文件，将其输出到测试的classpath目录中<br>2.8 process-resources 默认处理src/test/resources/下的文件，将其输出到测试的classpath目录中</li>
-<li>主要周期：<br>3.1 site 产生项目的站点文档<br>3.2 site-deploy 将项目的站点文档部署到服务器.<br>常用命令：mvn clean； mvn test; mvn clean compile; mvn clean install</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-	<div>
-	  
-	</div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2260,7 +2285,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">55</span>
+                    <span class="site-state-item-count">61</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2366,7 +2391,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">22</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
