@@ -103,19 +103,19 @@
 
 
 
-  <meta name="description" content="题目：用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。 思路： 用两个栈来实现队列的操作，首先理解队列的属性是“先进先出”，栈是先进后出。 第一个栈来装属性，第二栈来输出属性。 当第二个栈为空的时候，把第一个栈的存到第二个栈里面输出，刚好符合队列的先进先出原则。 当第二个栈不为空的时候，直接pop出去。pop出去的刚好是第一个栈前面的内容同时符合先进先出原则。&amp;">
+  <meta name="description" content="题目：用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。 思路： 用两个栈来实现队列的操作，首先理解队列的属性是“先进先出”，栈是先进后出。 第一个栈来装属性，第二栈来输出属性。 当第二个栈为空的时候，把第一个栈的存到第二个栈里面输出，刚好符合队列的先进先出原则。 当第二个栈不为空的时候，直接pop出去。pop出去的刚好是第一个栈前面的内容同时符合先进先出原则。">
 <meta name="keywords" content="JAVA,算法,队列">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用两个栈实现队列">
 <meta property="og:url" content="http://yoursite.com/2019/04/10/算法/用两个栈实现队列/index.html">
 <meta property="og:site_name" content="桃花源居">
-<meta property="og:description" content="题目：用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。 思路： 用两个栈来实现队列的操作，首先理解队列的属性是“先进先出”，栈是先进后出。 第一个栈来装属性，第二栈来输出属性。 当第二个栈为空的时候，把第一个栈的存到第二个栈里面输出，刚好符合队列的先进先出原则。 当第二个栈不为空的时候，直接pop出去。pop出去的刚好是第一个栈前面的内容同时符合先进先出原则。&amp;">
+<meta property="og:description" content="题目：用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。 思路： 用两个栈来实现队列的操作，首先理解队列的属性是“先进先出”，栈是先进后出。 第一个栈来装属性，第二栈来输出属性。 当第二个栈为空的时候，把第一个栈的存到第二个栈里面输出，刚好符合队列的先进先出原则。 当第二个栈不为空的时候，直接pop出去。pop出去的刚好是第一个栈前面的内容同时符合先进先出原则。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/9149914-ae956a378601c66a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-04-19T06:44:23.795Z">
+<meta property="og:updated_time" content="2019-04-19T06:47:38.686Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用两个栈实现队列">
-<meta name="twitter:description" content="题目：用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。 思路： 用两个栈来实现队列的操作，首先理解队列的属性是“先进先出”，栈是先进后出。 第一个栈来装属性，第二栈来输出属性。 当第二个栈为空的时候，把第一个栈的存到第二个栈里面输出，刚好符合队列的先进先出原则。 当第二个栈不为空的时候，直接pop出去。pop出去的刚好是第一个栈前面的内容同时符合先进先出原则。&amp;">
+<meta name="twitter:description" content="题目：用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。 思路： 用两个栈来实现队列的操作，首先理解队列的属性是“先进先出”，栈是先进后出。 第一个栈来装属性，第二栈来输出属性。 当第二个栈为空的时候，把第一个栈的存到第二个栈里面输出，刚好符合队列的先进先出原则。 当第二个栈不为空的时候，直接pop出去。pop出去的刚好是第一个栈前面的内容同时符合先进先出原则。">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/9149914-ae956a378601c66a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -384,7 +384,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-19 14:44:23" itemprop="dateModified" datetime="2019-04-19T14:44:23+08:00">2019-04-19</time>
+                <time title="修改时间：2019-04-19 14:47:38" itemprop="dateModified" datetime="2019-04-19T14:47:38+08:00">2019-04-19</time>
               
             
           </span>
@@ -461,7 +461,8 @@
 <li>用两个栈来实现队列的操作，首先理解队列的属性是“先进先出”，栈是先进后出。</li>
 <li>第一个栈来装属性，第二栈来输出属性。</li>
 <li>当第二个栈为空的时候，把第一个栈的存到第二个栈里面输出，刚好符合队列的先进先出原则。</li>
-<li>当第二个栈不为空的时候，直接pop出去。pop出去的刚好是第一个栈前面的内容同时符合先进先出原则。<br>&lt; !– more –&gt;</li>
+<li>当第二个栈不为空的时候，直接pop出去。pop出去的刚好是第一个栈前面的内容同时符合先进先出原则。<a id="more"></a>
+</li>
 </ol>
 <h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">package queueStudy;</div><div class="line"></div><div class="line">import java.util.Stack;</div><div class="line"></div><div class="line">public class QueueForStack &#123;</div><div class="line">    Stack&lt;Integer&gt; stackAdd = new Stack();</div><div class="line">    Stack&lt;Integer&gt; stackOut = new Stack();</div><div class="line"></div><div class="line">    public int pop() &#123;</div><div class="line">        if (stackOut.isEmpty()) &#123;</div><div class="line">            while(!stackAdd.isEmpty())&#123;</div><div class="line">                stackOut.push(stackAdd.pop());</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">            return stackOut.pop();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void push(int item) &#123;</div><div class="line">        stackAdd.push(item);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public static void main(String args[]) &#123;</div><div class="line">        QueueForStack queueForStack = new QueueForStack();</div><div class="line">        queueForStack.push(1);</div><div class="line">        queueForStack.push(2);</div><div class="line">        queueForStack.push(3);</div><div class="line">        System.out.print(queueForStack.pop());</div><div class="line">        System.out.print(queueForStack.pop());</div><div class="line">        System.out.print(queueForStack.pop());</div><div class="line">        queueForStack.push(4);</div><div class="line">        System.out.print(queueForStack.pop());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="运行结果："><a href="#运行结果：" class="headerlink" title="运行结果："></a>运行结果：</h3><p><img src="https://upload-images.jianshu.io/upload_images/9149914-ae956a378601c66a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
