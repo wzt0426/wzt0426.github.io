@@ -320,6 +320,410 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/05/springcloud/Unable to connect to Command Metric Stream./"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang"/>
+      <meta itemprop="description" content="If you want, then do it ."/>
+      <meta itemprop="image" content="/images/wzt.jpg"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/02/05/springcloud/Unable to connect to Command Metric Stream./" class="post-title-link" itemprop="url">Unable to connect to Command Metric Stream.</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+	
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-05 22:10:25" itemprop="dateCreated datePublished" datetime="2019-02-05T22:10:25+08:00">2019-02-05</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-02-27 21:03:53" itemprop="dateModified" datetime="2019-02-27T21:03:53+08:00">2019-02-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/05/springcloud/Unable to connect to Command Metric Stream./#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/02/05/springcloud/Unable to connect to Command Metric Stream./" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/02/05/springcloud/Unable to connect to Command Metric Stream./" class="leancloud_visitors" data-flag-title="Unable to connect to Command Metric Stream.">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+	
+      
+      
+
+      
+        
+          
+            <p>还是在学习hystrix监控的时候遇到了一个问题，访问过<a href="http://localhost:7913/hystrix.stream之后就显示Unable" target="_blank" rel="external">http://localhost:7913/hystrix.stream之后就显示Unable</a> to connect to Command Metric Stream。这是为什么呢？<br>我就查了一下资料，前辈说springBoot1.5是可以的，那为什么2.0就不行了呢？<br>进入源代码中查看一下，发现spring2.0的一个Servlect被注释掉了，我们只要在自己的项目里配置上这个servlet就ok了。<br>具体操作：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">@Bean</div><div class="line">	public ServletRegistrationBean getServlet() &#123;</div><div class="line">		HystrixMetricsStreamServlet streamServlet = new HystrixMetricsStreamServlet();</div><div class="line">		ServletRegistrationBean registrationBean = new ServletRegistrationBean(streamServlet);</div><div class="line">		registrationBean.setLoadOnStartup(1);</div><div class="line">		registrationBean.addUrlMappings(&quot;/hystrix.stream&quot;);</div><div class="line">		registrationBean.setName(&quot;HystrixMetricsStreamServlet&quot;);</div><div class="line">		return registrationBean;</div><div class="line">	&#125;</div></pre></td></tr></table></figure></p>
+<p>这样就可以了。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+     <div>
+      
+     </div>
+
+    
+
+    
+      
+    
+    
+
+    
+	<div>
+	  
+	</div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/02/springcloud/Spring Cloud 中的@enablehystrixdashboard注解用不了/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang"/>
+      <meta itemprop="description" content="If you want, then do it ."/>
+      <meta itemprop="image" content="/images/wzt.jpg"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/02/02/springcloud/Spring Cloud 中的@enablehystrixdashboard注解用不了/" class="post-title-link" itemprop="url">Spring Cloud 中的@enablehystrixdashboard注解用不了</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+	
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-02 22:10:25" itemprop="dateCreated datePublished" datetime="2019-02-02T22:10:25+08:00">2019-02-02</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-02-27 21:02:32" itemprop="dateModified" datetime="2019-02-27T21:02:32+08:00">2019-02-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/02/springcloud/Spring Cloud 中的@enablehystrixdashboard注解用不了/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/02/02/springcloud/Spring Cloud 中的@enablehystrixdashboard注解用不了/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/02/02/springcloud/Spring Cloud 中的@enablehystrixdashboard注解用不了/" class="leancloud_visitors" data-flag-title="Spring Cloud 中的@enablehystrixdashboard注解用不了">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+	
+      
+      
+
+      
+        
+          
+            <p>在完成前端向后台异步交互的时候，遇到了这样的一个问题。就是说在发送到后台数据，并且后台已经执行成功该方法的时候。前端并没有执行success方法或者error方法。这让我非常吃惊。开始的代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">今天学习的springcloud的hystrix的时候遇到了一个问题，就是@enablehystrixdashboard的注解无论如何都不能把她的包```import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;``` 引入。我查看了一下pom.xml 发现</div></pre></td></tr></table></figure></p>
+<p><dependency><br>            <groupid>org.springframework.cloud</groupid><br>            <artifactid>spring-cloud-netflix-hystrix-dashboard</artifactid><br>        </dependency><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">已经引入了，所以就在网上查看了一下发现是Spring Boot版本的问题。需要把依赖替换一下：</div></pre></td></tr></table></figure></p>
+<p><dependency><br>            <groupid>org.springframework.cloud</groupid><br>            <artifactid>spring-cloud-netflix-hystrix-dashboard</artifactid><br>        </dependency><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">替换成</div></pre></td></tr></table></figure></p>
+<p><dependency><br>            <groupid>com.netflix.hystrix</groupid><br>            <artifactid>hystrix-javanica</artifactid><br>            <version>RELEASE</version><br>        </dependency><br>        <dependency><br>            <groupid>org.springframework.cloud</groupid><br>            <artifactid>spring-cloud-netflix-hystrix-dashboard</artifactid><br>        </dependency><br>```<br>这样就ok了。希望大家写的时候也要多注意一下版本的问题。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+     <div>
+      
+     </div>
+
+    
+
+    
+      
+    
+    
+
+    
+	<div>
+	  
+	</div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/02/java/自定义线程池/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -894,7 +1298,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/svn/SVN的学习-add/"/>
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/svn/SVN的学习-diff和mkdir/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micky Wang"/>
@@ -914,7 +1318,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/11/04/svn/SVN的学习-add/" class="post-title-link" itemprop="url">SVN的学习-diff和mkdir</a>
+                <a href="/2018/11/04/svn/SVN的学习-diff和mkdir/" class="post-title-link" itemprop="url">SVN的学习-diff和mkdir</a>
               
             
           </h1>
@@ -977,8 +1381,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/04/svn/SVN的学习-add/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/svn/SVN的学习-add/" itemprop="commentCount"></span>
+                <a href="/2018/11/04/svn/SVN的学习-diff和mkdir/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/svn/SVN的学习-diff和mkdir/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -986,7 +1390,7 @@
 
           
           
-             <span id="/2018/11/04/svn/SVN的学习-add/" class="leancloud_visitors" data-flag-title="SVN的学习-diff和mkdir">
+             <span id="/2018/11/04/svn/SVN的学习-diff和mkdir/" class="leancloud_visitors" data-flag-title="SVN的学习-diff和mkdir">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1300,7 +1704,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/svn/SVN的学习-diff和mkdir/"/>
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/svn/SVN的学习-add/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micky Wang"/>
@@ -1320,7 +1724,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/11/04/svn/SVN的学习-diff和mkdir/" class="post-title-link" itemprop="url">SVN的学习-diff和mkdir</a>
+                <a href="/2018/11/04/svn/SVN的学习-add/" class="post-title-link" itemprop="url">SVN的学习-diff和mkdir</a>
               
             
           </h1>
@@ -1383,8 +1787,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/04/svn/SVN的学习-diff和mkdir/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/svn/SVN的学习-diff和mkdir/" itemprop="commentCount"></span>
+                <a href="/2018/11/04/svn/SVN的学习-add/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/svn/SVN的学习-add/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1392,7 +1796,7 @@
 
           
           
-             <span id="/2018/11/04/svn/SVN的学习-diff和mkdir/" class="leancloud_visitors" data-flag-title="SVN的学习-diff和mkdir">
+             <span id="/2018/11/04/svn/SVN的学习-add/" class="leancloud_visitors" data-flag-title="SVN的学习-diff和mkdir">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1503,7 +1907,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/新建文件夹 (3)/An internal error occurred durin/"/>
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/新建文件夹 (2)/python3 查询mysql数据库导出excel/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micky Wang"/>
@@ -1523,7 +1927,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/11/04/新建文件夹 (3)/An internal error occurred durin/" class="post-title-link" itemprop="url">eclipse出现Java heap space 错误。</a>
+                <a href="/2018/11/04/新建文件夹 (2)/python3 查询mysql数据库导出excel/" class="post-title-link" itemprop="url">python3 查询mysql数据库导出excel</a>
               
             
           </h1>
@@ -1549,24 +1953,12 @@
                 
               
 
-              <time title="创建时间：2018-11-04 10:10:25" itemprop="dateCreated datePublished" datetime="2018-11-04T10:10:25+08:00">2018-11-04</time>
+              <time title="创建时间：2018-11-04 10:10:25 / 修改时间：18:19:49" itemprop="dateCreated datePublished" datetime="2018-11-04T10:10:25+08:00">2018-11-04</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-01-04 15:46:43" itemprop="dateModified" datetime="2019-01-04T15:46:43+08:00">2019-01-04</time>
               
             
           </span>
@@ -1583,7 +1975,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/eclipse/" itemprop="url" rel="index"><span itemprop="name">eclipse</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a></span>
 
                 
                 
@@ -1598,8 +1990,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/04/新建文件夹 (3)/An internal error occurred durin/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/新建文件夹 (3)/An internal error occurred durin/" itemprop="commentCount"></span>
+                <a href="/2018/11/04/新建文件夹 (2)/python3 查询mysql数据库导出excel/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/新建文件夹 (2)/python3 查询mysql数据库导出excel/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1607,7 +1999,7 @@
 
           
           
-             <span id="/2018/11/04/新建文件夹 (3)/An internal error occurred durin/" class="leancloud_visitors" data-flag-title="eclipse出现Java heap space 错误。">
+             <span id="/2018/11/04/新建文件夹 (2)/python3 查询mysql数据库导出excel/" class="leancloud_visitors" data-flag-title="python3 查询mysql数据库导出excel">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1640,9 +2032,8 @@
       
         
           
-            <p>今天在做项目的时候从svn上把项目检出来之后，运行项目的时候发现出现了一些问题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">eclipse出现An internal error occurred during: &quot;Building workspace&quot;. Java heap space 错误。</div></pre></td></tr></table></figure></p>
-<p>然后eclipse超级卡的，百度了以后发现可以这样操作：<br>删除这两处<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">  第一处：</div><div class="line"></div><div class="line"> &lt;buildCommand&gt;</div><div class="line">         &lt;name&gt;org.eclipse.wst.jsdt.core.javascriptValidator&lt;/name&gt;</div><div class="line">         &lt;arguments&gt;</div><div class="line">         &lt;/arguments&gt;</div><div class="line">&lt;ildCommand&gt;</div><div class="line">第二处：</div><div class="line"> &lt;nature&gt;org.eclipse.wst.jsdt.core.jsNature&lt;/nature&gt;</div></pre></td></tr></table></figure></p>
-<p>最后重启一下eclipse运行一些自己的项目就可以了。</p>
+            <p>在项目使用中有时候会需要给用户拉一下数据，那么python脚本就很好的解决了这个问题。但是python2和python3在使用库中有些不一样。<br>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"># -*- coding: utf-8 -*-</div><div class="line">import math</div><div class="line">import sys</div><div class="line">import pymysql</div><div class="line"># pymysql.install_as_MySQLdb()</div><div class="line">import xlwt  </div><div class="line"># import MySQLdb</div><div class="line"></div><div class="line">print (sys.argv[1])</div><div class="line">print (sys.argv[2])</div><div class="line">number1 = sys.argv[1]</div><div class="line">number2 = sys.argv[2]</div><div class="line">sqlString = &apos;select  t.id, t.schoolid, t.czr, t.xqid, t.zy, q.title from questionnaire_time_grant t, tquestionnaire q where sfsc = 0 and  schoolid= ** and status= 1  AND q.isdelete = 0 AND q.id = t.wjid limit &apos; + number1 +&apos; , &apos;+ number2</div><div class="line">print (sqlString)</div><div class="line"></div><div class="line">conn = pymysql.connect(</div><div class="line">    host=&apos;****&apos;,</div><div class="line">    port=***,</div><div class="line">    user=***,</div><div class="line">    passwd=***,</div><div class="line">    db=***,</div><div class="line">    charset=&apos;utf8&apos;</div><div class="line">)</div><div class="line"></div><div class="line">print (conn.cursor())</div><div class="line"></div><div class="line">cursor = conn.cursor()</div><div class="line">count = cursor.execute(sqlString)</div><div class="line"></div><div class="line">print (count)</div><div class="line">#重置游标位置  </div><div class="line">cursor.scroll(0,mode=&apos;absolute&apos;)  </div><div class="line">#搜取所有结果  </div><div class="line">results = cursor.fetchall()</div><div class="line"># fields = cursor.description</div><div class="line">fields = [&apos;id&apos;,&apos;schoolid&apos;,&apos;czr&apos;,&apos;xqid&apos;,&apos;zy&apos;,&apos;title&apos;]</div><div class="line">print (fields)</div><div class="line">#print (results)</div><div class="line">wbk = xlwt.Workbook(encoding=&apos;utf-8&apos;)</div><div class="line">sheet = wbk.add_sheet(&apos;test1&apos;,cell_overwrite_ok=True)</div><div class="line">style = xlwt.XFStyle()#初始化样式</div><div class="line">font = xlwt.Font()#创建字体</div><div class="line">font.name = u&apos;微软雅黑&apos; #字体类型</div><div class="line">font.colour_index = 6   #字体颜色</div><div class="line">print (len(fields))</div><div class="line"># for ifs in range(0,len(fields)):  </div><div class="line">#     sheet.write(0,ifs,fields[ifs][0]) </div><div class="line">for ifs in range(0,len(fields)): </div><div class="line">	sheet.write(0,ifs,fields[ifs])</div><div class="line">ics=1  </div><div class="line">jcs=0  </div><div class="line">for ics in range(1,len(results)+1):  </div><div class="line">    for jcs in range(0,len(fields)):  </div><div class="line">        sheet.write(ics,jcs,results[ics-1][jcs]) </div><div class="line">cursor.close()</div><div class="line"></div><div class="line">conn.close()</div><div class="line">wbk.save(&apos;test4.xls&apos;)</div></pre></td></tr></table></figure></p>
+<p>刚学python，有什么问题欢迎交流。</p>
 
           
         
@@ -1705,7 +2096,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/新建文件夹 (2)/MYSQL中如何把三条数据分组时候按照两条数据分组/"/>
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/新建文件夹 (2)/sublime选中全部某个字段进行批量操作/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micky Wang"/>
@@ -1725,7 +2116,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/11/04/新建文件夹 (2)/MYSQL中如何把三条数据分组时候按照两条数据分组/" class="post-title-link" itemprop="url">MYSQL中如何把三条数据分组时候按照两条数据分组</a>
+                <a href="/2018/11/04/新建文件夹 (2)/sublime选中全部某个字段进行批量操作/" class="post-title-link" itemprop="url">sublime选中全部某个字段进行批量操作</a>
               
             
           </h1>
@@ -1751,7 +2142,7 @@
                 
               
 
-              <time title="创建时间：2018-11-04 10:10:25 / 修改时间：18:16:16" itemprop="dateCreated datePublished" datetime="2018-11-04T10:10:25+08:00">2018-11-04</time>
+              <time title="创建时间：2018-11-04 10:10:25 / 修改时间：18:25:44" itemprop="dateCreated datePublished" datetime="2018-11-04T10:10:25+08:00">2018-11-04</time>
             
 
             
@@ -1773,7 +2164,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/sublime/" itemprop="url" rel="index"><span itemprop="name">sublime</span></a></span>
 
                 
                 
@@ -1788,8 +2179,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/04/新建文件夹 (2)/MYSQL中如何把三条数据分组时候按照两条数据分组/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/新建文件夹 (2)/MYSQL中如何把三条数据分组时候按照两条数据分组/" itemprop="commentCount"></span>
+                <a href="/2018/11/04/新建文件夹 (2)/sublime选中全部某个字段进行批量操作/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/新建文件夹 (2)/sublime选中全部某个字段进行批量操作/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1797,7 +2188,7 @@
 
           
           
-             <span id="/2018/11/04/新建文件夹 (2)/MYSQL中如何把三条数据分组时候按照两条数据分组/" class="leancloud_visitors" data-flag-title="MYSQL中如何把三条数据分组时候按照两条数据分组">
+             <span id="/2018/11/04/新建文件夹 (2)/sublime选中全部某个字段进行批量操作/" class="leancloud_visitors" data-flag-title="sublime选中全部某个字段进行批量操作">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1830,390 +2221,10 @@
       
         
           
-            <p>今天在完成pm的时候，发现了这样的一条需求。我的层次表中有三条数分别是专升本，高起本，专科三条数据。但是查询分组的时候却需要根据专科本科来进行分组本科为（高起本+专升本）。直接使用group by 肯定是不行的。这样出来的就会是三组数据。最后根据学习发现可以使用 <figure class="highlight plain"><figcaption><span>when``` 。用嵌套语句来做。比如这样：</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">select id ,ccmc, CASE ccmc</div><div class="line">	WHEN &apos;专科&apos; THEN</div><div class="line">		&apos;专科&apos;</div><div class="line">	ELSE</div><div class="line">		&apos;本科&apos;</div><div class="line">END as number1</div><div class="line"> from 表A</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-     <div>
-      
-     </div>
-
-    
-
-    
-      
-    
-    
-
-    
-	<div>
-	  
-	</div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/新建文件夹 (2)/SQL如何在分组后的某个字段中加条件/"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang"/>
-      <meta itemprop="description" content="If you want, then do it ."/>
-      <meta itemprop="image" content="/images/wzt.jpg"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/11/04/新建文件夹 (2)/SQL如何在分组后的某个字段中加条件/" class="post-title-link" itemprop="url">SQL如何在分组后的某个字段中加条件</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-	
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-04 10:10:25 / 修改时间：18:17:18" itemprop="dateCreated datePublished" datetime="2018-11-04T10:10:25+08:00">2018-11-04</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/04/新建文件夹 (2)/SQL如何在分组后的某个字段中加条件/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/新建文件夹 (2)/SQL如何在分组后的某个字段中加条件/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/11/04/新建文件夹 (2)/SQL如何在分组后的某个字段中加条件/" class="leancloud_visitors" data-flag-title="SQL如何在分组后的某个字段中加条件">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-	
-      
-      
-
-      
-        
-          
-            <p>在工作中会遇到各种各样的需求，比如会让你统计一些数据的数量，但是在拿数量的时候条件还不一样。这样的话仅仅在where中写条件就不行了，一个统计在校生的个数，一个要统计在校女生的个数。那个这个判断是否为女生的判断就不能写在where中了。我们可以在count的时候加上每个统计所需要的条件比如：<br><code>count( IF ( njid =1 and zxzt = 0, TRUE, NULL ) )</code><br>这样就是统计原有的条件中再加上年纪id为1，zxzt为0的条件再进行统计。<br>ps. 这种首字母拼音的格式非常垃圾，但是公司要求的，求不喷。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-     <div>
-      
-     </div>
-
-    
-
-    
-      
-    
-    
-
-    
-	<div>
-	  
-	</div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/新建文件夹 (2)/选择排序与冒泡排序/"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang"/>
-      <meta itemprop="description" content="If you want, then do it ."/>
-      <meta itemprop="image" content="/images/wzt.jpg"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/11/04/新建文件夹 (2)/选择排序与冒泡排序/" class="post-title-link" itemprop="url">选择排序与冒泡排序</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-	
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-04 10:10:25 / 修改时间：18:18:44" itemprop="dateCreated datePublished" datetime="2018-11-04T10:10:25+08:00">2018-11-04</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/04/新建文件夹 (2)/选择排序与冒泡排序/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/新建文件夹 (2)/选择排序与冒泡排序/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/11/04/新建文件夹 (2)/选择排序与冒泡排序/" class="leancloud_visitors" data-flag-title="选择排序与冒泡排序">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-	
-      
-      
-
-      
-        
-          
-            <p>在一些面试和应用中会遇到很多种需要排序的算法，这里就聊一下选择排序和冒泡排序。首先选择排序：</p>
-<ol>
-<li><p>选择排序<br>选择排序主要就是先选出列表中最小的数值，然后依次比较放到起始位置。从剩余未排序元素中继续寻找最小元素，然后放到排序序列起始位置。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">public selectSort(int number[])&#123;</div><div class="line">     int size = numbers.length;</div><div class="line">　    int temp;</div><div class="line">    //外侧循环</div><div class="line">    for (int i=0;i&lt;size;i++) &#123;</div><div class="line">        int k = i;</div><div class="line">        //内侧循环</div><div class="line">        for (int j =size-1;j&gt;i;j--) &#123;</div><div class="line">        //取出最小值</div><div class="line">         if (number[j]&lt;number[k]) &#123;</div><div class="line">            k=j;</div><div class="line">         &#125;</div><div class="line">        &#125;</div><div class="line">        temp = number[k];</div><div class="line">        number[i] = number[k];</div><div class="line">        bumber[k] = temp;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>冒泡排序<br>冒泡排序主要是依次两两进行比较，它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">public static void bubbleSort(int[] a) &#123;</div><div class="line">    int temp;</div><div class="line">    int size = a.length;</div><div class="line">    for(int i=1; i&lt;size; i++) &#123;</div><div class="line">        for(int j=0; j&lt;size-i; j++) &#123;</div><div class="line">            if(a[j] &lt; a[j+1]) &#123;</div><div class="line">                temp = a[j];</div><div class="line">                a[j]=a[j+1];</div><div class="line">                a[j+1]=temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        for(int aa : a)</div><div class="line">            System.out.print(aa+&quot;,&quot;);</div><div class="line">        System.out.println();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
+            <ol>
+<li>首先选中，ctrl+f</li>
+<li>alert+enter.</li>
+<li>搞定。</li>
 </ol>
 
           
@@ -2313,7 +2324,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">65</span>
+                    <span class="site-state-item-count">67</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2362,7 +2373,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">18</span>
+                      
+                    
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">分类</span>
                   
                 </div>
@@ -2427,7 +2440,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

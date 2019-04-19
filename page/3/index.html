@@ -320,196 +320,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/新建文件夹 (2)/python3获取网页上的图片/"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang"/>
-      <meta itemprop="description" content="If you want, then do it ."/>
-      <meta itemprop="image" content="/images/wzt.jpg"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/11/04/新建文件夹 (2)/python3获取网页上的图片/" class="post-title-link" itemprop="url">python3获取网页上的图片</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-	
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-04 10:10:25 / 修改时间：18:20:43" itemprop="dateCreated datePublished" datetime="2018-11-04T10:10:25+08:00">2018-11-04</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/04/新建文件夹 (2)/python3获取网页上的图片/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/新建文件夹 (2)/python3获取网页上的图片/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/11/04/新建文件夹 (2)/python3获取网页上的图片/" class="leancloud_visitors" data-flag-title="python3获取网页上的图片">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-	
-      
-      
-
-      
-        
-          
-            <p>由于今天工作早早做完，就想从网上找一些偶像的照片等写自己的网站使用。然后又正在学习python就想着扒一些图片。但是发现有时候网页上出现中文就不行，后来还是解决了，棒棒的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">import urllib.request</div><div class="line">import re</div><div class="line">from urllib.request import quote, unquote</div><div class="line"></div><div class="line">url = &quot;https://baike.baidu.com/item/刘亦菲/136156?fr=aladdin&quot; #http://findicons.com/pack/2787/beautiful_flat_icons</div><div class="line"># utf8编码，指定安全字符。</div><div class="line">url = quote(url, safe=&quot;;/?:@&amp;=+$,&quot;, encoding=&quot;utf-8&quot;)</div><div class="line">webPage=urllib.request.urlopen(url) #https://baike.baidu.com/item/刘亦菲/136156?fr=aladdin</div><div class="line">#print (webPage)</div><div class="line">data = webPage.read()</div><div class="line">data = data.decode(&apos;UTF-8&apos;)</div><div class="line">#print (data)</div><div class="line">k = re.split(r&apos;\s+&apos;,data)</div><div class="line"></div><div class="line">s = []</div><div class="line">sp = []</div><div class="line">si = []</div><div class="line">for i in k :</div><div class="line">    if (re.match(r&apos;src&apos;,i) or re.match(r&apos;href&apos;,i)):</div><div class="line">        if (not re.match(r&apos;href=&quot;#&quot;&apos;,i)):</div><div class="line">            if (re.match(r&apos;.*?png&quot;&apos;,i) or re.match(r&apos;.*?ico&quot;&apos;,i) or re.match(r&apos;.*?jpg&quot;&apos;,i) ):</div><div class="line">                if (re.match(r&apos;src&apos;,i)):</div><div class="line">                    s.append(i)</div><div class="line"></div><div class="line">for it in s :</div><div class="line">    if (re.match(r&apos;.*?png&quot;&apos;,it)):</div><div class="line">        sp.append(it)</div><div class="line"></div><div class="line">for it in s :</div><div class="line">    if (re.match(r&apos;.*?jpg&quot;&apos;,it)):</div><div class="line">        sp.append(it)</div><div class="line"></div><div class="line">cnt = 0</div><div class="line">cou = 1</div><div class="line">for it in sp:</div><div class="line">    m = re.search(r&apos;src=&quot;(.*?)&quot;&apos;,it)</div><div class="line">    iturl = m.group(1)</div><div class="line">    print(iturl)</div><div class="line">    if (iturl[0]==&apos;/&apos;):</div><div class="line">        continue;</div><div class="line">    web = urllib.request.urlopen(iturl)</div><div class="line">    itdata = web.read()</div><div class="line">    if (cnt%3==1 and cnt&gt;=4 and cou&lt;=30):</div><div class="line">        f = open(&apos;d:/image/&apos;+str(cou)+&apos;.png&apos;,&quot;wb&quot;)</div><div class="line">        cou = cou+1</div><div class="line">        f.write(itdata)</div><div class="line">        f.close()</div><div class="line">        print(it)</div><div class="line">    cnt = cnt+1</div></pre></td></tr></table></figure></p>
-<p>如图所示：<br><img src="https://upload-images.jianshu.io/upload_images/9149914-877f41fa74562077.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="截图.png"></p>
-<p>刚学python，有什么问题欢迎交流。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-     <div>
-      
-     </div>
-
-    
-
-    
-      
-    
-    
-
-    
-	<div>
-	  
-	</div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/新建文件夹 (2)/mavan的生命周期/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -703,7 +513,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/新建文件夹 (2)/python3 查询mysql数据库导出excel/"/>
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/新建文件夹 (2)/SQL如何在分组后的某个字段中加条件/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micky Wang"/>
@@ -723,7 +533,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/11/04/新建文件夹 (2)/python3 查询mysql数据库导出excel/" class="post-title-link" itemprop="url">python3 查询mysql数据库导出excel</a>
+                <a href="/2018/11/04/新建文件夹 (2)/SQL如何在分组后的某个字段中加条件/" class="post-title-link" itemprop="url">SQL如何在分组后的某个字段中加条件</a>
               
             
           </h1>
@@ -749,7 +559,579 @@
                 
               
 
-              <time title="创建时间：2018-11-04 10:10:25 / 修改时间：18:19:49" itemprop="dateCreated datePublished" datetime="2018-11-04T10:10:25+08:00">2018-11-04</time>
+              <time title="创建时间：2018-11-04 10:10:25 / 修改时间：18:17:18" itemprop="dateCreated datePublished" datetime="2018-11-04T10:10:25+08:00">2018-11-04</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/04/新建文件夹 (2)/SQL如何在分组后的某个字段中加条件/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/新建文件夹 (2)/SQL如何在分组后的某个字段中加条件/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/11/04/新建文件夹 (2)/SQL如何在分组后的某个字段中加条件/" class="leancloud_visitors" data-flag-title="SQL如何在分组后的某个字段中加条件">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+	
+      
+      
+
+      
+        
+          
+            <p>在工作中会遇到各种各样的需求，比如会让你统计一些数据的数量，但是在拿数量的时候条件还不一样。这样的话仅仅在where中写条件就不行了，一个统计在校生的个数，一个要统计在校女生的个数。那个这个判断是否为女生的判断就不能写在where中了。我们可以在count的时候加上每个统计所需要的条件比如：<br><code>count( IF ( njid =1 and zxzt = 0, TRUE, NULL ) )</code><br>这样就是统计原有的条件中再加上年纪id为1，zxzt为0的条件再进行统计。<br>ps. 这种首字母拼音的格式非常垃圾，但是公司要求的，求不喷。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+     <div>
+      
+     </div>
+
+    
+
+    
+      
+    
+    
+
+    
+	<div>
+	  
+	</div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/新建文件夹 (2)/MYSQL中如何把三条数据分组时候按照两条数据分组/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang"/>
+      <meta itemprop="description" content="If you want, then do it ."/>
+      <meta itemprop="image" content="/images/wzt.jpg"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/11/04/新建文件夹 (2)/MYSQL中如何把三条数据分组时候按照两条数据分组/" class="post-title-link" itemprop="url">MYSQL中如何把三条数据分组时候按照两条数据分组</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+	
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-04 10:10:25 / 修改时间：18:16:16" itemprop="dateCreated datePublished" datetime="2018-11-04T10:10:25+08:00">2018-11-04</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/04/新建文件夹 (2)/MYSQL中如何把三条数据分组时候按照两条数据分组/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/新建文件夹 (2)/MYSQL中如何把三条数据分组时候按照两条数据分组/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/11/04/新建文件夹 (2)/MYSQL中如何把三条数据分组时候按照两条数据分组/" class="leancloud_visitors" data-flag-title="MYSQL中如何把三条数据分组时候按照两条数据分组">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+	
+      
+      
+
+      
+        
+          
+            <p>今天在完成pm的时候，发现了这样的一条需求。我的层次表中有三条数分别是专升本，高起本，专科三条数据。但是查询分组的时候却需要根据专科本科来进行分组本科为（高起本+专升本）。直接使用group by 肯定是不行的。这样出来的就会是三组数据。最后根据学习发现可以使用 <figure class="highlight plain"><figcaption><span>when``` 。用嵌套语句来做。比如这样：</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">select id ,ccmc, CASE ccmc</div><div class="line">	WHEN &apos;专科&apos; THEN</div><div class="line">		&apos;专科&apos;</div><div class="line">	ELSE</div><div class="line">		&apos;本科&apos;</div><div class="line">END as number1</div><div class="line"> from 表A</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+     <div>
+      
+     </div>
+
+    
+
+    
+      
+    
+    
+
+    
+	<div>
+	  
+	</div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/新建文件夹 (2)/选择排序与冒泡排序/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang"/>
+      <meta itemprop="description" content="If you want, then do it ."/>
+      <meta itemprop="image" content="/images/wzt.jpg"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/11/04/新建文件夹 (2)/选择排序与冒泡排序/" class="post-title-link" itemprop="url">选择排序与冒泡排序</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+	
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-04 10:10:25 / 修改时间：18:18:44" itemprop="dateCreated datePublished" datetime="2018-11-04T10:10:25+08:00">2018-11-04</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/04/新建文件夹 (2)/选择排序与冒泡排序/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/新建文件夹 (2)/选择排序与冒泡排序/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/11/04/新建文件夹 (2)/选择排序与冒泡排序/" class="leancloud_visitors" data-flag-title="选择排序与冒泡排序">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+	
+      
+      
+
+      
+        
+          
+            <p>在一些面试和应用中会遇到很多种需要排序的算法，这里就聊一下选择排序和冒泡排序。首先选择排序：</p>
+<ol>
+<li><p>选择排序<br>选择排序主要就是先选出列表中最小的数值，然后依次比较放到起始位置。从剩余未排序元素中继续寻找最小元素，然后放到排序序列起始位置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">public selectSort(int number[])&#123;</div><div class="line">     int size = numbers.length;</div><div class="line">　    int temp;</div><div class="line">    //外侧循环</div><div class="line">    for (int i=0;i&lt;size;i++) &#123;</div><div class="line">        int k = i;</div><div class="line">        //内侧循环</div><div class="line">        for (int j =size-1;j&gt;i;j--) &#123;</div><div class="line">        //取出最小值</div><div class="line">         if (number[j]&lt;number[k]) &#123;</div><div class="line">            k=j;</div><div class="line">         &#125;</div><div class="line">        &#125;</div><div class="line">        temp = number[k];</div><div class="line">        number[i] = number[k];</div><div class="line">        bumber[k] = temp;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>冒泡排序<br>冒泡排序主要是依次两两进行比较，它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">public static void bubbleSort(int[] a) &#123;</div><div class="line">    int temp;</div><div class="line">    int size = a.length;</div><div class="line">    for(int i=1; i&lt;size; i++) &#123;</div><div class="line">        for(int j=0; j&lt;size-i; j++) &#123;</div><div class="line">            if(a[j] &lt; a[j+1]) &#123;</div><div class="line">                temp = a[j];</div><div class="line">                a[j]=a[j+1];</div><div class="line">                a[j+1]=temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        for(int aa : a)</div><div class="line">            System.out.print(aa+&quot;,&quot;);</div><div class="line">        System.out.println();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+     <div>
+      
+     </div>
+
+    
+
+    
+      
+    
+    
+
+    
+	<div>
+	  
+	</div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/新建文件夹 (2)/python3获取网页上的图片/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang"/>
+      <meta itemprop="description" content="If you want, then do it ."/>
+      <meta itemprop="image" content="/images/wzt.jpg"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/11/04/新建文件夹 (2)/python3获取网页上的图片/" class="post-title-link" itemprop="url">python3获取网页上的图片</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+	
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-04 10:10:25 / 修改时间：18:20:43" itemprop="dateCreated datePublished" datetime="2018-11-04T10:10:25+08:00">2018-11-04</time>
             
 
             
@@ -786,8 +1168,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/04/新建文件夹 (2)/python3 查询mysql数据库导出excel/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/新建文件夹 (2)/python3 查询mysql数据库导出excel/" itemprop="commentCount"></span>
+                <a href="/2018/11/04/新建文件夹 (2)/python3获取网页上的图片/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/新建文件夹 (2)/python3获取网页上的图片/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -795,7 +1177,7 @@
 
           
           
-             <span id="/2018/11/04/新建文件夹 (2)/python3 查询mysql数据库导出excel/" class="leancloud_visitors" data-flag-title="python3 查询mysql数据库导出excel">
+             <span id="/2018/11/04/新建文件夹 (2)/python3获取网页上的图片/" class="leancloud_visitors" data-flag-title="python3获取网页上的图片">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -828,7 +1210,8 @@
       
         
           
-            <p>在项目使用中有时候会需要给用户拉一下数据，那么python脚本就很好的解决了这个问题。但是python2和python3在使用库中有些不一样。<br>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"># -*- coding: utf-8 -*-</div><div class="line">import math</div><div class="line">import sys</div><div class="line">import pymysql</div><div class="line"># pymysql.install_as_MySQLdb()</div><div class="line">import xlwt  </div><div class="line"># import MySQLdb</div><div class="line"></div><div class="line">print (sys.argv[1])</div><div class="line">print (sys.argv[2])</div><div class="line">number1 = sys.argv[1]</div><div class="line">number2 = sys.argv[2]</div><div class="line">sqlString = &apos;select  t.id, t.schoolid, t.czr, t.xqid, t.zy, q.title from questionnaire_time_grant t, tquestionnaire q where sfsc = 0 and  schoolid= ** and status= 1  AND q.isdelete = 0 AND q.id = t.wjid limit &apos; + number1 +&apos; , &apos;+ number2</div><div class="line">print (sqlString)</div><div class="line"></div><div class="line">conn = pymysql.connect(</div><div class="line">    host=&apos;****&apos;,</div><div class="line">    port=***,</div><div class="line">    user=***,</div><div class="line">    passwd=***,</div><div class="line">    db=***,</div><div class="line">    charset=&apos;utf8&apos;</div><div class="line">)</div><div class="line"></div><div class="line">print (conn.cursor())</div><div class="line"></div><div class="line">cursor = conn.cursor()</div><div class="line">count = cursor.execute(sqlString)</div><div class="line"></div><div class="line">print (count)</div><div class="line">#重置游标位置  </div><div class="line">cursor.scroll(0,mode=&apos;absolute&apos;)  </div><div class="line">#搜取所有结果  </div><div class="line">results = cursor.fetchall()</div><div class="line"># fields = cursor.description</div><div class="line">fields = [&apos;id&apos;,&apos;schoolid&apos;,&apos;czr&apos;,&apos;xqid&apos;,&apos;zy&apos;,&apos;title&apos;]</div><div class="line">print (fields)</div><div class="line">#print (results)</div><div class="line">wbk = xlwt.Workbook(encoding=&apos;utf-8&apos;)</div><div class="line">sheet = wbk.add_sheet(&apos;test1&apos;,cell_overwrite_ok=True)</div><div class="line">style = xlwt.XFStyle()#初始化样式</div><div class="line">font = xlwt.Font()#创建字体</div><div class="line">font.name = u&apos;微软雅黑&apos; #字体类型</div><div class="line">font.colour_index = 6   #字体颜色</div><div class="line">print (len(fields))</div><div class="line"># for ifs in range(0,len(fields)):  </div><div class="line">#     sheet.write(0,ifs,fields[ifs][0]) </div><div class="line">for ifs in range(0,len(fields)): </div><div class="line">	sheet.write(0,ifs,fields[ifs])</div><div class="line">ics=1  </div><div class="line">jcs=0  </div><div class="line">for ics in range(1,len(results)+1):  </div><div class="line">    for jcs in range(0,len(fields)):  </div><div class="line">        sheet.write(ics,jcs,results[ics-1][jcs]) </div><div class="line">cursor.close()</div><div class="line"></div><div class="line">conn.close()</div><div class="line">wbk.save(&apos;test4.xls&apos;)</div></pre></td></tr></table></figure></p>
+            <p>由于今天工作早早做完，就想从网上找一些偶像的照片等写自己的网站使用。然后又正在学习python就想着扒一些图片。但是发现有时候网页上出现中文就不行，后来还是解决了，棒棒的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">import urllib.request</div><div class="line">import re</div><div class="line">from urllib.request import quote, unquote</div><div class="line"></div><div class="line">url = &quot;https://baike.baidu.com/item/刘亦菲/136156?fr=aladdin&quot; #http://findicons.com/pack/2787/beautiful_flat_icons</div><div class="line"># utf8编码，指定安全字符。</div><div class="line">url = quote(url, safe=&quot;;/?:@&amp;=+$,&quot;, encoding=&quot;utf-8&quot;)</div><div class="line">webPage=urllib.request.urlopen(url) #https://baike.baidu.com/item/刘亦菲/136156?fr=aladdin</div><div class="line">#print (webPage)</div><div class="line">data = webPage.read()</div><div class="line">data = data.decode(&apos;UTF-8&apos;)</div><div class="line">#print (data)</div><div class="line">k = re.split(r&apos;\s+&apos;,data)</div><div class="line"></div><div class="line">s = []</div><div class="line">sp = []</div><div class="line">si = []</div><div class="line">for i in k :</div><div class="line">    if (re.match(r&apos;src&apos;,i) or re.match(r&apos;href&apos;,i)):</div><div class="line">        if (not re.match(r&apos;href=&quot;#&quot;&apos;,i)):</div><div class="line">            if (re.match(r&apos;.*?png&quot;&apos;,i) or re.match(r&apos;.*?ico&quot;&apos;,i) or re.match(r&apos;.*?jpg&quot;&apos;,i) ):</div><div class="line">                if (re.match(r&apos;src&apos;,i)):</div><div class="line">                    s.append(i)</div><div class="line"></div><div class="line">for it in s :</div><div class="line">    if (re.match(r&apos;.*?png&quot;&apos;,it)):</div><div class="line">        sp.append(it)</div><div class="line"></div><div class="line">for it in s :</div><div class="line">    if (re.match(r&apos;.*?jpg&quot;&apos;,it)):</div><div class="line">        sp.append(it)</div><div class="line"></div><div class="line">cnt = 0</div><div class="line">cou = 1</div><div class="line">for it in sp:</div><div class="line">    m = re.search(r&apos;src=&quot;(.*?)&quot;&apos;,it)</div><div class="line">    iturl = m.group(1)</div><div class="line">    print(iturl)</div><div class="line">    if (iturl[0]==&apos;/&apos;):</div><div class="line">        continue;</div><div class="line">    web = urllib.request.urlopen(iturl)</div><div class="line">    itdata = web.read()</div><div class="line">    if (cnt%3==1 and cnt&gt;=4 and cou&lt;=30):</div><div class="line">        f = open(&apos;d:/image/&apos;+str(cou)+&apos;.png&apos;,&quot;wb&quot;)</div><div class="line">        cou = cou+1</div><div class="line">        f.write(itdata)</div><div class="line">        f.close()</div><div class="line">        print(it)</div><div class="line">    cnt = cnt+1</div></pre></td></tr></table></figure></p>
+<p>如图所示：<br><img src="https://upload-images.jianshu.io/upload_images/9149914-877f41fa74562077.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="截图.png"></p>
 <p>刚学python，有什么问题欢迎交流。</p>
 
           
@@ -892,7 +1275,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/新建文件夹 (2)/sublime选中全部某个字段进行批量操作/"/>
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/新建文件夹 (3)/An internal error occurred durin/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micky Wang"/>
@@ -912,7 +1295,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/11/04/新建文件夹 (2)/sublime选中全部某个字段进行批量操作/" class="post-title-link" itemprop="url">sublime选中全部某个字段进行批量操作</a>
+                <a href="/2018/11/04/新建文件夹 (3)/An internal error occurred durin/" class="post-title-link" itemprop="url">eclipse出现Java heap space 错误。</a>
               
             
           </h1>
@@ -938,12 +1321,24 @@
                 
               
 
-              <time title="创建时间：2018-11-04 10:10:25 / 修改时间：18:25:44" itemprop="dateCreated datePublished" datetime="2018-11-04T10:10:25+08:00">2018-11-04</time>
+              <time title="创建时间：2018-11-04 10:10:25" itemprop="dateCreated datePublished" datetime="2018-11-04T10:10:25+08:00">2018-11-04</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-04 15:46:43" itemprop="dateModified" datetime="2019-01-04T15:46:43+08:00">2019-01-04</time>
               
             
           </span>
@@ -960,7 +1355,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/sublime/" itemprop="url" rel="index"><span itemprop="name">sublime</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/eclipse/" itemprop="url" rel="index"><span itemprop="name">eclipse</span></a></span>
 
                 
                 
@@ -975,8 +1370,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/04/新建文件夹 (2)/sublime选中全部某个字段进行批量操作/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/新建文件夹 (2)/sublime选中全部某个字段进行批量操作/" itemprop="commentCount"></span>
+                <a href="/2018/11/04/新建文件夹 (3)/An internal error occurred durin/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/04/新建文件夹 (3)/An internal error occurred durin/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -984,7 +1379,7 @@
 
           
           
-             <span id="/2018/11/04/新建文件夹 (2)/sublime选中全部某个字段进行批量操作/" class="leancloud_visitors" data-flag-title="sublime选中全部某个字段进行批量操作">
+             <span id="/2018/11/04/新建文件夹 (3)/An internal error occurred durin/" class="leancloud_visitors" data-flag-title="eclipse出现Java heap space 错误。">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1017,11 +1412,9 @@
       
         
           
-            <ol>
-<li>首先选中，ctrl+f</li>
-<li>alert+enter.</li>
-<li>搞定。</li>
-</ol>
+            <p>今天在做项目的时候从svn上把项目检出来之后，运行项目的时候发现出现了一些问题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">eclipse出现An internal error occurred during: &quot;Building workspace&quot;. Java heap space 错误。</div></pre></td></tr></table></figure></p>
+<p>然后eclipse超级卡的，百度了以后发现可以这样操作：<br>删除这两处<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">  第一处：</div><div class="line"></div><div class="line"> &lt;buildCommand&gt;</div><div class="line">         &lt;name&gt;org.eclipse.wst.jsdt.core.javascriptValidator&lt;/name&gt;</div><div class="line">         &lt;arguments&gt;</div><div class="line">         &lt;/arguments&gt;</div><div class="line">&lt;ildCommand&gt;</div><div class="line">第二处：</div><div class="line"> &lt;nature&gt;org.eclipse.wst.jsdt.core.jsNature&lt;/nature&gt;</div></pre></td></tr></table></figure></p>
+<p>最后重启一下eclipse运行一些自己的项目就可以了。</p>
 
           
         
@@ -1875,413 +2268,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/新建文件夹/java笔试2/"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang"/>
-      <meta itemprop="description" content="If you want, then do it ."/>
-      <meta itemprop="image" content="/images/wzt.jpg"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/08/16/新建文件夹/java笔试2/" class="post-title-link" itemprop="url">java笔试题1</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-	
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-08-16 16:20:30" itemprop="dateCreated datePublished" datetime="2018-08-16T16:20:30+08:00">2018-08-16</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-08-21 18:40:26" itemprop="dateModified" datetime="2018-08-21T18:40:26+08:00">2018-08-21</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/08/16/新建文件夹/java笔试2/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/08/16/新建文件夹/java笔试2/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/08/16/新建文件夹/java笔试2/" class="leancloud_visitors" data-flag-title="java笔试题1">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-	
-      
-      
-
-      
-        
-          
-            <ol>
-<li>== 和equal方法的区别<br>答： 1. 1.基本数据类型，也称原始数据类型。byte,short,char,int,long,float,double,boolean<br>他们之间的比较，应用双等号（==）,比较的是他们的值。<br>2.复合数据类型(类)<br>当他们用（==）进行比较的时候，比较的是他们在内存中的存放地址，所以，除非是同一个new出来的对象，他们的比较后的结果为true，否则比较后结果为false。 JAVA当中所有的类都是继承于Object这个基类的，在Object中的基类中定义了一个equals的方法，这个方法的初始行为是比较对象的内存地 址，但在一些类库当中这个方法被覆盖掉了，如String,Integer,Date在这些类当中equals有其自身的实现，而不再是比较类在堆内存中的存放地址了。</li>
-<li>HashMap和HashTable区别<br>答： 1.hashmap和hashTable都继承了Map,CloneAble,Serializable三个接口，但是hashMap继承的是AbstractMap而hashTable继承的是Dictionary。2.hashMap可以接受null的key和value，但是hashTable如果有null值会NullPointerException。3. hashTable是线程安全的，hashMap不是线程安全的。因为hashTable的get方法中用了synchronized描述符。</li>
-<li>HashSet和TreeSet的区别<br>答： 1.hashSet底层用的是hashmap，TreeSet底层用的是treemap。2. 存储时保证数据唯一性依据不同：HashSet是通过复写hashCode()方法和equals()方法来保证的，而HashSet通过Compareable接口的compareTo()方法来保证的。3. HashSet无序，TreeSet有序。4. hashset底层结构用的是hash表，TreeSet底层用的是二叉树。</li>
-<li>.ArrayList和LinkedList的区别<br>答： 1.ArrayList是实现了基于动态数组的数据结构，LinkedList基于链表的数据结构。2.对于随机访问get和set，ArrayList觉得优于LinkedList，因为LinkedList要移动指针。3. 对于新增和删除操作add和remove，LinedList比较占优势，因为ArrayList要移动数据。4.线程不安全。</li>
-<li>假如你正在开发一个系统的登录程序，请简述你是如何实现记住用户名和密码这个操作的，并如何实现<br>答: 首先在登录的时候会进行查询cookie里面是否有我要的信息，如果有的话。拿出来放到form表单里面。如果没有登陆成功以后，把需要的信息放在cookie中并且付一个时间。</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-     <div>
-      
-     </div>
-
-    
-
-    
-      
-    
-    
-
-    
-	<div>
-	  
-	</div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/15/新建文件夹 (2)/查询所有的重复记录/"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang"/>
-      <meta itemprop="description" content="If you want, then do it ."/>
-      <meta itemprop="image" content="/images/wzt.jpg"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/08/15/新建文件夹 (2)/查询所有的重复记录/" class="post-title-link" itemprop="url">查询所有的重复记录</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-	
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-08-15 20:10:25" itemprop="dateCreated datePublished" datetime="2018-08-15T20:10:25+08:00">2018-08-15</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-08-21 18:33:34" itemprop="dateModified" datetime="2018-08-21T18:33:34+08:00">2018-08-21</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/08/15/新建文件夹 (2)/查询所有的重复记录/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/08/15/新建文件夹 (2)/查询所有的重复记录/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/08/15/新建文件夹 (2)/查询所有的重复记录/" class="leancloud_visitors" data-flag-title="查询所有的重复记录">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-	
-      
-      
-
-      
-        
-          
-            <p>如何查询一个表内的所有重复记录：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SELECT * FROM students s WHERE s.kemu IN(SELECT sd.kemu FROM students sd GROUP BY sd.kemu HAVING COUNT(sd.kemu) &gt;1);</div></pre></td></tr></table></figure></p>
-<p>查询出来之后，如何删除这些重复的记录：<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">DELETE FROM students WHERE id not in (select maxid from (SELECT MAX(ID) AS maxid FROM students GROUP BY kemu) b)</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-     <div>
-      
-     </div>
-
-    
-
-    
-      
-    
-    
-
-    
-	<div>
-	  
-	</div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2333,7 +2319,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">65</span>
+                    <span class="site-state-item-count">67</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2382,7 +2368,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">18</span>
+                      
+                    
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">分类</span>
                   
                 </div>
@@ -2447,7 +2435,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
