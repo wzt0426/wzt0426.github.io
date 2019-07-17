@@ -320,7 +320,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2018/03/26/新建文件夹/java面试题2/"/>
+    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2018/03/26/java笔试面试/设计模式-单例模式/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micky Wang"/>
@@ -340,7 +340,186 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/26/新建文件夹/java面试题2/" class="post-title-link" itemprop="url">java面试题2</a>
+                <a href="/2018/03/26/java笔试面试/设计模式-单例模式/" class="post-title-link" itemprop="url">设计模式-单例模式</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+	
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-03-26 21:07:17 / 修改时间：21:59:26" itemprop="dateCreated datePublished" datetime="2018-03-26T21:07:17+08:00">2018-03-26</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/26/java笔试面试/设计模式-单例模式/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/26/java笔试面试/设计模式-单例模式/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/03/26/java笔试面试/设计模式-单例模式/" class="leancloud_visitors" data-flag-title="设计模式-单例模式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+	
+      
+      
+
+      
+        
+          
+            <p>在项目中有时候就需要用到单例模式,通过单例模式可以保证系统中一个类只有一个实例而且该实例易于外界访问，从而方便对实例个数的控制并节约系统资源.比如你的log,每个功能都会写log,但是我们只需要一个实例来进行.</p>
+<p>####懒汉模式:<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public class First &#123;</div><div class="line">    private static First instance;</div><div class="line">    private First()&#123;&#125;</div><div class="line">    public static First getInstance()&#123;</div><div class="line">        if (instance == null) &#123;</div><div class="line">            instance = new SingletonDemo1();</div><div class="line">        &#125;</div><div class="line">        return instance;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>但是很明显,不能用于多线程的工作.多个线程同时进行判断的时候还是会出问题.</p>
+<p>####懒汉模式(加锁)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public class Second &#123;</div><div class="line">    private static Second instance;</div><div class="line">    private Second()&#123;&#125;</div><div class="line">    public static synchronized Second getInstance()&#123;</div><div class="line">        if (instance == null) &#123;</div><div class="line">            instance = new Second();</div><div class="line">        &#125;</div><div class="line">        return instance;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这种方法可以解决多线程同时进行访问的问题,但是由于加了锁,进入到方法的时候会等待上一个线程把资源释放出来.那么效率就非常低了.</p>
+<p>####饿汉模式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public class Third &#123;</div><div class="line">    private static Third instance = new Third();</div><div class="line">    private Third()&#123;&#125;</div><div class="line">    public static Third getInstance()&#123;</div><div class="line">        return instance;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这种方法会在类实例化的时候就加载,如果不用的话会造成资源的浪费.</p>
+<h4 id="双重锁模式"><a href="#双重锁模式" class="headerlink" title="双重锁模式"></a>双重锁模式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public class Fourth &#123;</div><div class="line">    private volatile static Fourth fourth;</div><div class="line">    private Fourth()&#123;&#125;</div><div class="line">    public static Fourth getInstance()&#123;</div><div class="line">        if (Fourth == null) &#123;</div><div class="line">            synchronized (Fourth.class) &#123;</div><div class="line">                if (fourth == null) &#123;</div><div class="line">                    fourth = new Fourth();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return fourth;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这种双重锁模式可以有效的防止资源浪费和解决多线程的问题,其中第二个锁就是为了防止多线程执行过第一个锁之后第一个线程继续执行,而第二个进行等待,等第一个线程执行过其实已经创建过实例了但是第二个线程进行执行的时候需要再进行一次判断.</p>
+<p>时间：2018年三月26号<br>地点：上海市浦东<br>公司：**<br>致自己：美好的生活源于不断地努力。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+     <div>
+      
+     </div>
+
+    
+
+    
+      
+    
+    
+
+    
+	<div>
+	  
+	</div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2018/03/26/java笔试面试/java面试题2/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang"/>
+      <meta itemprop="description" content="If you want, then do it ."/>
+      <meta itemprop="image" content="/images/wzt.jpg"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/03/26/java笔试面试/java面试题2/" class="post-title-link" itemprop="url">java面试题2</a>
               
             
           </h1>
@@ -385,8 +564,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/26/新建文件夹/java面试题2/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/26/新建文件夹/java面试题2/" itemprop="commentCount"></span>
+                <a href="/2018/03/26/java笔试面试/java面试题2/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/26/java笔试面试/java面试题2/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -394,7 +573,7 @@
 
           
           
-             <span id="/2018/03/26/新建文件夹/java面试题2/" class="leancloud_visitors" data-flag-title="java面试题2">
+             <span id="/2018/03/26/java笔试面试/java面试题2/" class="leancloud_visitors" data-flag-title="java面试题2">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -507,7 +686,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2018/03/25/新建文件夹 (2)/设计模式-代理模式/"/>
+    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2018/03/25/java笔试面试/设计模式-代理模式/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micky Wang"/>
@@ -527,7 +706,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/25/新建文件夹 (2)/设计模式-代理模式/" class="post-title-link" itemprop="url">设计模式-代理模式</a>
+                <a href="/2018/03/25/java笔试面试/设计模式-代理模式/" class="post-title-link" itemprop="url">设计模式-代理模式</a>
               
             
           </h1>
@@ -584,8 +763,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/25/新建文件夹 (2)/设计模式-代理模式/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/25/新建文件夹 (2)/设计模式-代理模式/" itemprop="commentCount"></span>
+                <a href="/2018/03/25/java笔试面试/设计模式-代理模式/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/25/java笔试面试/设计模式-代理模式/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -593,7 +772,7 @@
 
           
           
-             <span id="/2018/03/25/新建文件夹 (2)/设计模式-代理模式/" class="leancloud_visitors" data-flag-title="设计模式-代理模式">
+             <span id="/2018/03/25/java笔试面试/设计模式-代理模式/" class="leancloud_visitors" data-flag-title="设计模式-代理模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -697,7 +876,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2018/03/24/新建文件夹/java面试-Sting,Stringbuffer,Stringbuilder/"/>
+    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2018/03/24/java笔试面试/java面试-Sting,Stringbuffer,Stringbuilder/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micky Wang"/>
@@ -717,7 +896,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/24/新建文件夹/java面试-Sting,Stringbuffer,Stringbuilder/" class="post-title-link" itemprop="url">java面试-Sting,Stringbuffer,Stringbuilder</a>
+                <a href="/2018/03/24/java笔试面试/java面试-Sting,Stringbuffer,Stringbuilder/" class="post-title-link" itemprop="url">java面试-Sting,Stringbuffer,Stringbuilder</a>
               
             
           </h1>
@@ -774,8 +953,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/24/新建文件夹/java面试-Sting,Stringbuffer,Stringbuilder/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/24/新建文件夹/java面试-Sting,Stringbuffer,Stringbuilder/" itemprop="commentCount"></span>
+                <a href="/2018/03/24/java笔试面试/java面试-Sting,Stringbuffer,Stringbuilder/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/24/java笔试面试/java面试-Sting,Stringbuffer,Stringbuilder/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -783,7 +962,7 @@
 
           
           
-             <span id="/2018/03/24/新建文件夹/java面试-Sting,Stringbuffer,Stringbuilder/" class="leancloud_visitors" data-flag-title="java面试-Sting,Stringbuffer,Stringbuilder">
+             <span id="/2018/03/24/java笔试面试/java面试-Sting,Stringbuffer,Stringbuilder/" class="leancloud_visitors" data-flag-title="java面试-Sting,Stringbuffer,Stringbuilder">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -882,7 +1061,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2018/03/23/新建文件夹/java面试题1/"/>
+    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2018/03/23/java笔试面试/java面试题1/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micky Wang"/>
@@ -902,7 +1081,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/23/新建文件夹/java面试题1/" class="post-title-link" itemprop="url">java面试1</a>
+                <a href="/2018/03/23/java笔试面试/java面试题1/" class="post-title-link" itemprop="url">java面试1</a>
               
             
           </h1>
@@ -959,8 +1138,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/23/新建文件夹/java面试题1/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/23/新建文件夹/java面试题1/" itemprop="commentCount"></span>
+                <a href="/2018/03/23/java笔试面试/java面试题1/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/23/java笔试面试/java面试题1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -968,7 +1147,7 @@
 
           
           
-             <span id="/2018/03/23/新建文件夹/java面试题1/" class="leancloud_visitors" data-flag-title="java面试1">
+             <span id="/2018/03/23/java笔试面试/java面试题1/" class="leancloud_visitors" data-flag-title="java面试1">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1114,7 +1293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2018/03/02/新建文件夹 (2)/mongodb-模糊查询+聚合函数+连表查询+排序/"/>
+    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2018/03/02/sql+mongodb+php+python/mongodb-模糊查询+聚合函数+连表查询+排序/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micky Wang"/>
@@ -1134,7 +1313,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/02/新建文件夹 (2)/mongodb-模糊查询+聚合函数+连表查询+排序/" class="post-title-link" itemprop="url">mongodb-模糊查询+聚合函数+连表查询+排序</a>
+                <a href="/2018/03/02/sql+mongodb+php+python/mongodb-模糊查询+聚合函数+连表查询+排序/" class="post-title-link" itemprop="url">mongodb-模糊查询+聚合函数+连表查询+排序</a>
               
             
           </h1>
@@ -1197,8 +1376,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/02/新建文件夹 (2)/mongodb-模糊查询+聚合函数+连表查询+排序/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/02/新建文件夹 (2)/mongodb-模糊查询+聚合函数+连表查询+排序/" itemprop="commentCount"></span>
+                <a href="/2018/03/02/sql+mongodb+php+python/mongodb-模糊查询+聚合函数+连表查询+排序/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/02/sql+mongodb+php+python/mongodb-模糊查询+聚合函数+连表查询+排序/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1206,7 +1385,7 @@
 
           
           
-             <span id="/2018/03/02/新建文件夹 (2)/mongodb-模糊查询+聚合函数+连表查询+排序/" class="leancloud_visitors" data-flag-title="mongodb-模糊查询+聚合函数+连表查询+排序">
+             <span id="/2018/03/02/sql+mongodb+php+python/mongodb-模糊查询+聚合函数+连表查询+排序/" class="leancloud_visitors" data-flag-title="mongodb-模糊查询+聚合函数+连表查询+排序">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1309,7 +1488,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2018/03/02/新建文件夹 (2)/mongodb的聚合,连表查询lookup/"/>
+    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2018/03/02/sql+mongodb+php+python/mongodb的聚合,连表查询lookup/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micky Wang"/>
@@ -1329,7 +1508,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/02/新建文件夹 (2)/mongodb的聚合,连表查询lookup/" class="post-title-link" itemprop="url">mongodb的聚合,连表查询lookup</a>
+                <a href="/2018/03/02/sql+mongodb+php+python/mongodb的聚合,连表查询lookup/" class="post-title-link" itemprop="url">mongodb的聚合,连表查询lookup</a>
               
             
           </h1>
@@ -1392,8 +1571,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/02/新建文件夹 (2)/mongodb的聚合,连表查询lookup/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/02/新建文件夹 (2)/mongodb的聚合,连表查询lookup/" itemprop="commentCount"></span>
+                <a href="/2018/03/02/sql+mongodb+php+python/mongodb的聚合,连表查询lookup/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/02/sql+mongodb+php+python/mongodb的聚合,连表查询lookup/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1401,7 +1580,7 @@
 
           
           
-             <span id="/2018/03/02/新建文件夹 (2)/mongodb的聚合,连表查询lookup/" class="leancloud_visitors" data-flag-title="mongodb的聚合,连表查询lookup">
+             <span id="/2018/03/02/sql+mongodb+php+python/mongodb的聚合,连表查询lookup/" class="leancloud_visitors" data-flag-title="mongodb的聚合,连表查询lookup">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1507,7 +1686,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2018/03/02/新建文件夹 (2)/mongodb普通增删改查/"/>
+    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2018/03/02/sql+mongodb+php+python/mongodb普通增删改查/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micky Wang"/>
@@ -1527,7 +1706,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/02/新建文件夹 (2)/mongodb普通增删改查/" class="post-title-link" itemprop="url">mongodb普通的增删改查</a>
+                <a href="/2018/03/02/sql+mongodb+php+python/mongodb普通增删改查/" class="post-title-link" itemprop="url">mongodb普通的增删改查</a>
               
             
           </h1>
@@ -1590,8 +1769,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/02/新建文件夹 (2)/mongodb普通增删改查/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/02/新建文件夹 (2)/mongodb普通增删改查/" itemprop="commentCount"></span>
+                <a href="/2018/03/02/sql+mongodb+php+python/mongodb普通增删改查/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/02/sql+mongodb+php+python/mongodb普通增删改查/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1599,7 +1778,7 @@
 
           
           
-             <span id="/2018/03/02/新建文件夹 (2)/mongodb普通增删改查/" class="leancloud_visitors" data-flag-title="mongodb普通的增删改查">
+             <span id="/2018/03/02/sql+mongodb+php+python/mongodb普通增删改查/" class="leancloud_visitors" data-flag-title="mongodb普通的增删改查">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1697,7 +1876,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2018/03/01/新建文件夹 (2)/mongodb聚合函数+limit,skip,sort/"/>
+    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2018/03/01/sql+mongodb+php+python/mongodb聚合函数+limit,skip,sort/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micky Wang"/>
@@ -1717,7 +1896,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/01/新建文件夹 (2)/mongodb聚合函数+limit,skip,sort/" class="post-title-link" itemprop="url">mongodb的聚合函数,limit,skip,sort</a>
+                <a href="/2018/03/01/sql+mongodb+php+python/mongodb聚合函数+limit,skip,sort/" class="post-title-link" itemprop="url">mongodb的聚合函数,limit,skip,sort</a>
               
             
           </h1>
@@ -1792,8 +1971,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/01/新建文件夹 (2)/mongodb聚合函数+limit,skip,sort/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/01/新建文件夹 (2)/mongodb聚合函数+limit,skip,sort/" itemprop="commentCount"></span>
+                <a href="/2018/03/01/sql+mongodb+php+python/mongodb聚合函数+limit,skip,sort/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/01/sql+mongodb+php+python/mongodb聚合函数+limit,skip,sort/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1801,7 +1980,7 @@
 
           
           
-             <span id="/2018/03/01/新建文件夹 (2)/mongodb聚合函数+limit,skip,sort/" class="leancloud_visitors" data-flag-title="mongodb的聚合函数,limit,skip,sort">
+             <span id="/2018/03/01/sql+mongodb+php+python/mongodb聚合函数+limit,skip,sort/" class="leancloud_visitors" data-flag-title="mongodb的聚合函数,limit,skip,sort">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1903,7 +2082,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2018/03/01/新建文件夹 (2)/mongodb的insert/"/>
+    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2018/03/01/sql+mongodb+php+python/mongodb的insert/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micky Wang"/>
@@ -1923,7 +2102,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/01/新建文件夹 (2)/mongodb的insert/" class="post-title-link" itemprop="url">mongodb的插入数据</a>
+                <a href="/2018/03/01/sql+mongodb+php+python/mongodb的insert/" class="post-title-link" itemprop="url">mongodb的插入数据</a>
               
             
           </h1>
@@ -1998,8 +2177,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/01/新建文件夹 (2)/mongodb的insert/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/01/新建文件夹 (2)/mongodb的insert/" itemprop="commentCount"></span>
+                <a href="/2018/03/01/sql+mongodb+php+python/mongodb的insert/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/01/sql+mongodb+php+python/mongodb的insert/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -2007,7 +2186,7 @@
 
           
           
-             <span id="/2018/03/01/新建文件夹 (2)/mongodb的insert/" class="leancloud_visitors" data-flag-title="mongodb的插入数据">
+             <span id="/2018/03/01/sql+mongodb+php+python/mongodb的insert/" class="leancloud_visitors" data-flag-title="mongodb的插入数据">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -2043,208 +2222,6 @@
             <h5 id="在现在的项目中经常会用到数据库-但是数据库也有sql数据库和nosql数据库-他们虽然都是crud的操作但是其中也有很多的不同-同时我也是刚接触nosql中的一种mongodb数据库"><a href="#在现在的项目中经常会用到数据库-但是数据库也有sql数据库和nosql数据库-他们虽然都是crud的操作但是其中也有很多的不同-同时我也是刚接触nosql中的一种mongodb数据库" class="headerlink" title="在现在的项目中经常会用到数据库,但是数据库也有sql数据库和nosql数据库.他们虽然都是crud的操作但是其中也有很多的不同.同时我也是刚接触nosql中的一种mongodb数据库."></a>在现在的项目中经常会用到数据库,但是数据库也有sql数据库和nosql数据库.他们虽然都是crud的操作但是其中也有很多的不同.同时我也是刚接触nosql中的一种mongodb数据库.</h5><h5 id="在插入数据的时候-关系型数据库必须要求表格存在-但是mongodb不用-它会自动帮你建一个表"><a href="#在插入数据的时候-关系型数据库必须要求表格存在-但是mongodb不用-它会自动帮你建一个表" class="headerlink" title="在插入数据的时候,关系型数据库必须要求表格存在,但是mongodb不用,它会自动帮你建一个表."></a>在插入数据的时候,关系型数据库必须要求表格存在,但是mongodb不用,它会自动帮你建一个表.</h5><h6 id="1-插入一条数据"><a href="#1-插入一条数据" class="headerlink" title="1. 插入一条数据"></a>1. 插入一条数据</h6><figure class="highlight plain"><figcaption><span>temp </span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">    &quot;accountId&quot; : ObjectId(&quot;111111&quot;),</div><div class="line">    &quot;name&quot; : &quot;micky&quot;,</div><div class="line">    &quot;type&quot; : &quot;1111&quot;,</div><div class="line">    &quot;isDeleted&quot; : false</div><div class="line">&#125;</div><div class="line">db.test.insert(temp)</div></pre></td></tr></table></figure>
 <h6 id="2-插入多条数据"><a href="#2-插入多条数据" class="headerlink" title="2. 插入多条数据"></a>2. 插入多条数据</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">var temp = ([&#123;</div><div class="line">    &quot;_id&quot; : ObjectId(&quot;111111&quot;),</div><div class="line">    &quot;accountId&quot; : ObjectId(&quot;111111&quot;),</div><div class="line">    &quot;name&quot; : &quot;111111&quot;,</div><div class="line">    &quot;type&quot; : &quot;111111&quot;,</div><div class="line">    &quot;isDeleted&quot; : false</div><div class="line">&#125;,</div><div class="line"></div><div class="line">/* 3 */</div><div class="line">&#123;</div><div class="line">    &quot;_id&quot; : ObjectId(&quot;111111&quot;),</div><div class="line">    &quot;accountId&quot; : ObjectId(&quot;111111&quot;),</div><div class="line">    &quot;name&quot; : &quot;111111&quot;,</div><div class="line">    &quot;type&quot; : &quot;111111&quot;,</div><div class="line">    &quot;isDeleted&quot; : false</div><div class="line">&#125;</div><div class="line">])</div><div class="line">db.test.insertMany(temp)</div></pre></td></tr></table></figure>
 <p>初次学习,有什么不对多多见谅.欢迎关注<a href="http://www.mickylove.cn">博客</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-     <div>
-      
-     </div>
-
-    
-
-    
-      
-    
-    
-
-    
-	<div>
-	  
-	</div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2018/03/01/新建文件夹 (2)/初学php-数组/"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang"/>
-      <meta itemprop="description" content="If you want, then do it ."/>
-      <meta itemprop="image" content="/images/wzt.jpg"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/03/01/新建文件夹 (2)/初学php-数组/" class="post-title-link" itemprop="url">初学php-数组</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-	
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-03-01 12:47:25" itemprop="dateCreated datePublished" datetime="2018-03-01T12:47:25+08:00">2018-03-01</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-03-02 19:17:58" itemprop="dateModified" datetime="2018-03-02T19:17:58+08:00">2018-03-02</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/php/" itemprop="url" rel="index"><span itemprop="name">php</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/03/01/新建文件夹 (2)/初学php-数组/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/03/01/新建文件夹 (2)/初学php-数组/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/03/01/新建文件夹 (2)/初学php-数组/" class="leancloud_visitors" data-flag-title="初学php-数组">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-	
-      
-      
-
-      
-        
-          
-            <p>在php中并没有像java那样把数组分的那么清楚有list有map，php只有一个array。所以在当在数组后面加值的时候就不一样的，array有key =&gt;value的时候array_push()这个函数就无法使用，这个时候就要使用array[key]=[value]。</p>
-<h6 id="那么这些函数都代表什么意思呢"><a href="#那么这些函数都代表什么意思呢" class="headerlink" title="那么这些函数都代表什么意思呢:"></a>那么这些函数都代表什么意思呢:</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">array_push() 函数向数组尾部插入一个或多个元素。相当于list</div><div class="line">is_array() 是否是数组。</div><div class="line">array_keys() 包含数组中所有键名的一个新数组。</div><div class="line">array_values() 包含数组中所有非键名的一个新数组。</div><div class="line">array_key_exists() 这个key值是否存在</div><div class="line">count() 函数用于返回数组的长度</div></pre></td></tr></table></figure>
-<p>其他的就靠自己在实战中去用一下了,这些我用到的也是出过错的.初次学习,有什么不对多多见谅.欢迎关注<a href="http://www.mickylove.cn">博客:桃花源居</a></p>
 
           
         
@@ -2343,7 +2320,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">67</span>
+                    <span class="site-state-item-count">68</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2463,7 +2440,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">28</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
