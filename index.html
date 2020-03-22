@@ -937,7 +937,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2019/10/11/算法/线性表二：用ArrayList来实现Queued的功能/"/>
+    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2020/03/22/java/JDK8一些更加方便的小技巧1/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Micky Wang"/>
@@ -957,7 +957,203 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/10/11/算法/线性表二：用ArrayList来实现Queued的功能/" class="post-title-link" itemprop="url">线性表二：用ArrayList来实现Queued的功能</a>
+                <a href="/2020/03/22/java/JDK8一些更加方便的小技巧1/" class="post-title-link" itemprop="url">JDK8一些更加方便的小技巧1</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+	
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-03-22 10:20:30 / 修改时间：22:37:45" itemprop="dateCreated datePublished" datetime="2020-03-22T10:20:30+08:00">2020-03-22</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/22/java/JDK8一些更加方便的小技巧1/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/03/22/java/JDK8一些更加方便的小技巧1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/03/22/java/JDK8一些更加方便的小技巧1/" class="leancloud_visitors" data-flag-title="JDK8一些更加方便的小技巧1">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+	
+      
+      
+
+      
+        
+          
+            <h3 id="1-判空操作"><a href="#1-判空操作" class="headerlink" title="1. 判空操作"></a>1. 判空操作</h3>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">1. 旧代码</div><div class="line">if (obj !=null) &#123;</div><div class="line">	System.out.println(&quot;不为空&quot;);</div><div class="line">&#125;</div><div class="line">2. 新代码</div><div class="line">if (Optional.ofNullable(obj).isPresent()) &#123;</div><div class="line">	System.out.println(&quot;不为空&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="2-判空异常操作"><a href="#2-判空异常操作" class="headerlink" title="2. 判空异常操作"></a>2. 判空异常操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">1. 旧代码</div><div class="line">if (obj ==null) &#123;</div><div class="line">	throw new Exception();</div><div class="line">&#125;</div><div class="line">2. 新代码</div><div class="line">Optional.ofNullable(obj).isPresent().orElseThrow(() -&gt;new RuntimeException(&quot;&quot;));</div></pre></td></tr></table></figure>
+<h3 id="3-返回非空值"><a href="#3-返回非空值" class="headerlink" title="3. 返回非空值"></a>3. 返回非空值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1. 旧代码</div><div class="line">if (list == null) &#123; return new ArrayList(); &#125; return list;</div><div class="line">2. 新代码</div><div class="line">return Optional.ofNullable(list).orElse(new ArrayList());</div></pre></td></tr></table></figure>
+<h3 id="4-求最大值最小值"><a href="#4-求最大值最小值" class="headerlink" title="4. 求最大值最小值"></a>4. 求最大值最小值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1. Integer ll = Stream.of(1,2,3,4,5).max(Integer::compareTo).get();</div><div class="line">2. Integer ll = Stream.of(1,2,3,4,5).min(Integer::compareTo).get();</div></pre></td></tr></table></figure>
+<h3 id="5-去重操作"><a href="#5-去重操作" class="headerlink" title="5. 去重操作"></a>5. 去重操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">List &lt;Integer&gt; temp = list2.stream().distinct().collect(Collectors.toList());</div></pre></td></tr></table></figure>
+<h3 id="6-集合判空遍历操作"><a href="#6-集合判空遍历操作" class="headerlink" title="6. 集合判空遍历操作"></a>6. 集合判空遍历操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Optional.ofNullable(list2).orElse(new ArrayList()).forEach(user-&gt; &#123;&#125;);</div></pre></td></tr></table></figure>
+<h3 id="7-规约计算"><a href="#7-规约计算" class="headerlink" title="7. 规约计算"></a>7. 规约计算</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">IntSummaryStatistics status = list2.stream().mapToInt(i-&gt;i).summaryStatistics();</div><div class="line">		int max = status.getMax();</div><div class="line">		int min = status.getMin();</div><div class="line">		double sum = status.getSum();</div><div class="line">		double evg = status.getAverage();</div><div class="line">		long count = status.getCount();</div><div class="line">		System.out.println(max);</div></pre></td></tr></table></figure>
+<h3 id="8-筛选"><a href="#8-筛选" class="headerlink" title="8. 筛选"></a>8. 筛选</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">long ss = list2.stream().filter(sz -&gt; sz.equals(1)).count();</div></pre></td></tr></table></figure>
+<h3 id="9-排序"><a href="#9-排序" class="headerlink" title="9. 排序"></a>9. 排序</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">List&lt;Integer&gt; list3 = Stream.of(2,1,3,4,5).sorted().collect(Collectors.toList());</div></pre></td></tr></table></figure>
+<h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3><h4 id="Optional类："><a href="#Optional类：" class="headerlink" title="Optional类："></a>Optional类：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">1. orElse: 存在即返回，无则返回默认值。</div><div class="line">2. ofNullable: 存在即返回，无则由函数产生。</div><div class="line">3. orElseThrow: 存在即返回，无则抛出异常。</div><div class="line">4. ifPresent: 若对象不为空，则进行操作。</div><div class="line">5. map：若对象存在，则进行转换。</div><div class="line">6. filter：过滤条件，不符合条件，则返回null。</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+     <div>
+      
+     </div>
+
+    
+
+    
+      
+    
+    
+
+    
+	<div>
+	  
+	</div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2019/10/11/算法/线性表二：用ArrayList来实现Queue的功能/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang"/>
+      <meta itemprop="description" content="If you want, then do it ."/>
+      <meta itemprop="image" content="/images/wzt.jpg"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/10/11/算法/线性表二：用ArrayList来实现Queue的功能/" class="post-title-link" itemprop="url">线性表二：用ArrayList来实现Queue的功能</a>
               
             
           </h1>
@@ -1000,7 +1196,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-10-13 16:20:46" itemprop="dateModified" datetime="2019-10-13T16:20:46+08:00">2019-10-13</time>
+                <time title="修改时间：2019-10-13 16:29:08" itemprop="dateModified" datetime="2019-10-13T16:29:08+08:00">2019-10-13</time>
               
             
           </span>
@@ -1032,8 +1228,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/10/11/算法/线性表二：用ArrayList来实现Queued的功能/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/10/11/算法/线性表二：用ArrayList来实现Queued的功能/" itemprop="commentCount"></span>
+                <a href="/2019/10/11/算法/线性表二：用ArrayList来实现Queue的功能/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/10/11/算法/线性表二：用ArrayList来实现Queue的功能/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1041,7 +1237,7 @@
 
           
           
-             <span id="/2019/10/11/算法/线性表二：用ArrayList来实现Queued的功能/" class="leancloud_visitors" data-flag-title="线性表二：用ArrayList来实现Queued的功能">
+             <span id="/2019/10/11/算法/线性表二：用ArrayList来实现Queue的功能/" class="leancloud_visitors" data-flag-title="线性表二：用ArrayList来实现Queue的功能">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1817,7 +2013,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-10-13 16:12:07" itemprop="dateModified" datetime="2019-10-13T16:12:07+08:00">2019-10-13</time>
+                <time title="修改时间：2019-10-13 16:25:04" itemprop="dateModified" datetime="2019-10-13T16:25:04+08:00">2019-10-13</time>
               
             
           </span>
@@ -2154,206 +2350,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2019/04/10/算法/链表逆序输出数值（并且不能改变链表结构）/"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang"/>
-      <meta itemprop="description" content="If you want, then do it ."/>
-      <meta itemprop="image" content="/images/wzt.jpg"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/10/算法/链表逆序输出数值（并且不能改变链表结构）/" class="post-title-link" itemprop="url">链表逆序输出数值（并且不能改变链表结构）</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-	
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-10 10:00:30" itemprop="dateCreated datePublished" datetime="2019-04-10T10:00:30+08:00">2019-04-10</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-17 11:11:55" itemprop="dateModified" datetime="2019-04-17T11:11:55+08:00">2019-04-17</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/04/10/算法/链表逆序输出数值（并且不能改变链表结构）/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/04/10/算法/链表逆序输出数值（并且不能改变链表结构）/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/04/10/算法/链表逆序输出数值（并且不能改变链表结构）/" class="leancloud_visitors" data-flag-title="链表逆序输出数值（并且不能改变链表结构）">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-	
-      
-      
-
-      
-        
-          
-            <h3 id="链表逆序输出数值"><a href="#链表逆序输出数值" class="headerlink" title="链表逆序输出数值"></a>链表逆序输出数值</h3><h4 id="创建一个链表之后，翻转该链表返回一个链表，该链表由node1-gt-node2-gt-node3变成node3-gt-node2-gt-nod1-同时不能改变结构。"><a href="#创建一个链表之后，翻转该链表返回一个链表，该链表由node1-gt-node2-gt-node3变成node3-gt-node2-gt-nod1-同时不能改变结构。" class="headerlink" title="创建一个链表之后，翻转该链表返回一个链表，该链表由node1-&gt;node2-&gt;node3变成node3-&gt;node2-&gt;nod1.同时不能改变结构。"></a>创建一个链表之后，翻转该链表返回一个链表，该链表由node1-&gt;node2-&gt;node3变成node3-&gt;node2-&gt;nod1.同时不能改变结构。</h4><h5 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h5><p>首先拿到这道题第一想法是，如何把node的next当成pre来用。肯定是需要先循环中把最后面的一个放到最前面。定义两个node，一个nextnode一个prenode。先拿出node的下一个赋给nextnode方便下一步的调用，接着把该节点node的值指向prenode，下一步把node的值赋给nodepre等待下一个node的连接。最后把nextnode的值赋给node继续循环。</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">package likendListStudy;</div><div class="line"></div><div class="line">public class ReverseLinkedListNotChange &#123;</div><div class="line"></div><div class="line">    public Node ReverseList(Node node) &#123;</div><div class="line">        if (node == null) &#123;</div><div class="line">            return null;</div><div class="line">        &#125;</div><div class="line">        Node nodePre= null;</div><div class="line">        Node nodeNext= null;</div><div class="line">        while (node != null) &#123;</div><div class="line">            // 首先拿到链表下一个要拿的node</div><div class="line">            nodeNext = node.getNest();</div><div class="line">            // 把node下一个存成定义好的上一个pre。</div><div class="line">            node.setNest(nodePre);</div><div class="line">            // 把node放到pre中</div><div class="line">            nodePre = node;</div><div class="line">            // 把要查的节点赋给node</div><div class="line">            node = nodeNext;</div><div class="line">        &#125;</div><div class="line">        return nodePre;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    void printList(Node node) &#123;</div><div class="line">        while (node != null) &#123;</div><div class="line">            System.out.print(node.getData()+&quot;,&quot;);</div><div class="line">            node = node.getNest();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public static void main(String args[]) &#123;</div><div class="line">        Node node = new Node(1);</div><div class="line">        Node node1 = new Node(2);</div><div class="line">        Node node2 = new Node(3);</div><div class="line">        Node node3 = new Node(4);</div><div class="line">        Node node4 = new Node(5);</div><div class="line">        node.setNest(node1);</div><div class="line">        node1.setNest(node2);</div><div class="line">        node2.setNest(node3);</div><div class="line">        node3.setNest(node4);</div><div class="line">        ReverseLinkedListNotChange reverseLinkedListNotChange = new ReverseLinkedListNotChange();</div><div class="line">        Node nodef= reverseLinkedListNotChange.ReverseList(node);</div><div class="line">        reverseLinkedListNotChange.printList(nodef);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-     <div>
-      
-     </div>
-
-    
-
-    
-      
-    
-    
-
-    
-	<div>
-	  
-	</div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2405,7 +2401,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">73</span>
+                    <span class="site-state-item-count">74</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2603,7 +2599,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

@@ -322,6 +322,206 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2019/04/10/算法/链表逆序输出数值（并且不能改变链表结构）/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang"/>
+      <meta itemprop="description" content="If you want, then do it ."/>
+      <meta itemprop="image" content="/images/wzt.jpg"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/10/算法/链表逆序输出数值（并且不能改变链表结构）/" class="post-title-link" itemprop="url">链表逆序输出数值（并且不能改变链表结构）</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+	
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-10 10:00:30" itemprop="dateCreated datePublished" datetime="2019-04-10T10:00:30+08:00">2019-04-10</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-17 11:11:55" itemprop="dateModified" datetime="2019-04-17T11:11:55+08:00">2019-04-17</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/10/算法/链表逆序输出数值（并且不能改变链表结构）/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/04/10/算法/链表逆序输出数值（并且不能改变链表结构）/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/04/10/算法/链表逆序输出数值（并且不能改变链表结构）/" class="leancloud_visitors" data-flag-title="链表逆序输出数值（并且不能改变链表结构）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+	
+      
+      
+
+      
+        
+          
+            <h3 id="链表逆序输出数值"><a href="#链表逆序输出数值" class="headerlink" title="链表逆序输出数值"></a>链表逆序输出数值</h3><h4 id="创建一个链表之后，翻转该链表返回一个链表，该链表由node1-gt-node2-gt-node3变成node3-gt-node2-gt-nod1-同时不能改变结构。"><a href="#创建一个链表之后，翻转该链表返回一个链表，该链表由node1-gt-node2-gt-node3变成node3-gt-node2-gt-nod1-同时不能改变结构。" class="headerlink" title="创建一个链表之后，翻转该链表返回一个链表，该链表由node1-&gt;node2-&gt;node3变成node3-&gt;node2-&gt;nod1.同时不能改变结构。"></a>创建一个链表之后，翻转该链表返回一个链表，该链表由node1-&gt;node2-&gt;node3变成node3-&gt;node2-&gt;nod1.同时不能改变结构。</h4><h5 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h5><p>首先拿到这道题第一想法是，如何把node的next当成pre来用。肯定是需要先循环中把最后面的一个放到最前面。定义两个node，一个nextnode一个prenode。先拿出node的下一个赋给nextnode方便下一步的调用，接着把该节点node的值指向prenode，下一步把node的值赋给nodepre等待下一个node的连接。最后把nextnode的值赋给node继续循环。</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">package likendListStudy;</div><div class="line"></div><div class="line">public class ReverseLinkedListNotChange &#123;</div><div class="line"></div><div class="line">    public Node ReverseList(Node node) &#123;</div><div class="line">        if (node == null) &#123;</div><div class="line">            return null;</div><div class="line">        &#125;</div><div class="line">        Node nodePre= null;</div><div class="line">        Node nodeNext= null;</div><div class="line">        while (node != null) &#123;</div><div class="line">            // 首先拿到链表下一个要拿的node</div><div class="line">            nodeNext = node.getNest();</div><div class="line">            // 把node下一个存成定义好的上一个pre。</div><div class="line">            node.setNest(nodePre);</div><div class="line">            // 把node放到pre中</div><div class="line">            nodePre = node;</div><div class="line">            // 把要查的节点赋给node</div><div class="line">            node = nodeNext;</div><div class="line">        &#125;</div><div class="line">        return nodePre;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    void printList(Node node) &#123;</div><div class="line">        while (node != null) &#123;</div><div class="line">            System.out.print(node.getData()+&quot;,&quot;);</div><div class="line">            node = node.getNest();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public static void main(String args[]) &#123;</div><div class="line">        Node node = new Node(1);</div><div class="line">        Node node1 = new Node(2);</div><div class="line">        Node node2 = new Node(3);</div><div class="line">        Node node3 = new Node(4);</div><div class="line">        Node node4 = new Node(5);</div><div class="line">        node.setNest(node1);</div><div class="line">        node1.setNest(node2);</div><div class="line">        node2.setNest(node3);</div><div class="line">        node3.setNest(node4);</div><div class="line">        ReverseLinkedListNotChange reverseLinkedListNotChange = new ReverseLinkedListNotChange();</div><div class="line">        Node nodef= reverseLinkedListNotChange.ReverseList(node);</div><div class="line">        reverseLinkedListNotChange.printList(nodef);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+     <div>
+      
+     </div>
+
+    
+
+    
+      
+    
+    
+
+    
+	<div>
+	  
+	</div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2019/04/10/算法/链表逆序输出数值/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -922,209 +1122,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2019/02/20/leetcode/leetcode-Two-um/"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang"/>
-      <meta itemprop="description" content="If you want, then do it ."/>
-      <meta itemprop="image" content="/images/wzt.jpg"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/02/20/leetcode/leetcode-Two-um/" class="post-title-link" itemprop="url">leetcode Two Sum</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-	
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-02-20 22:10:25" itemprop="dateCreated datePublished" datetime="2019-02-20T22:10:25+08:00">2019-02-20</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-02-27 21:12:10" itemprop="dateModified" datetime="2019-02-27T21:12:10+08:00">2019-02-27</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/02/20/leetcode/leetcode-Two-um/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/02/20/leetcode/leetcode-Two-um/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/02/20/leetcode/leetcode-Two-um/" class="leancloud_visitors" data-flag-title="leetcode Two Sum">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-	
-      
-      
-
-      
-        
-          
-            <h3 id="问题"><a href="#问题" class="headerlink" title="问题:"></a>问题:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Given an array of integers, return indices of the two numbers such that they add up to a specific target.</div><div class="line"></div><div class="line">You may assume that each input would have exactly one solution, and you may not use the same element twice.</div><div class="line"></div><div class="line">Example:</div><div class="line"></div><div class="line">Given nums = [2, 7, 11, 15], target = 9,</div><div class="line"></div><div class="line">Because nums[0] + nums[1] = 2 + 7 = 9,</div><div class="line">return [0, 1].</div></pre></td></tr></table></figure>
-<h3 id="初级解决方案："><a href="#初级解决方案：" class="headerlink" title="初级解决方案："></a>初级解决方案：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public int[] twoSum(int[] nums, int target) &#123;</div><div class="line">        int []ss = new int[2];;</div><div class="line">        for (int i=0;i&lt;nums.length-1;i++) &#123;</div><div class="line">            for (int j = i+1;j&lt;nums.length;j++) &#123;</div><div class="line">                if (target == (nums[i]+nums[j])) &#123;</div><div class="line">                    ss[0] = i;</div><div class="line">                    ss[1] = j;</div><div class="line">                    return ss;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return null;</div><div class="line"></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<h3 id="进阶解决方案："><a href="#进阶解决方案：" class="headerlink" title="进阶解决方案："></a>进阶解决方案：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">public int[] twoSum(int[] nums, int target) &#123;</div><div class="line">        Map&lt;Integer,Integer&gt; map = new HashMap&lt;Integer, Integer&gt;();</div><div class="line">        for (int i =0;i&lt;nums.length;i++) &#123;</div><div class="line">            if (map.containsKey(target - nums[i])) &#123;</div><div class="line">                return new int[] &#123;map.get(target - nums[i]),i&#125;;</div><div class="line">            &#125;else &#123;</div><div class="line">                map.put(nums[i],i);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return null;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>在遇到问题的时候首先会直接运用最简单的方法去完成，但是如果可以花点时间想一下也是能够进步的。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-     <div>
-      
-     </div>
-
-    
-
-    
-      
-    
-    
-
-    
-	<div>
-	  
-	</div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2019/02/20/springcloud/Spring Cloud git 配置报错/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1280,6 +1277,209 @@
 </ol>
 <p>把<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">5.  查看自己引用的依赖</div></pre></td></tr></table></figure></p>
 <p><groupid>org.springframework.cloud</groupid><br>            <artifactid>spring-cloud-starter-config</artifactid><br>        <br><code>这个依赖是client要使用的，不是</code>spring-cloud-config-server```  千万不要从server那边复制过来直接用了，不是一个依赖。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+     <div>
+      
+     </div>
+
+    
+
+    
+      
+    
+    
+
+    
+	<div>
+	  
+	</div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2019/02/20/leetcode/leetcode-Two-um/"/>
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Micky Wang"/>
+      <meta itemprop="description" content="If you want, then do it ."/>
+      <meta itemprop="image" content="/images/wzt.jpg"/>
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="桃花源居"/>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/02/20/leetcode/leetcode-Two-um/" class="post-title-link" itemprop="url">leetcode Two Sum</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+	
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-20 22:10:25" itemprop="dateCreated datePublished" datetime="2019-02-20T22:10:25+08:00">2019-02-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-02-27 21:12:10" itemprop="dateModified" datetime="2019-02-27T21:12:10+08:00">2019-02-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/20/leetcode/leetcode-Two-um/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/02/20/leetcode/leetcode-Two-um/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/02/20/leetcode/leetcode-Two-um/" class="leancloud_visitors" data-flag-title="leetcode Two Sum">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+	
+      
+      
+
+      
+        
+          
+            <h3 id="问题"><a href="#问题" class="headerlink" title="问题:"></a>问题:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Given an array of integers, return indices of the two numbers such that they add up to a specific target.</div><div class="line"></div><div class="line">You may assume that each input would have exactly one solution, and you may not use the same element twice.</div><div class="line"></div><div class="line">Example:</div><div class="line"></div><div class="line">Given nums = [2, 7, 11, 15], target = 9,</div><div class="line"></div><div class="line">Because nums[0] + nums[1] = 2 + 7 = 9,</div><div class="line">return [0, 1].</div></pre></td></tr></table></figure>
+<h3 id="初级解决方案："><a href="#初级解决方案：" class="headerlink" title="初级解决方案："></a>初级解决方案：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public int[] twoSum(int[] nums, int target) &#123;</div><div class="line">        int []ss = new int[2];;</div><div class="line">        for (int i=0;i&lt;nums.length-1;i++) &#123;</div><div class="line">            for (int j = i+1;j&lt;nums.length;j++) &#123;</div><div class="line">                if (target == (nums[i]+nums[j])) &#123;</div><div class="line">                    ss[0] = i;</div><div class="line">                    ss[1] = j;</div><div class="line">                    return ss;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return null;</div><div class="line"></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h3 id="进阶解决方案："><a href="#进阶解决方案：" class="headerlink" title="进阶解决方案："></a>进阶解决方案：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">public int[] twoSum(int[] nums, int target) &#123;</div><div class="line">        Map&lt;Integer,Integer&gt; map = new HashMap&lt;Integer, Integer&gt;();</div><div class="line">        for (int i =0;i&lt;nums.length;i++) &#123;</div><div class="line">            if (map.containsKey(target - nums[i])) &#123;</div><div class="line">                return new int[] &#123;map.get(target - nums[i]),i&#125;;</div><div class="line">            &#125;else &#123;</div><div class="line">                map.put(nums[i],i);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return null;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>在遇到问题的时候首先会直接运用最简单的方法去完成，但是如果可以花点时间想一下也是能够进步的。</p>
 
           
         
@@ -1946,195 +2146,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2019/01/02/java/自定义线程池/"/>
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Micky Wang"/>
-      <meta itemprop="description" content="If you want, then do it ."/>
-      <meta itemprop="image" content="/images/wzt.jpg"/>
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="桃花源居"/>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/01/02/java/自定义线程池/" class="post-title-link" itemprop="url">自定义线程池</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-	
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-01-02 22:10:25 / 修改时间：23:09:48" itemprop="dateCreated datePublished" datetime="2019-01-02T22:10:25+08:00">2019-01-02</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/01/02/java/自定义线程池/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/01/02/java/自定义线程池/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/01/02/java/自定义线程池/" class="leancloud_visitors" data-flag-title="自定义线程池">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-	
-      
-      
-
-      
-        
-          
-            <h4 id="自定义线程池的学习："><a href="#自定义线程池的学习：" class="headerlink" title="自定义线程池的学习："></a>自定义线程池的学习：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line">package StudyOne;</div><div class="line"></div><div class="line">import java.util.concurrent.ArrayBlockingQueue;</div><div class="line">import java.util.concurrent.BlockingQueue;</div><div class="line">import java.util.concurrent.TimeUnit;</div><div class="line"></div><div class="line">import org.apache.tomcat.util.threads.ThreadPoolExecutor;</div><div class="line"></div><div class="line">public class ThreadPoolTest &#123;</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		//阻塞队列  创建等待队列</div><div class="line">		BlockingQueue&lt;Runnable&gt; bqr = new ArrayBlockingQueue&lt;Runnable&gt;(20);</div><div class="line">		//corePoolSize: 核心线程数，默认情况下核心线程会一直存活，即使处于闲置状态也不会受存keepAliveTime限制。除非将allowCoreThreadTimeOut设置为true</div><div class="line">		// maximumPoolSize: 线程池所能容纳的最大线程数。超过这个数的线程将被阻塞。当任务队列为没有设置大小的LinkedBlockingDeque时，这个值无效</div><div class="line">		// keepAliveTime: 非核心线程的闲置超时时间，超过这个时间就会被回收</div><div class="line">		// unit: 指定keepAliveTime的单位，如TimeUnit.SECONDS。当将allowCoreThreadTimeOut设置为true时对corePoolSize生效。</div><div class="line">		// workQueue: 线程池中的任务队列.常用的有三种队列，SynchronousQueue,LinkedBlockingDeque,ArrayBlockingQueue。</div><div class="line">		ThreadPoolExecutor pool = new ThreadPoolExecutor(3, 5, 50,TimeUnit.MILLISECONDS, bqr);</div><div class="line">		Runnable test1 = new MyThead(&quot;test1&quot;);</div><div class="line">		Runnable test2 = new MyThead(&quot;test2&quot;);</div><div class="line">		Runnable test3 = new MyThead(&quot;test3&quot;);</div><div class="line">		Runnable test4 = new MyThead(&quot;test4&quot;);</div><div class="line">		Runnable test5 = new MyThead(&quot;test5&quot;);</div><div class="line">		Runnable test6 = new MyThead(&quot;test6&quot;);</div><div class="line">		pool.execute(test1);</div><div class="line">		pool.execute(test2);</div><div class="line">		pool.execute(test3);</div><div class="line">		pool.execute(test4);</div><div class="line">		pool.execute(test5);</div><div class="line">		pool.execute(test6);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div><div class="line"></div><div class="line">class MyThead implements Runnable &#123;</div><div class="line">	public String Name;</div><div class="line">	</div><div class="line">	public String getName() &#123;</div><div class="line">		return Name;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public void setName(String name) &#123;</div><div class="line">		Name = name;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public MyThead(String name) &#123;</div><div class="line">		setName(name);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	@Override</div><div class="line">	public void run() &#123;</div><div class="line">		System.out.println(Thread.currentThread().getName() + &quot;正在执行。。。&quot;+getName());</div><div class="line">		try &#123;</div><div class="line">			Thread.sleep(100);</div><div class="line">		&#125; catch (InterruptedException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h6 id="运行结果："><a href="#运行结果：" class="headerlink" title="运行结果："></a>运行结果：</h6><p><img src="https://upload-images.jianshu.io/upload_images/9149914-73f4b79c01a5f914.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-     <div>
-      
-     </div>
-
-    
-
-    
-      
-    
-    
-
-    
-	<div>
-	  
-	</div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.mickylove.cn/2019/01/02/前端/jquery调用ajax方法时候不执行success的也不执行error的方法/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2373,7 +2384,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">73</span>
+                    <span class="site-state-item-count">74</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2571,7 +2582,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
